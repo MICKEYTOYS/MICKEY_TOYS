@@ -186,5 +186,20 @@ function changeHeadsetImage(direction) {
   headsetIndex = (headsetIndex + direction + headsetImages.length) % headsetImages.length;
   document.getElementById("headsetImage").src = headsetImages[headsetIndex];
 }
+const markersImages = [
+  "WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.32.18%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.31.18%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.31.18%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.31.17%20AM(1).jpeg"
+];
+
+let markersIndex = 0;
+
+function changeMarkersImage(direction) {
+  markersIndex = (markersIndex + direction + markersImages.length) % markersImages.length;
+  document.getElementById("markersImage").src = markersImages[markersIndex];
+}
 </script></html>
 </script></html>
