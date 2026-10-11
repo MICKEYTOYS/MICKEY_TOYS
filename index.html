@@ -133,7 +133,11 @@ a {
   <main>
   <title>Mickey Toys</title>
     <div class="card">
-  <img src="WhatsApp%20Image%202026-10-06%20at%207.55.50%20AM.jpeg" alt="Barbie Headset" width="250">
+<div class="gallery">
+  <button type="button" onclick="changeHeadsetImage(-1)">❮</button>
+  <img id="headsetImage" src="WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM.jpeg" alt="Barbie Headset" width="250">
+  <button type="button" onclick="changeHeadsetImage(1)">❯</button>
+</div> 
   <h3>Barbie Headset</h3>
   <p>Price: 495 EGP</p>
  
@@ -157,4 +161,22 @@ a {
   </a>
 </div> </main>
 </body>
-</html>
+<script>
+const headsetImages = [
+  "WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.06%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.07%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM(2).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.10%20AM.jpeg"
+];
+
+let headsetIndex = 0;
+
+function changeHeadsetImage(direction) {
+  headsetIndex = (headsetIndex + direction + headsetImages.length) % headsetImages.length;
+  document.getElementById("headsetImage").src = headsetImages[headsetIndex];
+}
+</script></html>
