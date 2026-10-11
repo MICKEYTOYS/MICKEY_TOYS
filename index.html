@@ -157,7 +157,25 @@ a {
   <h3>Kids Money Safe</h3>
   <p>Price: 420 EGP</p>
   <a href="https://wa.me/201107743657" target="_blank"><button>Order Now</button></a>
-</div><div style="margin: 30px;">
+<div class="card">
+  <h3>🎨 Unicorn Metal Color Set 🦄</h3>
+
+  <div class="gallery">
+    <button type="button" onclick="changeUnicornImage(-1)">❮</button>
+    <img id="unicornImage" src="WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(4).jpeg" alt="Unicorn Metal Color Set" width="250">
+    <button type="button" onclick="changeUnicornImage(1)">❯</button>
+  </div>
+
+  <p><strong>145 Pieces</strong></p>
+  <p>Price: 650 EGP</p>
+  <p>Metal case with two levels, unicorn design, sturdy handle and metal locks.</p>
+  <p>Includes wood colors, watercolors, markers, pastels and painting tools.</p>
+  <p>Available in pink and light blue.</p>
+
+  <a href="https://wa.me/201107743657?text=Hello%20Mickey%20Toys%21%20I%20would%20like%20to%20order%20the%20Unicorn%20Metal%20Color%20Set%20for%20650%20EGP." target="_blank">
+    <button>Order Now</button>
+  </a>
+</div></div><div style="margin: 30px;">
   <h2>📱 Contact Mickey Toys</h2>
   <a href="https://wa.me/201107743657" target="_blank">
     <button>Chat with us on WhatsApp 💚</button>
@@ -202,5 +220,20 @@ function changeMarkersImage(direction) {
   markersIndex = (markersIndex + direction + markersImages.length) % markersImages.length;
   document.getElementById("markersImage").src = markersImages[markersIndex];
 }
-</script></html>
+const unicornImages = [
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(4).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(3).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.51.03%20PM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.58%20PM(3).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.58%20PM(2).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.57.22%20PM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.57.13%20PM.jpeg"
+];
+
+let unicornIndex = 0;
+
+function changeUnicornImage(direction) {
+  unicornIndex = (unicornIndex + direction + unicornImages.length) % unicornImages.length;
+  document.getElementById("unicornImage").src = unicornImages[unicornIndex];
+}</script></html>
 </script></html>
