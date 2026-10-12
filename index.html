@@ -9,10 +9,10 @@
 * { box-sizing: border-box; }
 
 :root {
-  --pink-bg: #FFF0F6;
-  --pink: #F8CDE0;
-  --pink-dark: #A84D78;
-  --pink-border: #F3D5E4;
+  --pink-bg: #FFD6E7;
+  --pink: #F8B6D2;
+  --pink-dark: #A83269;
+  --pink-border: #F0BBD3;
   --purple: #E9DDFB;
   --purple-dark: #76559C;
   --mint: #DDF5E8;
@@ -22,9 +22,7 @@
   --white: #FFFFFF;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: Arial, sans-serif;
@@ -46,7 +44,7 @@ header {
   border-radius: 18px;
   overflow: hidden;
   background: var(--white);
-  box-shadow: 0 5px 18px rgba(168,77,120,.08);
+  box-shadow: 0 5px 18px rgba(168,77,120,.12);
 }
 
 .hero-banner img {
@@ -54,6 +52,27 @@ header {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.language-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 8px 4px;
+}
+
+.language-bar button {
+  min-width: 105px;
+  background: #FFFFFF;
+  color: var(--pink-dark);
+  border: 2px solid var(--pink-border);
+}
+
+.language-bar button.active {
+  background: var(--pink-dark);
+  color: #FFFFFF;
+  border-color: var(--pink-dark);
 }
 
 main {
@@ -78,13 +97,13 @@ main {
   background: var(--white);
   border: 1px solid var(--pink-border);
   border-radius: 20px;
-  box-shadow: 0 5px 16px rgba(168,77,120,.09);
+  box-shadow: 0 5px 16px rgba(168,77,120,.12);
   transition: transform .2s, box-shadow .2s;
 }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(168,77,120,.13);
+  box-shadow: 0 8px 20px rgba(168,77,120,.17);
 }
 
 .card img {
@@ -119,9 +138,7 @@ main {
   font-weight: bold;
 }
 
-.old-price {
-  color: #999;
-}
+.old-price { color: #999; }
 
 .gallery {
   display: flex;
@@ -137,12 +154,11 @@ main {
   object-fit: contain;
 }
 
-button,
-.order-button {
+button, .order-button {
   display: inline-block;
   background: var(--pink);
   color: #843D62;
-  border: 1px solid #F0BDD5;
+  border: 1px solid #F0A6C7;
   padding: 12px 18px;
   border-radius: 25px;
   font-size: 15px;
@@ -152,9 +168,8 @@ button,
   transition: background .2s, transform .2s;
 }
 
-button:hover,
-.order-button:hover {
-  background: #F3B8D2;
+button:hover, .order-button:hover {
+  background: #F3A6C8;
   transform: translateY(-1px);
 }
 
@@ -166,13 +181,9 @@ button:hover,
   border-color: #D8C5F4;
 }
 
-.gallery button:hover {
-  background: #DCCAF7;
-}
+.gallery button:hover { background: #DCCAF7; }
 
-.add-button {
-  margin-top: 10px;
-}
+.add-button { margin-top: 10px; }
 
 select {
   max-width: 100%;
@@ -185,11 +196,8 @@ select {
   font-size: 15px;
 }
 
-select:focus {
-  outline: 2px solid var(--purple);
-}
+select:focus { outline: 2px solid var(--purple); }
 
-/* Shopping cart */
 .cart-section {
   margin: 35px auto;
   padding: 24px;
@@ -198,7 +206,7 @@ select:focus {
   border: 2px solid var(--pink-border);
   border-radius: 22px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(168,77,120,.08);
+  box-shadow: 0 6px 18px rgba(168,77,120,.10);
 }
 
 .cart-section h2 {
@@ -221,12 +229,10 @@ select:focus {
   flex-wrap: wrap;
   padding: 15px 8px;
   border-bottom: 1px solid var(--pink-border);
-  text-align: left;
+  text-align: start;
 }
 
-.cart-item:last-child {
-  border-bottom: none;
-}
+.cart-item:last-child { border-bottom: none; }
 
 .cart-name {
   flex: 1;
@@ -260,9 +266,7 @@ select:focus {
   border-color: #F3C8D8;
 }
 
-.remove-button:hover {
-  background: #F5C9D9;
-}
+.remove-button:hover { background: #F5C9D9; }
 
 .cart-total {
   margin: 22px 0;
@@ -289,9 +293,7 @@ select:focus {
   padding: 14px 22px;
 }
 
-.checkout-button:hover {
-  background: #C8EDD9;
-}
+.checkout-button:hover { background: #C8EDD9; }
 
 .contact {
   margin: 30px 0 10px;
@@ -301,9 +303,7 @@ select:focus {
   border-radius: 20px;
 }
 
-.contact h2 {
-  color: var(--purple-dark);
-}
+.contact h2 { color: var(--purple-dark); }
 
 .contact .order-button {
   background: var(--mint);
@@ -311,27 +311,21 @@ select:focus {
   border-color: #BDE7D0;
 }
 
-.contact .order-button:hover {
-  background: #C8EDD9;
-}
+.contact .order-button:hover { background: #C8EDD9; }
+
+[hidden] { display: none !important; }
 
 @media (max-width: 600px) {
-  header {
-    padding: 5px 6px 0;
-  }
+  header { padding: 5px 6px 0; }
 
-  .hero-banner {
-    border-radius: 12px;
-  }
+  .hero-banner { border-radius: 12px; }
 
   main {
     padding: 8px;
     margin-top: 10px;
   }
 
-  .products {
-    gap: 15px;
-  }
+  .products { gap: 15px; }
 
   .card {
     width: 100%;
@@ -339,10 +333,7 @@ select:focus {
     padding: 16px;
   }
 
-  .card img,
-  .gallery img {
-    height: 200px;
-  }
+  .card img, .gallery img { height: 200px; }
 
   .cart-section {
     padding: 16px 10px;
@@ -354,18 +345,14 @@ select:focus {
     justify-content: center;
   }
 
-  .cart-name {
-    flex-basis: 100%;
-  }
+  .cart-name { flex-basis: 100%; }
 
   .cart-item > div:nth-child(2) {
     width: 100%;
     text-align: center;
   }
 
-  .cart-total {
-    font-size: 19px;
-  }
+  .cart-total { font-size: 19px; }
 }
 </style>
 </head>
@@ -375,6 +362,13 @@ select:focus {
 <header>
   <div class="hero-banner">
     <img src="mickey-banner.png.jpeg" alt="Welcome to Mickey Toys">
+  </div>
+
+  <div class="language-bar">
+    <button type="button" id="englishButton"
+      onclick="setLanguage('en')">English</button>
+    <button type="button" id="arabicButton"
+      onclick="setLanguage('ar')">العربية</button>
   </div>
 </header>
 
@@ -390,16 +384,15 @@ select:focus {
           alt="Barbie Headset">
         <button type="button" onclick="changeHeadsetImage(1)">❯</button>
       </div>
-      <h3>Barbie Headset</h3>
-      <p class="price">Price: 495 EGP</p>
-      <button class="add-button" onclick="addToCart('headset')">
-        Add to Cart 🛒
-      </button>
+      <h3 data-en="Barbie Headset" data-ar="سماعة باربي">Barbie Headset</h3>
+      <p class="price" data-en="Price: 495 EGP" data-ar="السعر: 495 جنيه">Price: 495 EGP</p>
+      <button class="add-button" onclick="addToCart('headset')"
+        data-en="Add to Cart 🛒" data-ar="أضف للسلة 🛒">Add to Cart 🛒</button>
     </div>
 
     <!-- Special Offer -->
     <div class="card">
-      <h2>Special Offer 🎁</h2>
+      <h2 data-en="Special Offer 🎁" data-ar="عرض خاص 🎁">Special Offer 🎁</h2>
       <div class="gallery">
         <button type="button" onclick="changeMarkersImage(-1)">❮</button>
         <img id="markersImage"
@@ -407,12 +400,11 @@ select:focus {
           alt="Touch 48pcs Markers">
         <button type="button" onclick="changeMarkersImage(1)">❯</button>
       </div>
-      <h3>Touch 48pcs Markers</h3>
+      <h3 data-en="Touch 48pcs Markers" data-ar="ماركرز تاتش 48 قطعة">Touch 48pcs Markers</h3>
       <p><del class="old-price">275 EGP</del>
         <strong class="price">249 EGP</strong></p>
-      <button class="add-button" onclick="addToCart('markers')">
-        Add to Cart 🛒
-      </button>
+      <button class="add-button" onclick="addToCart('markers')"
+        data-en="Add to Cart 🛒" data-ar="أضف للسلة 🛒">Add to Cart 🛒</button>
     </div>
 
     <!-- Kids Money Safe -->
@@ -420,16 +412,16 @@ select:focus {
       <img
         src="WhatsApp%20Image%202026-10-08%20at%2012.03.11%20AM.jpeg"
         alt="Kids Money Safe">
-      <h3>Kids Money Safe</h3>
-      <p class="price">Price: 420 EGP</p>
-      <button class="add-button" onclick="addToCart('safe')">
-        Add to Cart 🛒
-      </button>
+      <h3 data-en="Kids Money Safe" data-ar="خزنة نقود للأطفال">Kids Money Safe</h3>
+      <p class="price" data-en="Price: 420 EGP" data-ar="السعر: 420 جنيه">Price: 420 EGP</p>
+      <button class="add-button" onclick="addToCart('safe')"
+        data-en="Add to Cart 🛒" data-ar="أضف للسلة 🛒">Add to Cart 🛒</button>
     </div>
 
     <!-- Unicorn Metal Color Set -->
     <div class="card">
-      <h3>🎨 Unicorn Metal Color Set 🦄</h3>
+      <h3 data-en="🎨 Unicorn Metal Color Set 🦄"
+          data-ar="🎨 علبة ألوان معدنية يونيكورن 🦄">🎨 Unicorn Metal Color Set 🦄</h3>
       <div class="gallery">
         <button type="button" onclick="changeUnicornImage(-1)">❮</button>
         <img id="unicornImage"
@@ -437,19 +429,24 @@ select:focus {
           alt="Unicorn Metal Color Set">
         <button type="button" onclick="changeUnicornImage(1)">❯</button>
       </div>
-      <p><strong>145 Pieces</strong></p>
-      <p class="price">Price: 650 EGP</p>
-      <p>Metal case with two levels, unicorn design, sturdy handle and metal locks.</p>
-      <p>Includes wood colors, watercolors, markers, pastels and painting tools.</p>
-      <p>Available in pink and light blue.</p>
-      <button class="add-button" onclick="addToCart('unicorn')">
-        Add to Cart 🛒
-      </button>
+      <p data-en="145 Pieces" data-ar="145 قطعة"><strong>145 Pieces</strong></p>
+      <p class="price" data-en="Price: 650 EGP" data-ar="السعر: 650 جنيه">Price: 650 EGP</p>
+      <p data-en="Metal case with two levels, unicorn design, sturdy handle and metal locks."
+         data-ar="علبة معدنية بطابقين بتصميم يونيكورن، بمقبض قوي وأقفال معدنية.">
+         Metal case with two levels, unicorn design, sturdy handle and metal locks.</p>
+      <p data-en="Includes wood colors, watercolors, markers, pastels and painting tools."
+         data-ar="تحتوي على ألوان خشب وألوان مائية وماركرز وباستيل وأدوات للرسم.">
+         Includes wood colors, watercolors, markers, pastels and painting tools.</p>
+      <p data-en="Available in pink and light blue."
+         data-ar="متاحة باللون الوردي والأزرق الفاتح.">Available in pink and light blue.</p>
+      <button class="add-button" onclick="addToCart('unicorn')"
+        data-en="Add to Cart 🛒" data-ar="أضف للسلة 🛒">Add to Cart 🛒</button>
     </div>
 
     <!-- Magnetic Building Sticks -->
     <div class="card">
-      <h3>🧲 Magnetic Building Sticks</h3>
+      <h3 data-en="🧲 Magnetic Building Sticks"
+          data-ar="🧲 أعواد البناء المغناطيسية">🧲 Magnetic Building Sticks</h3>
       <div class="gallery">
         <button type="button" onclick="changeMagneticImage(-1)">❮</button>
         <img id="magneticImage"
@@ -457,40 +454,57 @@ select:focus {
           alt="Magnetic Building Sticks">
         <button type="button" onclick="changeMagneticImage(1)">❯</button>
       </div>
-      <p>Fun magnetic building toys for kids!</p>
-      <p>Suitable for ages 3+.</p>
-      <label for="magneticSize">Choose size:</label><br>
+      <p data-en="Fun magnetic building toys for kids!"
+         data-ar="لعبة بناء مغناطيسية ممتعة للأطفال!">Fun magnetic building toys for kids!</p>
+      <p data-en="Suitable for ages 3+." data-ar="مناسبة للأطفال من عمر 3 سنوات.">Suitable for ages 3+.</p>
+      <label for="magneticSize" data-en="Choose size:" data-ar="اختاري الحجم:">Choose size:</label><br>
       <select id="magneticSize">
-        <option value="360">42 Pieces - 360 EGP</option>
-        <option value="460">64 Pieces - 460 EGP</option>
-        <option value="550">84 Pieces - 550 EGP</option>
+        <option value="360" data-en="42 Pieces - 360 EGP" data-ar="42 قطعة - 360 جنيه">42 Pieces - 360 EGP</option>
+        <option value="460" data-en="64 Pieces - 460 EGP" data-ar="64 قطعة - 460 جنيه">64 Pieces - 460 EGP</option>
+        <option value="550" data-en="84 Pieces - 550 EGP" data-ar="84 قطعة - 550 جنيه">84 Pieces - 550 EGP</option>
       </select>
       <p id="magneticPrice" class="price">Price: 360 EGP</p>
-      <button class="add-button" onclick="addMagneticToCart()">
-        Add to Cart 🛒
-      </button>
+      <button class="add-button" onclick="addMagneticToCart()"
+        data-en="Add to Cart 🛒" data-ar="أضف للسلة 🛒">Add to Cart 🛒</button>
+    </div>
+
+    <!-- Apple-Shaped Blackboard -->
+    <div class="card">
+      <div class="gallery">
+        <button type="button" onclick="changeAppleBoardImage(-1)">❮</button>
+        <img id="appleBoardImage"
+          src="السبوره%20شكل%20تفاحه%201.jpg"
+          alt="Apple-Shaped Blackboard">
+        <button type="button" onclick="changeAppleBoardImage(1)">❯</button>
+      </div>
+      <h3 data-en="🍎 Apple-Shaped Blackboard"
+          data-ar="🍎 السبورة شكل تفاحة">🍎 Apple-Shaped Blackboard</h3>
+      <p class="price" data-en="Price: 330 EGP" data-ar="السعر: 330 جنيه">Price: 330 EGP</p>
+      <button class="add-button" onclick="addToCart('appleBoard')"
+        data-en="Add to Cart 🛒" data-ar="أضف للسلة 🛒">Add to Cart 🛒</button>
     </div>
 
   </div>
 
   <!-- Shopping Cart -->
   <section class="cart-section" id="shoppingCart">
-    <h2>🛒 Shopping Cart - سلة المشتريات</h2>
-    <p id="cartEmpty">Your cart is empty - السلة فارغة حاليًا.</p>
+    <h2 id="cartHeading">🛒 Shopping Cart</h2>
+    <p id="cartEmpty">Your cart is empty.</p>
     <div id="cartItems"></div>
     <div id="cartTotal" class="cart-total">Total: 0 EGP</div>
-    <p class="cart-note">
-      الإجمالي يشمل أسعار المنتجات فقط. سيتم تأكيد مصاريف الشحن مع حضرتك قبل تأكيد الطلب.
+    <p class="cart-note" id="cartNote">
+      The total includes product prices only. Shipping costs will be confirmed before your order is finalized.
     </p>
     <button id="checkoutButton" class="checkout-button"
       onclick="checkoutWhatsApp()" hidden>
-      إرسال الأوردر على واتساب 💚
+      Send Order on WhatsApp 💚
     </button>
   </section>
 
   <div class="contact">
-    <h2>📱 Contact Mickey Toys</h2>
-    <a class="order-button" href="https://wa.me/201107743657"
+    <h2 id="contactHeading">📱 Contact Mickey Toys</h2>
+    <a class="order-button" id="contactButton"
+       href="https://wa.me/201107743657"
        target="_blank" rel="noopener">
       Chat with us on WhatsApp 💚
     </a>
@@ -498,15 +512,94 @@ select:focus {
 </main>
 
 <script>
+let currentLanguage = "en";
+
 /* Product information */
 const products = {
-  headset: { name: "Barbie Headset", price: 495 },
-  markers: { name: "Touch 48pcs Markers", price: 249 },
-  safe: { name: "Kids Money Safe", price: 420 },
-  unicorn: { name: "Unicorn Metal Color Set", price: 650 }
+  headset: {
+    nameEn: "Barbie Headset",
+    nameAr: "سماعة باربي",
+    price: 495
+  },
+  markers: {
+    nameEn: "Touch 48pcs Markers",
+    nameAr: "ماركرز تاتش 48 قطعة",
+    price: 249
+  },
+  safe: {
+    nameEn: "Kids Money Safe",
+    nameAr: "خزنة نقود للأطفال",
+    price: 420
+  },
+  unicorn: {
+    nameEn: "Unicorn Metal Color Set",
+    nameAr: "علبة ألوان معدنية يونيكورن",
+    price: 650
+  },
+  appleBoard: {
+    nameEn: "Apple-Shaped Blackboard",
+    nameAr: "السبورة شكل تفاحة",
+    price: 330
+  }
 };
 
 let cart = [];
+
+function setLanguage(language) {
+  currentLanguage = language;
+
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-en][data-ar]").forEach(element => {
+    const text = element.dataset[language];
+    if (text !== undefined) {
+      if (element.tagName === "OPTION") {
+        element.textContent = text;
+      } else if (element.tagName === "P" &&
+                 element.querySelector("strong")) {
+        /* Keep formatted content such as the 145 Pieces label. */
+        if (element.dataset.en || element.dataset.ar) {
+          element.textContent = text;
+        }
+      } else {
+        element.textContent = text;
+      }
+    }
+  });
+
+  document.getElementById("englishButton").classList.toggle("active", language === "en");
+  document.getElementById("arabicButton").classList.toggle("active", language === "ar");
+
+  document.getElementById("cartHeading").textContent =
+    language === "ar" ? "🛒 سلة المشتريات" : "🛒 Shopping Cart";
+
+  document.getElementById("cartEmpty").textContent =
+    language === "ar" ? "السلة فارغة حاليًا." : "Your cart is empty.";
+
+  document.getElementById("cartNote").textContent =
+    language === "ar"
+      ? "الإجمالي يشمل أسعار المنتجات فقط. سيتم تأكيد مصاريف الشحن مع حضرتك قبل تأكيد الطلب."
+      : "The total includes product prices only. Shipping costs will be confirmed before your order is finalized.";
+
+  document.getElementById("checkoutButton").textContent =
+    language === "ar" ? "إرسال الأوردر على واتساب 💚" : "Send Order on WhatsApp 💚";
+
+  document.getElementById("contactHeading").textContent =
+    language === "ar" ? "📱 تواصلي مع Mickey Toys" : "📱 Contact Mickey Toys";
+
+  document.getElementById("contactButton").textContent =
+    language === "ar" ? "تواصلي معنا على واتساب 💚" : "Chat with us on WhatsApp 💚";
+
+  updateMagneticPrice();
+  renderCart();
+}
+
+function getProductName(id) {
+  const product = products[id];
+  if (!product) return "";
+  return currentLanguage === "ar" ? product.nameAr : product.nameEn;
+}
 
 function addToCart(id) {
   const product = products[id];
@@ -517,7 +610,6 @@ function addToCart(id) {
   } else {
     cart.push({
       id: id,
-      name: product.name,
       price: product.price,
       qty: 1
     });
@@ -535,13 +627,18 @@ function addMagneticToCart() {
   const price = Number(select.value);
   const pieces = select.options[select.selectedIndex].text.split(" - ")[0];
   const id = "magnetic-" + price;
-  const name = "Magnetic Building Sticks - " + pieces;
   const existing = cart.find(item => item.id === id);
 
   if (existing) {
     existing.qty++;
   } else {
-    cart.push({ id: id, name: name, price: price, qty: 1 });
+    cart.push({
+      id: id,
+      price: price,
+      qty: 1,
+      piecesEn: price === 360 ? "42 Pieces" : price === 460 ? "64 Pieces" : "84 Pieces",
+      piecesAr: price === 360 ? "42 قطعة" : price === 460 ? "64 قطعة" : "84 قطعة"
+    });
   }
 
   renderCart();
@@ -549,6 +646,17 @@ function addMagneticToCart() {
     behavior: "smooth",
     block: "start"
   });
+}
+
+function getCartItemName(item) {
+  if (item.id.startsWith("magnetic-")) {
+    const pieces = currentLanguage === "ar" ? item.piecesAr : item.piecesEn;
+    const base = currentLanguage === "ar"
+      ? "أعواد البناء المغناطيسية"
+      : "Magnetic Building Sticks";
+    return base + " - " + pieces;
+  }
+  return getProductName(item.id);
 }
 
 function changeQuantity(id, amount) {
@@ -588,12 +696,12 @@ function renderCart() {
 
     const name = document.createElement("div");
     name.className = "cart-name";
-    name.textContent = item.name;
+    name.textContent = getCartItemName(item);
 
     const price = document.createElement("div");
-    price.textContent =
-      item.price + " EGP × " + item.qty + " = " +
-      (item.price * item.qty) + " EGP";
+    price.textContent = currentLanguage === "ar"
+      ? item.price + " جنيه × " + item.qty + " = " + (item.price * item.qty) + " جنيه"
+      : item.price + " EGP × " + item.qty + " = " + (item.price * item.qty) + " EGP";
 
     const controls = document.createElement("div");
     controls.className = "cart-controls";
@@ -601,7 +709,7 @@ function renderCart() {
     const minus = document.createElement("button");
     minus.className = "small-button";
     minus.textContent = "−";
-    minus.setAttribute("aria-label", "تقليل الكمية");
+    minus.setAttribute("aria-label", currentLanguage === "ar" ? "تقليل الكمية" : "Decrease quantity");
     minus.onclick = () => changeQuantity(item.id, -1);
 
     const quantity = document.createElement("span");
@@ -610,12 +718,12 @@ function renderCart() {
     const plus = document.createElement("button");
     plus.className = "small-button";
     plus.textContent = "+";
-    plus.setAttribute("aria-label", "زيادة الكمية");
+    plus.setAttribute("aria-label", currentLanguage === "ar" ? "زيادة الكمية" : "Increase quantity");
     plus.onclick = () => changeQuantity(item.id, 1);
 
     const remove = document.createElement("button");
     remove.className = "small-button remove-button";
-    remove.textContent = "حذف";
+    remove.textContent = currentLanguage === "ar" ? "حذف" : "Remove";
     remove.onclick = () => removeFromCart(item.id);
 
     controls.append(minus, quantity, plus, remove);
@@ -623,13 +731,18 @@ function renderCart() {
     container.appendChild(row);
   });
 
-  totalElement.textContent = "Total / الإجمالي: " + total + " EGP";
+  totalElement.textContent = currentLanguage === "ar"
+    ? "الإجمالي: " + total + " جنيه"
+    : "Total: " + total + " EGP";
+
   totalElement.dataset.total = total;
 }
 
 function checkoutWhatsApp() {
   if (cart.length === 0) {
-    alert("السلة فارغة. من فضلك أضيفي منتجات أولًا.");
+    alert(currentLanguage === "ar"
+      ? "السلة فارغة. من فضلك أضيفي منتجات أولًا."
+      : "Your cart is empty. Please add products first.");
     return;
   }
 
@@ -637,35 +750,57 @@ function checkoutWhatsApp() {
     (sum, item) => sum + item.price * item.qty, 0
   );
 
-  let message = "أهلًا Mickey Toys 💗\n";
-  message += "عايز/ة أطلب المنتجات التالية:\n\n";
+  let message = "";
 
-  cart.forEach((item, index) => {
-    message += (index + 1) + ". " + item.name + "\n";
-    message += "الكمية: " + item.qty + "\n";
-    message += "سعر الوحدة: " + item.price + " جنيه\n";
-    message += "الإجمالي: " + (item.price * item.qty) + " جنيه\n\n";
-  });
+  if (currentLanguage === "ar") {
+    message = "أهلًا Mickey Toys 💗\n";
+    message += "عايز/ة أطلب المنتجات التالية:\n\n";
 
-  message += "إجمالي المنتجات: " + total + " جنيه\n";
-  message += "مصاريف الشحن: برجاء تأكيدها\n";
-  message += "الإجمالي النهائي: برجاء تأكيده قبل إتمام الطلب\n\n";
-  message += "الاسم بالكامل:\n";
-  message += "العنوان بالتفصيل:\n";
-  message += "رقم الموبايل:\n\n";
-  message += "برجاء تأكيد توافر المنتجات وموعد التوصيل. شكرًا 💗";
+    cart.forEach((item, index) => {
+      message += (index + 1) + ". " + getCartItemName(item) + "\n";
+      message += "الكمية: " + item.qty + "\n";
+      message += "سعر الوحدة: " + item.price + " جنيه\n";
+      message += "الإجمالي: " + (item.price * item.qty) + " جنيه\n\n";
+    });
 
-  const url = "https://wa.me/201107743657?text=" +
-    encodeURIComponent(message);
+    message += "إجمالي المنتجات: " + total + " جنيه\n";
+    message += "مصاريف الشحن: برجاء تأكيدها\n";
+    message += "الإجمالي النهائي: برجاء تأكيده قبل إتمام الطلب\n\n";
+    message += "الاسم بالكامل:\nالعنوان بالتفصيل:\nرقم الموبايل:\n\n";
+    message += "برجاء تأكيد توافر المنتجات وموعد التوصيل. شكرًا 💗";
+  } else {
+    message = "Hello Mickey Toys 💗\n";
+    message += "I would like to order the following products:\n\n";
 
+    cart.forEach((item, index) => {
+      message += (index + 1) + ". " + getCartItemName(item) + "\n";
+      message += "Quantity: " + item.qty + "\n";
+      message += "Unit price: " + item.price + " EGP\n";
+      message += "Subtotal: " + (item.price * item.qty) + " EGP\n\n";
+    });
+
+    message += "Products total: " + total + " EGP\n";
+    message += "Shipping cost: Please confirm\n";
+    message += "Final total: Please confirm before completing the order\n\n";
+    message += "Full name:\nDetailed address:\nMobile number:\n\n";
+    message += "Please confirm product availability and delivery time. Thank you 💗";
+  }
+
+  const url = "https://wa.me/201107743657?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
 }
 
 /* Magnetic product price */
-document.getElementById("magneticSize").addEventListener("change", function() {
-  document.getElementById("magneticPrice").textContent =
-    "Price: " + this.value + " EGP";
-});
+function updateMagneticPrice() {
+  const select = document.getElementById("magneticSize");
+  const price = document.getElementById("magneticPrice");
+
+  price.textContent = currentLanguage === "ar"
+    ? "السعر: " + select.value + " جنيه"
+    : "Price: " + select.value + " EGP";
+}
+
+document.getElementById("magneticSize").addEventListener("change", updateMagneticPrice);
 
 /* Barbie Headset images */
 const headsetImages = [
@@ -681,8 +816,7 @@ const headsetImages = [
 let headsetIndex = 0;
 
 function changeHeadsetImage(direction) {
-  headsetIndex = (headsetIndex + direction + headsetImages.length) %
-    headsetImages.length;
+  headsetIndex = (headsetIndex + direction + headsetImages.length) % headsetImages.length;
   document.getElementById("headsetImage").src = headsetImages[headsetIndex];
 }
 
@@ -699,8 +833,7 @@ const markersImages = [
 let markersIndex = 0;
 
 function changeMarkersImage(direction) {
-  markersIndex = (markersIndex + direction + markersImages.length) %
-    markersImages.length;
+  markersIndex = (markersIndex + direction + markersImages.length) % markersImages.length;
   document.getElementById("markersImage").src = markersImages[markersIndex];
 }
 
@@ -717,8 +850,7 @@ const unicornImages = [
 let unicornIndex = 0;
 
 function changeUnicornImage(direction) {
-  unicornIndex = (unicornIndex + direction + unicornImages.length) %
-    unicornImages.length;
+  unicornIndex = (unicornIndex + direction + unicornImages.length) % unicornImages.length;
   document.getElementById("unicornImage").src = unicornImages[unicornIndex];
 }
 
@@ -734,12 +866,29 @@ const magneticImages = [
 let magneticIndex = 0;
 
 function changeMagneticImage(direction) {
-  magneticIndex = (magneticIndex + direction + magneticImages.length) %
-    magneticImages.length;
+  magneticIndex = (magneticIndex + direction + magneticImages.length) % magneticImages.length;
   document.getElementById("magneticImage").src = magneticImages[magneticIndex];
 }
 
-renderCart();
+/* Apple-Shaped Blackboard images */
+const appleBoardImages = [
+  "السبوره%20شكل%20تفاحه%201.jpg",
+  "السبوره%20شكل%20تفاحه%202.jpg",
+  "السبوره%20شكل%20تفاحه%203.jpg",
+  "السبوره%20شكل%20تفاحه%204.jpg",
+  "السبوره%20شكل%20تفاحه%205.jpg",
+  "السبوره%20شكل%20تفاحه%206.jpg",
+  "السبوره%20شكل%20تفاحه%207.jpg"
+];
+let appleBoardIndex = 0;
+
+function changeAppleBoardImage(direction) {
+  appleBoardIndex = (appleBoardIndex + direction + appleBoardImages.length) % appleBoardImages.length;
+  document.getElementById("appleBoardImage").src = appleBoardImages[appleBoardIndex];
+}
+
+/* Start in English */
+setLanguage("en");
 </script>
 
 </body>
