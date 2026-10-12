@@ -1,438 +1,603 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mickey Toys</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mickey Toys</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fffaf6;
-      color: #444;
-      text-align: center;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fffaf6;
+  color: #444;
+  text-align: center;
+}
 
-    header {
-      background: #fffaf6;
-      padding: 8px 12px 0;
-    }
+header {
+  background: #fffaf6;
+  padding: 8px 12px 0;
+}
 
-    .hero-banner {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
-    }
+.hero-banner {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
 
-    .hero-banner img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
+.hero-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
-    main {
-      max-width: 1150px;
-      margin: 12px auto 30px;
-      padding: 12px;
-    }
+main {
+  max-width: 1150px;
+  margin: 12px auto 30px;
+  padding: 12px;
+}
 
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: stretch;
-      gap: 18px;
-    }
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+}
 
-    .card {
-      width: 270px;
-      max-width: 100%;
-      padding: 18px;
-      margin: 0;
-      background: #ffffff;
-      border: 1px solid #f0e7e1;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(80, 65, 55, 0.07);
-    }
+.card {
+  width: 270px;
+  max-width: 100%;
+  padding: 18px;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #f0e7e1;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(80,65,55,.07);
+}
 
-    .card img {
-      max-width: 100%;
-      height: 220px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 14px;
-    }
+.card img {
+  max-width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+}
 
-    .card h2 {
-      color: #658f82;
-      font-size: 22px;
-    }
+.card h2 { color: #658f82; font-size: 22px; }
+.card h3 { color: #555; font-size: 20px; margin: 12px 0; }
 
-    .card h3 {
-      color: #555;
-      font-size: 20px;
-      margin: 12px 0;
-    }
+.card p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
 
-    .card p {
-      color: #666;
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 10px 0;
-    }
+.price {
+  color: #ba7a68 !important;
+  font-size: 18px !important;
+  font-weight: bold;
+}
 
-    .price {
-      color: #ba7a68 !important;
-      font-size: 18px !important;
-      font-weight: bold;
-    }
+.old-price { color: #888; }
 
-    .old-price {
-      color: #888;
-    }
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
-    .gallery {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+.gallery img {
+  width: 190px;
+  max-width: 75%;
+  height: 220px;
+  object-fit: contain;
+}
 
-    .gallery img {
-      width: 190px;
-      max-width: 75%;
-      height: 220px;
-      object-fit: contain;
-    }
+button, .order-button {
+  display: inline-block;
+  background: #91cdbd;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s;
+}
 
-    button,
-    .order-button {
-      display: inline-block;
-      background: #91cdbd;
-      color: #fff;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 25px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
+button:hover, .order-button:hover { background: #70b6a4; }
 
-    button:hover,
-    .order-button:hover {
-      background: #70b6a4;
-    }
+.gallery button {
+  padding: 8px 11px;
+  flex-shrink: 0;
+}
 
-    .gallery button {
-      padding: 8px 11px;
-      flex-shrink: 0;
-    }
+.add-button { margin-top: 10px; }
 
-    .order-button {
-      margin-top: 10px;
-    }
+select {
+  max-width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #c8e1d9;
+  border-radius: 8px;
+  background: #fff;
+  color: #444;
+  font-size: 15px;
+}
 
-    select {
-      max-width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #c8e1d9;
-      border-radius: 8px;
-      background: #fff;
-      color: #444;
-      font-size: 15px;
-    }
+/* Shopping cart */
+.cart-section {
+  margin: 35px auto;
+  padding: 22px;
+  max-width: 850px;
+  background: #f0f8f4;
+  border: 1px solid #d9ebe3;
+  border-radius: 18px;
+  text-align: center;
+}
 
-    .contact {
-      margin: 30px 0 10px;
-      padding: 24px 12px;
-      background: #f0f8f4;
-      border-radius: 16px;
-    }
+.cart-section h2 { color: #568575; }
 
-    .contact h2 {
-      color: #658f82;
-    }
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 4px;
+  border-bottom: 1px solid #d9e8e1;
+  text-align: left;
+}
 
-    @media (max-width: 600px) {
-      header {
-        padding: 4px 6px 0;
-      }
+.cart-item:last-child { border-bottom: none; }
 
-      .hero-banner {
-        border-radius: 10px;
-      }
+.cart-name {
+  flex: 1;
+  min-width: 130px;
+  font-weight: bold;
+}
 
-      main {
-        padding: 8px;
-        margin-top: 10px;
-      }
+.cart-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
 
-      .products {
-        gap: 14px;
-      }
+.small-button {
+  padding: 7px 11px;
+  font-size: 14px;
+}
 
-      .card {
-        width: 100%;
-        max-width: 340px;
-      }
+.remove-button { background: #d99b91; }
+.remove-button:hover { background: #c57e73; }
 
-      .card img {
-        height: 200px;
-      }
+.cart-total {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #568575;
+}
 
-      .gallery img {
-        height: 200px;
-      }
-    }
-  </style>
+.cart-note {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.checkout-button {
+  background: #25a765;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.checkout-button:hover { background: #198b52; }
+
+.contact {
+  margin: 30px 0 10px;
+  padding: 24px 12px;
+  background: #f0f8f4;
+  border-radius: 16px;
+}
+
+.contact h2 { color: #658f82; }
+
+@media (max-width: 600px) {
+  header { padding: 4px 6px 0; }
+  .hero-banner { border-radius: 10px; }
+  main { padding: 8px; margin-top: 10px; }
+  .products { gap: 14px; }
+  .card { width: 100%; max-width: 340px; }
+  .card img, .gallery img { height: 200px; }
+  .cart-section { padding: 15px 10px; }
+  .cart-item { text-align: center; justify-content: center; }
+  .cart-name { flex-basis: 100%; }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="hero-banner">
-      <img src="mickey-banner.png.jpeg"
-           alt="Welcome to Mickey Toys">
-    </div>
-  </header>
+<header>
+  <div class="hero-banner">
+    <img src="mickey-banner.png.jpeg" alt="Welcome to Mickey Toys">
+  </div>
+</header>
 
-  <main>
-    <div class="products">
+<main>
+  <div class="products">
 
-      <!-- Barbie Headset -->
-      <div class="card">
-        <div class="gallery">
-          <button type="button" onclick="changeHeadsetImage(-1)">❮</button>
-          <img id="headsetImage"
-               src="WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM.jpeg"
-               alt="Barbie Headset">
-          <button type="button" onclick="changeHeadsetImage(1)">❯</button>
-        </div>
-
-        <h3>Barbie Headset</h3>
-        <p class="price">Price: 495 EGP</p>
-
-        <a class="order-button"
-           href="https://wa.me/201107743657?text=Hello%20Mickey%20Toys%21%20I%20would%20like%20to%20order%20this%20product.%20Please%20confirm%20availability%20and%20delivery%20details."
-           target="_blank" rel="noopener">
-          Order Now
-        </a>
+    <!-- Barbie Headset -->
+    <div class="card">
+      <div class="gallery">
+        <button type="button" onclick="changeHeadsetImage(-1)">❮</button>
+        <img id="headsetImage"
+          src="WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM.jpeg"
+          alt="Barbie Headset">
+        <button type="button" onclick="changeHeadsetImage(1)">❯</button>
       </div>
-
-      <!-- Special Offer -->
-      <div class="card">
-        <h2>Special Offer 🎁</h2>
-
-        <div class="gallery">
-          <button type="button" onclick="changeMarkersImage(-1)">❮</button>
-          <img id="markersImage"
-               src="WhatsApp%20Image%202026-10-07%20at%2011.43.27%20PM.jpeg"
-               alt="Touch 48pcs Markers">
-          <button type="button" onclick="changeMarkersImage(1)">❯</button>
-        </div>
-
-        <h3>Touch 48pcs Markers</h3>
-        <p>
-          <del class="old-price">275 EGP</del>
-          <strong class="price">249 EGP</strong>
-        </p>
-
-        <a class="order-button"
-           href="https://wa.me/201107743657?text=Hello%20Mickey%20Toys%21%20I%20would%20like%20to%20order%20Touch%2048pcs%20Markers."
-           target="_blank" rel="noopener">
-          Order Now
-        </a>
-      </div>
-
-      <!-- Kids Money Safe -->
-      <div class="card">
-        <img
-          src="WhatsApp%20Image%202026-10-08%20at%2012.03.11%20AM.jpeg"
-          alt="Kids Money Safe">
-
-        <h3>Kids Money Safe</h3>
-        <p class="price">Price: 420 EGP</p>
-
-        <a class="order-button"
-           href="https://wa.me/201107743657?text=Hello%20Mickey%20Toys%21%20I%20would%20like%20to%20order%20Kids%20Money%20Safe."
-           target="_blank" rel="noopener">
-          Order Now
-        </a>
-      </div>
-
-      <!-- Unicorn Metal Color Set -->
-      <div class="card">
-        <h3>🎨 Unicorn Metal Color Set 🦄</h3>
-
-        <div class="gallery">
-          <button type="button" onclick="changeUnicornImage(-1)">❮</button>
-          <img id="unicornImage"
-               src="WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(4).jpeg"
-               alt="Unicorn Metal Color Set">
-          <button type="button" onclick="changeUnicornImage(1)">❯</button>
-        </div>
-
-        <p><strong>145 Pieces</strong></p>
-        <p class="price">Price: 650 EGP</p>
-        <p>Metal case with two levels, unicorn design, sturdy handle and metal locks.</p>
-        <p>Includes wood colors, watercolors, markers, pastels and painting tools.</p>
-        <p>Available in pink and light blue.</p>
-
-        <a class="order-button"
-           href="https://wa.me/201107743657?text=Hello%20Mickey%20Toys%21%20I%20would%20like%20to%20order%20the%20Unicorn%20Metal%20Color%20Set%20for%20650%20EGP."
-           target="_blank" rel="noopener">
-          Order Now
-        </a>
-      </div>
-
-      <!-- Magnetic Building Sticks -->
-      <div class="card">
-        <h3>🧲 Magnetic Building Sticks</h3>
-
-        <div class="gallery">
-          <button type="button" onclick="changeMagneticImage(-1)">❮</button>
-          <img id="magneticImage"
-               src="WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(3).jpeg"
-               alt="Magnetic Building Sticks">
-          <button type="button" onclick="changeMagneticImage(1)">❯</button>
-        </div>
-
-        <p>Fun magnetic building toys for kids!</p>
-        <p>Suitable for ages 3+.</p>
-
-        <label for="magneticSize">Choose size:</label>
-        <br>
-
-        <select id="magneticSize" onchange="updateMagneticPrice()">
-          <option value="360">42 Pieces - 360 EGP</option>
-          <option value="460">64 Pieces - 460 EGP</option>
-          <option value="550">84 Pieces - 550 EGP</option>
-        </select>
-
-        <p id="magneticPrice" class="price">Price: 360 EGP</p>
-
-        <a id="magneticOrder"
-           class="order-button"
-           href="https://wa.me/201107743657?text=Hello%20Mickey%20Toys%21%20I%20want%20Magnetic%20Building%20Sticks%20-%2042%20Pieces%20-%20360%20EGP."
-           target="_blank" rel="noopener">
-          Order Now
-        </a>
-      </div>
-
+      <h3>Barbie Headset</h3>
+      <p class="price">Price: 495 EGP</p>
+      <button class="add-button" onclick="addToCart('headset')">
+        Add to Cart 🛒
+      </button>
     </div>
 
-    <!-- Contact -->
-    <div class="contact">
-      <h2>📱 Contact Mickey Toys</h2>
-
-      <a class="order-button"
-         href="https://wa.me/201107743657"
-         target="_blank" rel="noopener">
-        Chat with us on WhatsApp 💚
-      </a>
+    <!-- Special Offer -->
+    <div class="card">
+      <h2>Special Offer 🎁</h2>
+      <div class="gallery">
+        <button type="button" onclick="changeMarkersImage(-1)">❮</button>
+        <img id="markersImage"
+          src="WhatsApp%20Image%202026-10-07%20at%2011.43.27%20PM.jpeg"
+          alt="Touch 48pcs Markers">
+        <button type="button" onclick="changeMarkersImage(1)">❯</button>
+      </div>
+      <h3>Touch 48pcs Markers</h3>
+      <p><del class="old-price">275 EGP</del>
+        <strong class="price">249 EGP</strong></p>
+      <button class="add-button" onclick="addToCart('markers')">
+        Add to Cart 🛒
+      </button>
     </div>
-  </main>
 
-  <script>
-    const headsetImages = [
-      "WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.06%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.07%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM(2).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%209.44.10%20AM.jpeg"
-    ];
+    <!-- Kids Money Safe -->
+    <div class="card">
+      <img
+        src="WhatsApp%20Image%202026-10-08%20at%2012.03.11%20AM.jpeg"
+        alt="Kids Money Safe">
+      <h3>Kids Money Safe</h3>
+      <p class="price">Price: 420 EGP</p>
+      <button class="add-button" onclick="addToCart('safe')">
+        Add to Cart 🛒
+      </button>
+    </div>
 
-    let headsetIndex = 0;
+    <!-- Unicorn Metal Color Set -->
+    <div class="card">
+      <h3>🎨 Unicorn Metal Color Set 🦄</h3>
+      <div class="gallery">
+        <button type="button" onclick="changeUnicornImage(-1)">❮</button>
+        <img id="unicornImage"
+          src="WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(4).jpeg"
+          alt="Unicorn Metal Color Set">
+        <button type="button" onclick="changeUnicornImage(1)">❯</button>
+      </div>
+      <p><strong>145 Pieces</strong></p>
+      <p class="price">Price: 650 EGP</p>
+      <p>Metal case with two levels, unicorn design, sturdy handle and metal locks.</p>
+      <p>Includes wood colors, watercolors, markers, pastels and painting tools.</p>
+      <p>Available in pink and light blue.</p>
+      <button class="add-button" onclick="addToCart('unicorn')">
+        Add to Cart 🛒
+      </button>
+    </div>
 
-    function changeHeadsetImage(direction) {
-      headsetIndex =
-        (headsetIndex + direction + headsetImages.length) % headsetImages.length;
-      document.getElementById("headsetImage").src = headsetImages[headsetIndex];
-    }
+    <!-- Magnetic Building Sticks -->
+    <div class="card">
+      <h3>🧲 Magnetic Building Sticks</h3>
+      <div class="gallery">
+        <button type="button" onclick="changeMagneticImage(-1)">❮</button>
+        <img id="magneticImage"
+          src="WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(3).jpeg"
+          alt="Magnetic Building Sticks">
+        <button type="button" onclick="changeMagneticImage(1)">❯</button>
+      </div>
+      <p>Fun magnetic building toys for kids!</p>
+      <p>Suitable for ages 3+.</p>
+      <label for="magneticSize">Choose size:</label><br>
+      <select id="magneticSize">
+        <option value="360">42 Pieces - 360 EGP</option>
+        <option value="460">64 Pieces - 460 EGP</option>
+        <option value="550">84 Pieces - 550 EGP</option>
+      </select>
+      <p id="magneticPrice" class="price">Price: 360 EGP</p>
+      <button class="add-button" onclick="addMagneticToCart()">
+        Add to Cart 🛒
+      </button>
+    </div>
 
-    const markersImages = [
-      "WhatsApp%20Image%202026-10-07%20at%2011.43.27%20PM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.32.18%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.31.18%20AM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.31.18%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.31.17%20PM(1).jpeg"
-    ];
+  </div>
 
-    let markersIndex = 0;
+  <!-- Shopping Cart -->
+  <section class="cart-section" id="shoppingCart">
+    <h2>🛒 Shopping Cart - سلة المشتريات</h2>
+    <p id="cartEmpty">Your cart is empty - السلة فارغة حاليًا.</p>
+    <div id="cartItems"></div>
+    <div id="cartTotal" class="cart-total">Total: 0 EGP</div>
+    <p class="cart-note">
+      الإجمالي يشمل أسعار المنتجات فقط. سيتم تأكيد مصاريف الشحن مع حضرتك قبل تأكيد الطلب.
+    </p>
+    <button id="checkoutButton" class="checkout-button"
+      onclick="checkoutWhatsApp()" hidden>
+      إرسال الأوردر على واتساب 💚
+    </button>
+  </section>
 
-    function changeMarkersImage(direction) {
-      markersIndex =
-        (markersIndex + direction + markersImages.length) % markersImages.length;
-      document.getElementById("markersImage").src = markersImages[markersIndex];
-    }
+  <div class="contact">
+    <h2>📱 Contact Mickey Toys</h2>
+    <a class="order-button" href="https://wa.me/201107743657"
+       target="_blank" rel="noopener">
+      Chat with us on WhatsApp 💚
+    </a>
+  </div>
+</main>
 
-    const unicornImages = [
-      "WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(4).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(3).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2011.51.03%20PM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2011.50.58%20PM(3).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2011.50.58%20PM(2).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2011.57.22%20PM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2011.57.13%20PM.jpeg"
-    ];
+<script>
+/* Product information */
+const products = {
+  headset: { name: "Barbie Headset", price: 495 },
+  markers: { name: "Touch 48pcs Markers", price: 249 },
+  safe: { name: "Kids Money Safe", price: 420 },
+  unicorn: { name: "Unicorn Metal Color Set", price: 650 }
+};
 
-    let unicornIndex = 0;
+let cart = [];
 
-    function changeUnicornImage(direction) {
-      unicornIndex =
-        (unicornIndex + direction + unicornImages.length) % unicornImages.length;
-      document.getElementById("unicornImage").src = unicornImages[unicornIndex];
-    }
+function addToCart(id) {
+  const product = products[id];
+  const existing = cart.find(item => item.id === id);
 
-    const magneticImages = [
-      "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(3).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(2).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM.jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.29.25%20AM(1).jpeg",
-      "WhatsApp%20Image%202026-10-11%20at%2010.29.25%20AM.jpeg"
-    ];
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({
+      id: id,
+      name: product.name,
+      price: product.price,
+      qty: 1
+    });
+  }
 
-    let magneticIndex = 0;
+  renderCart();
+  document.getElementById("shoppingCart").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
-    function changeMagneticImage(direction) {
-      magneticIndex =
-        (magneticIndex + direction + magneticImages.length) % magneticImages.length;
-      document.getElementById("magneticImage").src = magneticImages[magneticIndex];
-    }
+function addMagneticToCart() {
+  const select = document.getElementById("magneticSize");
+  const price = Number(select.value);
+  const pieces = select.options[select.selectedIndex].text.split(" - ")[0];
+  const id = "magnetic-" + price;
+  const name = "Magnetic Building Sticks - " + pieces;
+  const existing = cart.find(item => item.id === id);
 
-    function updateMagneticPrice() {
-      const size = document.getElementById("magneticSize");
-      const price = size.value;
-      const pieces = size.options[size.selectedIndex].text.split(" - ")[0];
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id: id, name: name, price: price, qty: 1 });
+  }
 
-      document.getElementById("magneticPrice").textContent =
-        "Price: " + price + " EGP";
+  renderCart();
+  document.getElementById("shoppingCart").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
-      document.getElementById("magneticOrder").href =
-        "https://wa.me/201107743657?text=" +
-        encodeURIComponent(
-          "Hello Mickey Toys! I want Magnetic Building Sticks - " +
-          pieces + " - " + price + " EGP."
-        );
-    }
-  </script>
+function changeQuantity(id, amount) {
+  const item = cart.find(item => item.id === id);
+  if (!item) return;
+
+  item.qty += amount;
+  if (item.qty <= 0) {
+    cart = cart.filter(item => item.id !== id);
+  }
+  renderCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(item => item.id !== id);
+  renderCart();
+}
+
+function renderCart() {
+  const container = document.getElementById("cartItems");
+  const emptyMessage = document.getElementById("cartEmpty");
+  const checkoutButton = document.getElementById("checkoutButton");
+  const totalElement = document.getElementById("cartTotal");
+
+  container.replaceChildren();
+
+  emptyMessage.hidden = cart.length > 0;
+  checkoutButton.hidden = cart.length === 0;
+
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price * item.qty;
+
+    const row = document.createElement("div");
+    row.className = "cart-item";
+
+    const name = document.createElement("div");
+    name.className = "cart-name";
+    name.textContent = item.name;
+
+    const price = document.createElement("div");
+    price.textContent =
+      item.price + " EGP × " + item.qty + " = " +
+      (item.price * item.qty) + " EGP";
+
+    const controls = document.createElement("div");
+    controls.className = "cart-controls";
+
+    const minus = document.createElement("button");
+    minus.className = "small-button";
+    minus.textContent = "−";
+    minus.setAttribute("aria-label", "تقليل الكمية");
+    minus.onclick = () => changeQuantity(item.id, -1);
+
+    const quantity = document.createElement("span");
+    quantity.textContent = item.qty;
+
+    const plus = document.createElement("button");
+    plus.className = "small-button";
+    plus.textContent = "+";
+    plus.setAttribute("aria-label", "زيادة الكمية");
+    plus.onclick = () => changeQuantity(item.id, 1);
+
+    const remove = document.createElement("button");
+    remove.className = "small-button remove-button";
+    remove.textContent = "حذف";
+    remove.onclick = () => removeFromCart(item.id);
+
+    controls.append(minus, quantity, plus, remove);
+    row.append(name, price, controls);
+    container.appendChild(row);
+  });
+
+  totalElement.textContent = "Total / الإجمالي: " + total + " EGP";
+  totalElement.dataset.total = total;
+}
+
+function checkoutWhatsApp() {
+  if (cart.length === 0) {
+    alert("السلة فارغة. من فضلك أضيفي منتجات أولًا.");
+    return;
+  }
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty, 0
+  );
+
+  let message = "أهلًا Mickey Toys 💚\n";
+  message += "عايز/ة أطلب المنتجات التالية:\n\n";
+
+  cart.forEach((item, index) => {
+    message += (index + 1) + ". " + item.name + "\n";
+    message += "الكمية: " + item.qty + "\n";
+    message += "سعر الوحدة: " + item.price + " جنيه\n";
+    message += "الإجمالي: " + (item.price * item.qty) + " جنيه\n\n";
+  });
+
+  message += "إجمالي المنتجات: " + total + " جنيه\n";
+  message += "مصاريف الشحن: برجاء تأكيدها\n";
+  message += "الإجمالي النهائي: برجاء تأكيده قبل إتمام الطلب\n\n";
+  message += "الاسم بالكامل:\n";
+  message += "العنوان بالتفصيل:\n";
+  message += "رقم الموبايل:\n\n";
+  message += "برجاء تأكيد توافر المنتجات وموعد التوصيل. شكرًا 💚";
+
+  const url = "https://wa.me/201107743657?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+/* Magnetic product price */
+document.getElementById("magneticSize").addEventListener("change", function() {
+  document.getElementById("magneticPrice").textContent =
+    "Price: " + this.value + " EGP";
+});
+
+/* Barbie Headset images */
+const headsetImages = [
+  "WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.05%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.06%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.07%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.09%20AM(2).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%209.44.10%20AM.jpeg"
+];
+let headsetIndex = 0;
+
+function changeHeadsetImage(direction) {
+  headsetIndex = (headsetIndex + direction + headsetImages.length) %
+    headsetImages.length;
+  document.getElementById("headsetImage").src = headsetImages[headsetIndex];
+}
+
+/* Markers images */
+const markersImages = [
+  "WhatsApp%20Image%202026-10-07%20at%2011.43.27%20PM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.32.18%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.31.18%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.31.18%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.31.17%20PM(1).jpeg"
+];
+let markersIndex = 0;
+
+function changeMarkersImage(direction) {
+  markersIndex = (markersIndex + direction + markersImages.length) %
+    markersImages.length;
+  document.getElementById("markersImage").src = markersImages[markersIndex];
+}
+
+/* Unicorn images */
+const unicornImages = [
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(4).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.57%20PM(3).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.51.03%20PM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.58%20PM(3).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.50.58%20PM(2).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.57.22%20PM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2011.57.13%20PM.jpeg"
+];
+let unicornIndex = 0;
+
+function changeUnicornImage(direction) {
+  unicornIndex = (unicornIndex + direction + unicornImages.length) %
+    unicornImages.length;
+  document.getElementById("unicornImage").src = unicornImages[unicornIndex];
+}
+
+/* Magnetic Building Sticks images */
+const magneticImages = [
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(3).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(2).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.25%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.25%20AM.jpeg"
+];
+let magneticIndex = 0;
+
+function changeMagneticImage(direction) {
+  magneticIndex = (magneticIndex + direction + magneticImages.length) %
+    magneticImages.length;
+  document.getElementById("magneticImage").src = magneticImages[magneticIndex];
+}
+
+renderCart();
+</script>
 
 </body>
 </html>
