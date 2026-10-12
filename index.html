@@ -183,7 +183,31 @@ a {
     <button>Order Now</button>
   </a>
 </div></div><div style="margin: 30px;">
-  <h2>📱 Contact Mickey Toys</h2>
+<div class="card">
+  <h3>🧲 Magnetic Building Sticks</h3>
+
+  <div class="gallery">
+    <button type="button" onclick="changeMagneticImage(-1)">❮</button>
+    <img id="magneticImage" src="WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(3).jpeg" alt="Magnetic Building Sticks" width="250">
+    <button type="button" onclick="changeMagneticImage(1)">❯</button>
+  </div>
+
+  <p>Fun magnetic building toys for kids!</p>
+  <p>Suitable for ages 3+.</p>
+
+  <label for="magneticSize">Choose size:</label>
+  <select id="magneticSize" onchange="updateMagneticPrice()">
+    <option value="360">42 Pieces - 360 EGP</option>
+    <option value="460">64 Pieces - 460 EGP</option>
+    <option value="550">84 Pieces - 550 EGP</option>
+  </select>
+
+  <p id="magneticPrice" style="color: orange;">Price: 360 EGP</p>
+
+  <a id="magneticOrder" href="https://wa.me/201107743657" target="_blank">
+    <button type="button">Order Now</button>
+  </a>
+</div>  <h2>📱 Contact Mickey Toys</h2>
   <a href="https://wa.me/201107743657" target="_blank">
     <button>Chat with us on WhatsApp 💚</button>
   </a>
@@ -242,5 +266,35 @@ let unicornIndex = 0;
 function changeUnicornImage(direction) {
   unicornIndex = (unicornIndex + direction + unicornImages.length) % unicornImages.length;
   document.getElementById("unicornImage").src = unicornImages[unicornIndex];
-}</script></html>
-</script></html>
+
+}
+
+const magneticImages = [
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(3).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(2).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.26%20AM.jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.25%20AM(1).jpeg",
+  "WhatsApp%20Image%202026-10-11%20at%2010.29.25%20AM.jpeg"
+];
+
+let magneticIndex = 0;
+
+function changeMagneticImage(direction) {
+  magneticIndex = (magneticIndex + direction + magneticImages.length) % magneticImages.length;
+  document.getElementById("magneticImage").src = magneticImages[magneticIndex];
+}
+
+function updateMagneticPrice() {
+  const size = document.getElementById("magneticSize");
+  const price = size.value;
+  document.getElementById("magneticPrice").textContent = "Price: " + price + " EGP";
+
+  const pieces = size.options[size.selectedIndex].text.split(" - ")[0];
+  document.getElementById("magneticOrder").href =
+    "https://wa.me/201107743657?text=" +
+    encodeURIComponent("Hello Mickey Toys! I want Magnetic Building Sticks - " + pieces + " - " + price + " EGP.");
+}
+</script>
+</body>
+</html>
