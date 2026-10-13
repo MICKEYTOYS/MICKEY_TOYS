@@ -4,947 +4,167 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mickey Toys</title>
-
 <style>
-:root {
-  --pink-bg:#FFD6E7;
-  --pink:#C83E78;
-  --pink-hover:#AD2F65;
-  --text:#594957;
-  --muted:#594957;
-  --white:#FFFFFF;
-  --green:#25D366;
-  --green-hover:#128C4A;
-  --border:#F0BBD2;
-}
-* { box-sizing:border-box; }
-body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--pink-bg);
-  color:var(--text);
-}
-header {
-  background:var(--pink);
-  color:white;
-  text-align:center;
-  padding:22px 15px;
-}
-header h1 { margin:0 0 8px; font-size:32px; }
-header p { margin:0; font-size:16px; }
-.language-bar {
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  padding:12px;
-}
-button,select { font:inherit; }
-.language-bar button {
-  background:white;
-  color:var(--pink);
-  border:1px solid var(--pink);
-  padding:9px 16px;
-  border-radius:20px;
-  cursor:pointer;
-  font-weight:bold;
-}
-.language-bar button.active {
-  background:var(--pink);
-  color:white;
-}
-.banner {
-  width:min(100% - 24px,1100px);
-  margin:0 auto 20px;
-}
-.banner img {
-  display:block;
-  width:100%;
-  max-height:360px;
-  object-fit:contain;
-  border-radius:14px;
-}
-h2.section-title {
-  text-align:center;
-  margin:25px 10px;
-  color:var(--text);
-}
-.products {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
-  max-width:1200px;
-  padding:0 16px;
-  margin:0 auto 35px;
-}
-.product {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:14px;
-  min-width:0;
-  box-shadow:0 4px 12px rgba(100,40,70,.08);
-}
-.product h3 {
-  color:var(--text);
-  font-size:20px;
-  margin:14px 0 8px;
-  line-height:1.4;
-}
-.product-description {
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.65;
-  min-height:45px;
-  margin:8px 0;
-}
-.gallery {
-  position:relative;
-  width:100%;
-  height:260px;
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-}
-.gallery img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  cursor:zoom-in;
-}
-.gallery-arrow {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:38px;
-  height:42px;
-  border:none;
-  border-radius:20px;
-  background:rgba(255,255,255,.94);
-  color:var(--pink);
-  font-size:25px;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 2px 8px #0002;
-}
-.gallery-arrow.prev { left:7px; }
-.gallery-arrow.next { right:7px; }
-.gallery-count {
-  position:absolute;
-  bottom:8px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(255,255,255,.95);
-  color:var(--text);
-  padding:4px 10px;
-  border-radius:14px;
-  font-size:12px;
-}
-.price {
-  color:var(--pink);
-  font-size:23px;
-  font-weight:bold;
-  margin:12px 0;
-}
-.old-price {
-  color:#777;
-  text-decoration:line-through;
-  font-size:15px;
-  margin-inline-start:7px;
-}
-.product select {
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border:1px solid var(--border);
-  border-radius:9px;
-  color:var(--text);
-  background:white;
-}
-.add-button {
-  display:block;
-  width:100%;
-  padding:13px 10px;
-  background:var(--pink);
-  color:white;
-  border:none;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-top:12px;
-}
-.add-button:hover { background:var(--pink-hover); }
-
-/* Special Offers */
-.offers-section {
-  max-width:1100px;
-  width:calc(100% - 28px);
-  margin:28px auto;
-  padding:24px 16px;
-  background:linear-gradient(135deg,#fff0f6,#fff);
-  border:2px solid var(--border);
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 6px 18px rgba(100,40,70,.10);
-}
-.offers-section h2 {
-  color:var(--pink);
-  font-size:28px;
-  margin:0 0 20px;
-}
-.offer-cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:16px;
-  max-width:800px;
-  margin:auto;
-}
-.offer-card {
-  padding:20px 16px;
-  background:white;
-  border:2px dashed var(--pink);
-  border-radius:16px;
-}
-.offer-badge {
-  display:inline-block;
-  padding:8px 12px;
-  border-radius:20px;
-  background:var(--pink);
-  color:white;
-  font-size:12px;
-  font-weight:bold;
-}
-.offer-card h3 {
-  color:var(--text);
-  font-size:23px;
-  margin:16px 0 8px;
-}
-.offer-card p { line-height:1.6; }
-.offer-prices {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.offer-old-price {
-  color:#888;
-  text-decoration:line-through;
-  font-size:17px;
-}
-.offer-new-price {
-  color:var(--pink);
-  font-size:29px;
-  font-weight:bold;
-}
-.offer-saving {
-  color:var(--green-hover);
-  font-weight:bold;
-}
-.cart-section,.contact-section {
-  max-width:900px;
-  margin:25px auto;
-  padding:20px;
-  background:white;
-  border-radius:16px;
-  width:calc(100% - 28px);
-}
-.cart-section h2,.contact-section h2 {
-  color:var(--text);
-  text-align:center;
-}
-.cart-item {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:12px 0;
-  border-bottom:1px solid var(--border);
-}
-.cart-item-info { flex:1; line-height:1.6; }
-.quantity-controls {
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.quantity-controls button,.remove-button {
-  border:none;
-  border-radius:7px;
-  padding:7px 10px;
-  cursor:pointer;
-}
-.quantity-controls button {
-  background:var(--pink-bg);
-  color:var(--pink);
-  font-weight:bold;
-}
-.remove-button {
-  background:#FCE4EC;
-  color:#A00035;
-}
-.cart-total {
-  font-size:23px;
-  font-weight:bold;
-  color:var(--pink);
-  text-align:center;
-  margin:20px 0;
-}
-.shipping-note {
-  color:var(--text);
-  text-align:center;
-  line-height:1.7;
-}
-.whatsapp-button {
-  display:block;
-  text-align:center;
-  background:var(--green);
-  color:white;
-  text-decoration:none;
-  border:none;
-  border-radius:10px;
-  padding:14px 16px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  width:100%;
-  margin-top:12px;
-}
-.whatsapp-button:hover { background:var(--green-hover); }
-.contact-section p {
-  text-align:center;
-  line-height:1.7;
-}
-.facebook-button {
-  display:block;
-  width:100%;
-  max-width:500px;
-  margin:12px auto 0;
-  padding:14px 16px;
-  background:#1877F2;
-  color:white;
-  text-align:center;
-  text-decoration:none;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:bold;
-}
-.facebook-button:hover { background:#145FC0; }
-footer {
-  text-align:center;
-  padding:22px 10px;
-  color:var(--text);
-}
-
-/* Product image lightbox */
-.lightbox {
-  display:none;
-  position:fixed;
-  z-index:9999;
-  inset:0;
-  background:rgba(25,15,22,.94);
-  align-items:center;
-  justify-content:center;
-  padding:55px;
-}
-.lightbox.open { display:flex; }
-.lightbox img {
-  max-width:100%;
-  max-height:85vh;
-  object-fit:contain;
-  cursor:default;
-}
-.lightbox-close {
-  position:absolute;
-  top:12px;
-  right:16px;
-  border:none;
-  background:white;
-  color:var(--pink);
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  font-size:26px;
-  cursor:pointer;
-}
-.lightbox-arrow {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:white;
-  color:var(--pink);
-  border:none;
-  border-radius:50%;
-  width:45px;
-  height:45px;
-  font-size:28px;
-  cursor:pointer;
-}
-.lightbox-prev { left:10px; }
-.lightbox-next { right:10px; }
-.lightbox-count {
-  position:absolute;
-  bottom:12px;
-  color:white;
-  font-size:15px;
-}
-@media(max-width:520px) {
-  header h1 { font-size:27px; }
-  .products {
-    grid-template-columns:1fr;
-    padding:0 12px;
-    gap:16px;
-  }
-  .gallery { height:300px; }
-  .product { padding:12px; }
-  .lightbox { padding:50px 40px; }
-  .lightbox img { max-height:80vh; }
-  .cart-item { flex-wrap:wrap; }
-}
+:root{--pink-bg:#fff0f6;--pink:#c83e78;--pink-dark:#ad2f65;--text:#594957;--green:#25d366;--green-dark:#128c4a;--border:#f0bbd2}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--pink-bg);color:var(--text)}
+header{background:linear-gradient(135deg,#c83e78,#f078a8);color:#fff;text-align:center;padding:24px 15px}
+header h1{margin:0 0 8px;font-size:32px}header p{margin:0;font-size:16px}
+.language-bar{display:flex;justify-content:center;gap:8px;padding:12px}
+button,select{font:inherit}
+.language-bar button{background:#fff;color:var(--pink);border:1px solid var(--pink);padding:9px 16px;border-radius:20px;cursor:pointer;font-weight:bold}
+.language-bar button.active{background:var(--pink);color:#fff}
+.banner{width:min(100% - 24px,1100px);margin:0 auto 20px}
+.banner img{display:block;width:100%;max-height:340px;object-fit:contain;border-radius:16px}
+h2.section-title{text-align:center;margin:28px 10px;color:var(--pink);font-size:30px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;max-width:1200px;padding:0 16px;margin:0 auto 35px}
+.product{background:linear-gradient(145deg,#fffafd,#ffeaf3);border:2px solid var(--border);border-radius:18px;padding:13px;min-width:0;box-shadow:0 5px 14px #9632641f;transition:transform .2s,box-shadow .2s}
+.product:hover{transform:translateY(-3px);box-shadow:0 8px 20px #9632642e}
+.product h3{color:var(--text);font-size:20px;margin:13px 0 8px;line-height:1.4}
+.product-description{color:var(--text);font-size:14px;line-height:1.6;min-height:44px;margin:8px 0}
+.gallery{position:relative;width:100%;height:250px;background:#fffafd;border-radius:12px;overflow:hidden;border:1px solid #f7d5e3}
+.gallery img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:40px;border:0;border-radius:20px;background:#ffffffed;color:var(--pink);font-size:25px;font-weight:bold;cursor:pointer;box-shadow:0 2px 8px #0002}
+.gallery-arrow.prev{left:6px}.gallery-arrow.next{right:6px}
+.gallery-count{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);background:#ffffffed;color:var(--text);padding:4px 10px;border-radius:14px;font-size:12px}
+.price{color:var(--pink);font-size:23px;font-weight:bold;margin:12px 0}
+.old-price{color:#777;text-decoration:line-through;font-size:14px;margin-inline-start:7px}
+.product select{width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:9px;color:var(--text);background:#fff}
+.add-button{display:block;width:100%;padding:13px 10px;background:var(--pink);color:#fff;border:0;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:12px}
+.add-button:hover{background:var(--pink-dark)}
+.offers-section{max-width:1100px;width:calc(100% - 28px);margin:28px auto;padding:24px 16px;background:linear-gradient(135deg,#ffe3ef,#fffafd);border:2px solid var(--border);border-radius:20px;text-align:center;box-shadow:0 6px 18px #64284619}
+.offers-section h2{color:var(--pink);font-size:28px;margin:0 0 20px}
+.offer-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:800px;margin:auto}
+.offer-card{padding:20px 16px;background:#fff;border:2px dashed var(--pink);border-radius:16px}
+.offer-badge{display:inline-block;padding:8px 12px;border-radius:20px;background:var(--pink);color:#fff;font-size:12px;font-weight:bold}
+.offer-card h3{color:var(--text);font-size:22px;margin:16px 0 8px}.offer-card p{line-height:1.6}
+.offer-prices{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.offer-old-price{color:#888;text-decoration:line-through;font-size:17px}.offer-new-price{color:var(--pink);font-size:29px;font-weight:bold}.offer-saving{color:var(--green-dark);font-weight:bold}
+.cart-section,.contact-section{max-width:900px;margin:25px auto;padding:20px;background:#fff;border:1px solid var(--border);border-radius:16px;width:calc(100% - 28px)}
+.cart-section h2,.contact-section h2{color:var(--pink);text-align:center}
+.cart-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.cart-item-info{flex:1;line-height:1.6}.quantity-controls{display:flex;align-items:center;gap:8px}
+.quantity-controls button,.remove-button{border:0;border-radius:7px;padding:7px 10px;cursor:pointer}
+.quantity-controls button{background:var(--pink-bg);color:var(--pink);font-weight:bold}.remove-button{background:#fce4ec;color:#a00035}
+.cart-total{font-size:23px;font-weight:bold;color:var(--pink);text-align:center;margin:20px 0}
+.shipping-note{text-align:center;line-height:1.7}
+.whatsapp-button{display:block;text-align:center;background:var(--green);color:#fff;text-decoration:none;border:0;border-radius:10px;padding:14px 16px;font-size:17px;font-weight:bold;cursor:pointer;width:100%;margin-top:12px}
+.whatsapp-button:hover{background:var(--green-dark)}
+.contact-section p{text-align:center;line-height:1.7}
+.facebook-button{display:block;width:100%;max-width:500px;margin:12px auto 0;padding:14px 16px;background:#1877f2;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-size:17px;font-weight:bold}
+footer{text-align:center;padding:22px 10px;color:var(--text)}
+.lightbox{display:none;position:fixed;z-index:9999;inset:0;background:#190f16f2;align-items:center;justify-content:center;padding:55px}
+.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:85vh;object-fit:contain}
+.lightbox-close,.lightbox-arrow{position:absolute;border:0;background:#fff;color:var(--pink);cursor:pointer}
+.lightbox-close{top:12px;right:16px;width:42px;height:42px;border-radius:50%;font-size:26px}
+.lightbox-arrow{top:50%;transform:translateY(-50%);border-radius:50%;width:45px;height:45px;font-size:28px}
+.lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-count{position:absolute;bottom:12px;color:#fff;font-size:15px}
+@media(max-width:520px){header h1{font-size:27px}.products{grid-template-columns:1fr;padding:0 12px;gap:15px}.gallery{height:290px}.product{padding:12px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
 </style>
 </head>
-
 <body>
-
-<header>
-  <h1>Mickey Toys 🧸</h1>
-  <p id="tagline">Fun toys for happy little ones!</p>
-</header>
-
+<header><h1>Mickey Toys 🧸</h1><p id="tagline">Fun toys for happy little ones!</p></header>
 <div class="language-bar">
-  <button id="englishButton" class="active" onclick="setLanguage('en')">English</button>
-  <button id="arabicButton" onclick="setLanguage('ar')">العربية</button>
+<button id="englishButton" class="active" onclick="setLanguage('en')">English</button>
+<button id="arabicButton" onclick="setLanguage('ar')">العربية</button>
 </div>
-
-<div class="banner">
-  <img src="mickey-banner.png.jpeg"
-       alt="Mickey Toys"
-       onerror="this.style.display='none'">
-</div>
+<div class="banner"><img src="mickey-banner.png.jpeg" alt="Mickey Toys" onerror="this.style.display='none'"></div>
 
 <section class="offers-section" id="specialOffers">
-  <h2 id="offersTitle">🎉 Special Offers</h2>
-  <div class="offer-cards">
-
-    <article class="offer-card">
-      <span class="offer-badge" id="offerBadge">LIMITED-TIME OFFER</span>
-      <h3>Wooden Blocks 🧸</h3>
-      <p id="woodenOfferDescription">Fun wooden blocks for creative play!</p>
-      <p class="offer-prices">
-        <span class="offer-old-price">185 EGP</span>
-        <span class="offer-new-price">160 EGP</span>
-      </p>
-      <p class="offer-saving" id="offerSaving">Save 25 EGP!</p>
-      <button class="add-button" onclick="goToWoodenBlocks()">
-        <span id="offerShopButton">Shop Now</span>
-      </button>
-    </article>
-
-    <article class="offer-card">
-      <span class="offer-badge" id="markerOfferBadge">SPECIAL OFFER</span>
-      <h3 id="markerOfferName">Touch 48pcs Markers 🎨</h3>
-      <p id="markerOfferDescription">A colorful set for drawing and creativity.</p>
-      <p class="offer-prices">
-        <span class="offer-old-price">275 EGP</span>
-        <span class="offer-new-price">249 EGP</span>
-      </p>
-      <p class="offer-saving" id="markerOfferSaving">Save 26 EGP!</p>
-      <button class="add-button" onclick="goToMarkers()">
-        <span id="markerOfferShopButton">Shop Now</span>
-      </button>
-    </article>
-
-  </div>
+<h2 id="offersTitle">🎉 Special Offers</h2>
+<div class="offer-cards">
+<article class="offer-card">
+<span class="offer-badge" id="offerBadge">LIMITED-TIME OFFER</span>
+<h3>Wooden Blocks 🧸</h3><p id="woodenOfferDescription">Fun wooden blocks for creative play!</p>
+<p class="offer-prices"><span class="offer-old-price">185 EGP</span><span class="offer-new-price">160 EGP</span></p>
+<p class="offer-saving" id="offerSaving">Save 25 EGP!</p>
+<button class="add-button" onclick="goToProduct('woodenBlocks')"><span id="offerShopButton">Shop Now</span></button>
+</article>
+<article class="offer-card">
+<span class="offer-badge" id="markerOfferBadge">SPECIAL OFFER</span>
+<h3 id="markerOfferName">Touch 48pcs Markers 🎨</h3><p id="markerOfferDescription">A colorful set for drawing and creativity.</p>
+<p class="offer-prices"><span class="offer-old-price">275 EGP</span><span class="offer-new-price">249 EGP</span></p>
+<p class="offer-saving" id="markerOfferSaving">Save 26 EGP!</p>
+<button class="add-button" onclick="goToProduct('markers')"><span id="markerOfferShopButton">Shop Now</span></button>
+</article>
+</div>
 </section>
 
 <h2 class="section-title" id="productsTitle">Our Toys</h2>
 <main class="products" id="products"></main>
 
 <section class="cart-section" id="shoppingCart">
-  <h2 id="cartTitle">🛒 Shopping Cart</h2>
-  <div id="cartItems"></div>
-  <div class="cart-total" id="cartTotal">Total: 0 EGP</div>
-  <p class="shipping-note" id="shippingNote">
-    Shipping cost will be confirmed before the order is completed.
-  </p>
-  <button class="whatsapp-button" onclick="checkoutWhatsApp()" id="checkoutButton">
-    Order on WhatsApp 💚
-  </button>
+<h2 id="cartTitle">🛒 Shopping Cart</h2><div id="cartItems"></div>
+<div class="cart-total" id="cartTotal">Total: 0 EGP</div>
+<p class="shipping-note" id="shippingNote">Shipping cost will be confirmed before the order is completed.</p>
+<button class="whatsapp-button" onclick="checkoutWhatsApp()" id="checkoutButton">Order on WhatsApp 💚</button>
 </section>
-
 <section class="contact-section">
-  <h2 id="contactTitle">📱 Contact Mickey Toys</h2>
-  <p id="contactDescription">Have a question? Contact us directly on WhatsApp.</p>
-  <a class="whatsapp-button"
-     href="https://wa.me/201107743657"
-     target="_blank" rel="noopener"
-     id="contactButton">Chat with us on WhatsApp 💚</a>
-  <a class="facebook-button"
-     href="https://www.facebook.com/share/19jbkNAcA8/"
-     target="_blank" rel="noopener"
-     id="facebookButton">Follow Us on Facebook 💙</a>
+<h2 id="contactTitle">📱 Contact Mickey Toys</h2><p id="contactDescription">Have a question? Contact us directly on WhatsApp.</p>
+<a class="whatsapp-button" href="https://wa.me/201107743657" target="_blank" rel="noopener" id="contactButton">Chat with us on WhatsApp 💚</a>
+<a class="facebook-button" href="https://www.facebook.com/share/19jbkNAcA8/" target="_blank" rel="noopener" id="facebookButton">Follow Us on Facebook 💙</a>
 </section>
-
 <footer>© Mickey Toys</footer>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()"
-          aria-label="Close image">×</button>
-  <button class="lightbox-arrow lightbox-prev"
-          onclick="lightboxMove(-1,event)" aria-label="Previous image">‹</button>
-  <img id="lightboxImage" src="" alt="Large product image"
-       onclick="event.stopPropagation()">
-  <button class="lightbox-arrow lightbox-next"
-          onclick="lightboxMove(1,event)" aria-label="Next image">›</button>
-  <div class="lightbox-count" id="lightboxCount"></div>
+<button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">×</button>
+<button class="lightbox-arrow lightbox-prev" onclick="lightboxMove(-1,event)" aria-label="Previous image">‹</button>
+<img id="lightboxImage" src="" alt="Large product image" onclick="event.stopPropagation()">
+<button class="lightbox-arrow lightbox-next" onclick="lightboxMove(1,event)" aria-label="Next image">›</button>
+<div class="lightbox-count" id="lightboxCount"></div>
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "201107743657";
-
-const headsetImages = [
-  "WhatsApp Image 2026-10-11 at 9.44.05 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.05 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.06 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.07 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.09 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.09 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.09 AM(2).jpeg",
-  "WhatsApp Image 2026-10-11 at 9.44.10 AM.jpeg"
+const WHATSAPP_NUMBER="201107743657";
+const productsData=[
+{id:"headset",nameEn:"Barbie Headset",nameAr:"سماعة باربي",descEn:"A fun headset for kids.",descAr:"سماعة ممتعة للأطفال.",price:495,images:["WhatsApp Image 2026-10-11 at 9.44.05 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.05 AM(1).jpeg","WhatsApp Image 2026-10-11 at 9.44.06 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.07 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM(1).jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM(2).jpeg","WhatsApp Image 2026-10-11 at 9.44.10 AM.jpeg"]},
+{id:"markers",nameEn:"Touch 48pcs Markers",nameAr:"ألوان ماركر تاتش 48 قطعة",descEn:"Special offer! A colorful set for drawing and creativity.",descAr:"عرض خاص! مجموعة ألوان للرسم والإبداع.",price:249,oldPrice:275,images:["WhatsApp Image 2026-10-07 at 11.43.27 PM.jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg","WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
+{id:"safe",nameEn:"Kids Money Safe",nameAr:"خزنة نقود للأطفال",descEn:"A fun way for children to save their money.",descAr:"طريقة ممتعة لتعليم الأطفال توفير النقود.",price:420,images:["WhatsApp Image 2026-10-08 at 12.03.11 AM.jpeg"]},
+{id:"unicorn",nameEn:"Unicorn Metal Color Set",nameAr:"شنطة ألوان يونيكورن معدنية",descEn:"145 pieces. Metal case with two levels, a sturdy handle and metal locks. Includes wood colors, watercolors, markers, pastels and painting tools. Available in rose and light blue.",descAr:"145 قطعة. علبة معدنية بطابقين ومقبض قوي وأقفال معدنية. تشمل ألوان خشب ومائية وماركر وباستيل وأدوات رسم. متاحة بالروز واللبني.",price:690,images:["WhatsApp Image 2026-10-11 at 11.50.57 PM(4).jpeg","WhatsApp Image 2026-10-11 at 11.50.57 PM(3).jpeg","WhatsApp Image 2026-10-11 at 11.51.03 AM(1).jpeg","WhatsApp Image 2026-10-11 at 11.50.58 PM(3).jpeg","WhatsApp Image 2026-10-11 at 11.50.58 PM(2).jpeg","WhatsApp Image 2026-10-11 at 11.57.22 PM.jpeg","WhatsApp Image 2026-10-11 at 11.57.13 PM.jpeg"]},
+{id:"magnetic",nameEn:"Magnetic Building Sticks",nameAr:"عصي البناء المغناطيسية",descEn:"Magnetic building toy. Choose the number of pieces.",descAr:"لعبة تركيب مغناطيسية. اختاري عدد القطع.",variants:[{label:"42 pieces",labelAr:"42 قطعة",price:360},{label:"64 pieces",labelAr:"64 قطعة",price:460},{label:"84 pieces",labelAr:"84 قطعة",price:550}],images:["WhatsApp Image 2026-10-11 at 10.29.26 AM(3).jpeg","WhatsApp Image 2026-10-11 at 10.29.26 AM(2).jpeg","WhatsApp Image 2026-10-11 at 10.29.26 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.29.26 AM.jpeg","WhatsApp Image 2026-10-11 at 10.29.25 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.29.25 AM.jpeg"]},
+{id:"appleBoard",nameEn:"Apple-Shaped Blackboard",nameAr:"سبورة على شكل تفاحة",descEn:"A cute apple-shaped board for drawing and writing.",descAr:"سبورة لطيفة على شكل تفاحة للرسم والكتابة.",price:330,images:["السبوره شكل تفاحه 1.jpg","السبوره شكل تفاحه 2.jpg","السبوره شكل تفاحه 3.jpg","السبوره شكل تفاحه 4.jpg","السبوره شكل تفاحه 5.jpg","السبوره شكل تفاحه 6.jpg","السبوره شكل تفاحه 7.jpg"]},
+{id:"makeupBag",nameEn:"Unicorn Makeup Bag 🦄💄",nameAr:"شنطة ميكب يونيكورن 🦄💄",descEn:"A unicorn-themed makeup bag for kids.",descAr:"شنطة ميكب للأطفال بتصميم يونيكورن.",price:745,images:["Unicorn Makeup Bag 🦄💄 1.jpg","Unicorn Makeup Bag 🦄💄 2.jpg","Unicorn Makeup Bag 🦄💄 3.jpg","Unicorn Makeup Bag 🦄💄 4.jpg","Unicorn Makeup Bag 🦄💄 5.jpg","Unicorn Makeup Bag 🦄💄 6.jpg"]},
+{id:"colledoll",nameEn:"Colledoll Makeup Bag",nameAr:"شنطة ميكب Colledoll",descEn:"A fun makeup bag for kids.",descAr:"شنطة ميكب ممتعة للأطفال.",price:549,images:["شنطه ميكب colledoll 1.jpg","شنطه ميكب colledoll 2.jpg","شنطه ميكب colledoll 3.jpg","شنطه ميكب colledoll 4.jpg","شنطه ميكب colledoll 5.jpg","شنطه ميكب colledoll 6.jpg","شنطه ميكب colledoll 7.jpg","شنطه ميكب colledoll 8.jpg"]},
+{id:"animalPiano",nameEn:"Animal Sounds Piano",nameAr:"بيانو أصوات الحيوانات",descEn:"A playful piano with animal sounds.",descAr:"بيانو ممتع بأصوات الحيوانات.",price:375,images:["بيانو اصوات الحيوانات 1.jpg","بيانو اصوات الحيوانات 2.jpg","بيانو اصوات الحيوانات 3.jpg"]},
+{id:"flashCards",nameEn:"Flash Cards",nameAr:"فلاش كارد",descEn:"Educational flash cards for kids.",descAr:"كروت تعليمية للأطفال.",price:210,images:["فلاش كارد 1.jpg","فلاش كارد 2.jpg","فلاش كارد 3.jpg","فلاش كارد 4.jpg","فلاش كارد 5.jpg","فلاش كارد 6.jpg"]},
+{id:"magneticWhiteboard",nameEn:"Magnetic Whiteboard",nameAr:"السبورة المغناطيسية",descEn:"A magnetic whiteboard for writing and drawing.",descAr:"سبورة مغناطيسية للكتابة والرسم.",price:330,images:["Magnetic whiteboard 1.jpg","Magnetic whiteboard 2.jpg","Magnetic whiteboard 3.jpg","Magnetic whiteboard 4.jpg","Magnetic whiteboard 5.jpg"]},
+{id:"colors208",nameEn:"208-Color Set",nameAr:"علبة ألوان 208 لون",descEn:"A colorful 208-color art set.",descAr:"علبة ألوان متنوعة تضم 208 لون.",price:390,images:["علبه الوان 208 لون 1.jpg","علبه الوان 208 لون 2.jpg","علبه الوان 208 لون 3.jpg","علبه الوان 208 لون 4.jpg","علبه الوان 208 لون 5.jpg","علبه الوان 208 لون 6.jpg","علبه الوان 208 لون 7.jpg"]},
+{id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:160,oldPrice:185,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]}
 ];
-
-const markerImages = [
-  "WhatsApp Image 2026-10-07 at 11.43.27 PM.jpeg",
-  "WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"
-];
-
-const unicornImages = [
-  "WhatsApp Image 2026-10-11 at 11.50.57 PM(4).jpeg",
-  "WhatsApp Image 2026-10-11 at 11.50.57 PM(3).jpeg",
-  "WhatsApp Image 2026-10-11 at 11.51.03 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 11.50.58 PM(3).jpeg",
-  "WhatsApp Image 2026-10-11 at 11.50.58 PM(2).jpeg",
-  "WhatsApp Image 2026-10-11 at 11.57.22 PM.jpeg",
-  "WhatsApp Image 2026-10-11 at 11.57.13 PM.jpeg"
-];
-
-const magneticImages = [
-  "WhatsApp Image 2026-10-11 at 10.29.26 AM(3).jpeg",
-  "WhatsApp Image 2026-10-11 at 10.29.26 AM(2).jpeg",
-  "WhatsApp Image 2026-10-11 at 10.29.26 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 10.29.26 AM.jpeg",
-  "WhatsApp Image 2026-10-11 at 10.29.25 AM(1).jpeg",
-  "WhatsApp Image 2026-10-11 at 10.29.25 AM.jpeg"
-];
-
-const appleBoardImages = [
-  "السبوره شكل تفاحه 1.jpg",
-  "السبوره شكل تفاحه 2.jpg",
-  "السبوره شكل تفاحه 3.jpg",
-  "السبوره شكل تفاحه 4.jpg",
-  "السبوره شكل تفاحه 5.jpg",
-  "السبوره شكل تفاحه 6.jpg",
-  "السبوره شكل تفاحه 7.jpg"
-];
-
-const makeupBagImages = [
-  "Unicorn Makeup Bag 🦄💄 1.jpg",
-  "Unicorn Makeup Bag 🦄💄 2.jpg",
-  "Unicorn Makeup Bag 🦄💄 3.jpg",
-  "Unicorn Makeup Bag 🦄💄 4.jpg",
-  "Unicorn Makeup Bag 🦄💄 5.jpg",
-  "Unicorn Makeup Bag 🦄💄 6.jpg"
-];
-
-function imagePath(filename) {
-  return encodeURIComponent(filename).replace(/%2F/gi,"/");
+let language="en",cart=[],imageIndexes={},lightboxProductId=null,lightboxIndex=0;
+function imagePath(filename){return encodeURIComponent(filename).replace(/%2F/gi,"/")}
+function money(price){return `${price} ${language==="en"?"EGP":"جنيه"}`}
+function productById(id){return productsData.find(p=>p.id===id)}
+function productName(p){return language==="en"?p.nameEn:p.nameAr}
+function productDescription(p){return language==="en"?p.descEn:p.descAr}
+function renderProducts(){
+const container=document.getElementById("products");
+container.innerHTML=productsData.map(p=>{
+const index=imageIndexes[p.id]||0,imgs=p.images,current=imgs[index]||imgs[0];
+const gallery=`<div class="gallery"><img src="${imagePath(current)}" alt="${productName(p)}" onclick="openLightbox('${p.id}',${index})" onerror="this.style.opacity='.2'">
+${imgs.length>1?`<button class="gallery-arrow prev" onclick="moveProductImage('${p.id}',-1,event)" aria-label="Previous image">‹</button><button class="gallery-arrow next" onclick="moveProductImage('${p.id}',1,event)" aria-label="Next image">›</button><div class="gallery-count">${index+1} / ${imgs.length}</div>`:""}</div>`;
+const priceMarkup=p.variants?`<div class="price" id="price-${p.id}">${money(p.variants[0].price)}</div>`:`<div class="price">${money(p.price)}${p.oldPrice?`<span class="old-price">${money(p.oldPrice)}</span>`:""}</div>`;
+const variants=p.variants?`<select id="variant-${p.id}" onchange="updateVariantPrice('${p.id}')">${p.variants.map((v,i)=>`<option value="${i}">${language==="en"?v.label:v.labelAr} — ${money(v.price)}</option>`).join("")}</select>`:"";
+return `<article class="product" id="product-${p.id}">${gallery}<h3>${productName(p)}</h3><p class="product-description">${productDescription(p)}</p>${variants}${priceMarkup}<button class="add-button" onclick="addToCart('${p.id}')">${language==="en"?"🛒 Add to Cart":"🛒 أضف إلى السلة"}</button></article>`;
+}).join("");
 }
-
-const productsData = [
-  {
-    id:"headset",
-    nameEn:"Barbie Headset",
-    nameAr:"سماعة باربي",
-    descEn:"A fun headset for kids.",
-    descAr:"سماعة ممتعة للأطفال.",
-    price:495,
-    images:headsetImages
-  },
-  {
-    id:"markers",
-    nameEn:"Touch 48pcs Markers",
-    nameAr:"ألوان ماركر تاتش 48 قطعة",
-    descEn:"Special offer! A colorful set for drawing and creativity.",
-    descAr:"عرض خاص! مجموعة ألوان للرسم والإبداع.",
-    price:249,
-    oldPrice:275,
-    images:markerImages
-  },
-  {
-    id:"safe",
-    nameEn:"Kids Money Safe",
-    nameAr:"خزنة نقود للأطفال",
-    descEn:"A fun way for children to save their money.",
-    descAr:"طريقة ممتعة لتعليم الأطفال توفير النقود.",
-    price:420,
-    images:["WhatsApp Image 2026-10-08 at 12.03.11 AM.jpeg"]
-  },
-  {
-    id:"unicorn",
-    nameEn:"Unicorn Metal Color Set",
-    nameAr:"شنطة ألوان يونيكورن معدنية",
-    descEn:"145 pieces. Metal case with two levels, sturdy handle and metal locks. Includes wood colors, watercolors, markers, pastels and painting tools. Available in pink and light blue.",
-    descAr:"145 قطعة. علبة معدنية بطابقين ومقبض قوي وأقفال معدنية. تشمل ألوان خشب ومائية وماركر وباستيل وأدوات رسم. متاحة بالوردي والأزرق الفاتح.",
-    price:650,
-    images:unicornImages
-  },
-  {
-    id:"magnetic",
-    nameEn:"Magnetic Building Sticks",
-    nameAr:"عصي البناء المغناطيسية",
-    descEn:"Magnetic building toy. Choose the number of pieces.",
-    descAr:"لعبة تركيب مغناطيسية. اختاري عدد القطع.",
-    variants:[
-      {label:"42 pieces",labelAr:"42 قطعة",price:360},
-      {label:"64 pieces",labelAr:"64 قطعة",price:460},
-      {label:"84 pieces",labelAr:"84 قطعة",price:550}
-    ],
-    images:magneticImages
-  },
-  {
-    id:"appleBoard",
-    nameEn:"Apple-Shaped Blackboard",
-    nameAr:"سبورة على شكل تفاحة",
-    descEn:"A cute apple-shaped board for drawing and writing.",
-    descAr:"سبورة لطيفة على شكل تفاحة للرسم والكتابة.",
-    price:330,
-    images:appleBoardImages
-  },
-  {
-    id:"makeupBag",
-    nameEn:"Unicorn Makeup Bag 🦄💄",
-    nameAr:"شنطة ميكب يونيكورن 🦄💄",
-    descEn:"A unicorn-themed makeup bag for kids.",
-    descAr:"شنطة ميكب للأطفال بتصميم يونيكورن.",
-    price:745,
-    images:makeupBagImages
-  },
-  {
-    id:"woodenBlocks",
-    nameEn:"Wooden Blocks",
-    nameAr:"مكعبات خشبية",
-    descEn:"Fun wooden blocks for creative play. Limited-time offer!",
-    descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",
-    price:160,
-    oldPrice:185,
-    images:[
-      "Wooden Blocks 1.jpg.jpg",
-      "Wooden Blocks 2.jpg.jpg",
-      "Wooden Blocks 3.jpg.jpg",
-      "Wooden Blocks 4.jpg.jpg"
-    ]
-  }
-];
-
-let language = "en";
-let cart = [];
-let imageIndexes = {};
-let lightboxProductId = null;
-let lightboxIndex = 0;
-
-function money(price) {
-  return `${price} ${language==="en"?"EGP":"جنيه"}`;
-}
-function productById(id) {
-  return productsData.find(product=>product.id===id);
-}
-function productName(product) {
-  return language==="en"?product.nameEn:product.nameAr;
-}
-function productDescription(product) {
-  return language==="en"?product.descEn:product.descAr;
-}
-
-function renderProducts() {
-  const container = document.getElementById("products");
-
-  container.innerHTML = productsData.map(product=>{
-    const index = imageIndexes[product.id]||0;
-    const images = product.images;
-    const currentImage = images[index]||images[0];
-
-    const gallery = `
-      <div class="gallery">
-        <img src="${imagePath(currentImage)}"
-             alt="${productName(product)}"
-             onclick="openLightbox('${product.id}',${index})"
-             onerror="this.style.opacity='0.2'">
-        ${images.length>1?`
-          <button class="gallery-arrow prev"
-            onclick="moveProductImage('${product.id}',-1,event)"
-            aria-label="Previous image">‹</button>
-          <button class="gallery-arrow next"
-            onclick="moveProductImage('${product.id}',1,event)"
-            aria-label="Next image">›</button>
-          <div class="gallery-count">${index+1} / ${images.length}</div>
-        `:""}
-      </div>`;
-
-    const priceMarkup = product.variants
-      ? `<div class="price" id="price-${product.id}">${money(product.variants[0].price)}</div>`
-      : `<div class="price">
-           ${money(product.price)}
-           ${product.oldPrice?`<span class="old-price">${money(product.oldPrice)}</span>`:""}
-         </div>`;
-
-    const variantMarkup = product.variants
-      ? `<select id="variant-${product.id}" onchange="updateVariantPrice('${product.id}')">
-           ${product.variants.map((variant,i)=>`
-             <option value="${i}">
-               ${language==="en"?variant.label:variant.labelAr} — ${money(variant.price)}
-             </option>
-           `).join("")}
-         </select>`
-      : "";
-
-    return `
-      <article class="product" id="product-${product.id}">
-        ${gallery}
-        <h3>${productName(product)}</h3>
-        <p class="product-description">${productDescription(product)}</p>
-        ${variantMarkup}
-        ${priceMarkup}
-        <button class="add-button" onclick="addToCart('${product.id}')">
-          ${language==="en"?"🛒 Add to Cart":"🛒 أضف إلى السلة"}
-        </button>
-      </article>`;
-  }).join("");
-}
-
-function goToWoodenBlocks() {
-  document.getElementById("product-woodenBlocks")
-    .scrollIntoView({behavior:"smooth",block:"center"});
-}
-function goToMarkers() {
-  document.getElementById("product-markers")
-    .scrollIntoView({behavior:"smooth",block:"center"});
-}
-
-function moveProductImage(id,direction,event) {
-  if(event) event.stopPropagation();
-  const product = productById(id);
-  if(!product||product.images.length<2) return;
-  const current = imageIndexes[id]||0;
-  imageIndexes[id]=(current+direction+product.images.length)%product.images.length;
-  renderProducts();
-}
-
-function openLightbox(id,index) {
-  lightboxProductId=id;
-  lightboxIndex=index;
-  document.getElementById("lightbox").classList.add("open");
-  updateLightbox();
-}
-function updateLightbox() {
-  const product=productById(lightboxProductId);
-  if(!product) return;
-  document.getElementById("lightboxImage").src=imagePath(product.images[lightboxIndex]);
-  document.getElementById("lightboxImage").alt=productName(product);
-  document.getElementById("lightboxCount").textContent=
-    `${lightboxIndex+1} / ${product.images.length}`;
-  const hasMany=product.images.length>1;
-  document.querySelector(".lightbox-prev").style.display=hasMany?"block":"none";
-  document.querySelector(".lightbox-next").style.display=hasMany?"block":"none";
-}
-function lightboxMove(direction,event) {
-  event.stopPropagation();
-  const product=productById(lightboxProductId);
-  if(!product||product.images.length<2) return;
-  lightboxIndex=(lightboxIndex+direction+product.images.length)%product.images.length;
-  updateLightbox();
-}
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("open");
-}
-document.addEventListener("keydown",event=>{
-  if(!document.getElementById("lightbox").classList.contains("open")) return;
-  if(event.key==="Escape") closeLightbox();
-  if(event.key==="ArrowRight") {
-    event.stopPropagation();
-    const product=productById(lightboxProductId);
-    if(product&&product.images.length>1) {
-      lightboxIndex=(lightboxIndex+1)%product.images.length;
-      updateLightbox();
-    }
-  }
-  if(event.key==="ArrowLeft") {
-    event.stopPropagation();
-    const product=productById(lightboxProductId);
-    if(product&&product.images.length>1) {
-      lightboxIndex=(lightboxIndex-1+product.images.length)%product.images.length;
-      updateLightbox();
-    }
-  }
-});
-
-function updateVariantPrice(id) {
-  const product=productById(id);
-  const select=document.getElementById(`variant-${id}`);
-  if(!product||!select) return;
-  const variant=product.variants[Number(select.value)];
-  document.getElementById(`price-${id}`).textContent=money(variant.price);
-}
-
-function addToCart(id) {
-  const product=productById(id);
-  if(!product) return;
-  let price=product.price;
-  let variantLabel="";
-  if(product.variants) {
-    const select=document.getElementById(`variant-${id}`);
-    const variant=product.variants[Number(select.value)];
-    price=variant.price;
-    variantLabel=language==="en"?variant.label:variant.labelAr;
-  }
-  const existing=cart.find(item=>
-    item.id===id&&item.price===price&&item.variantLabel===variantLabel
-  );
-  if(existing) existing.qty++;
-  else cart.push({id,price,qty:1,variantLabel});
-  renderCart();
-  document.getElementById("shoppingCart")
-    .scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-function changeQuantity(index,amount) {
-  if(!cart[index]) return;
-  cart[index].qty+=amount;
-  if(cart[index].qty<=0) cart.splice(index,1);
-  renderCart();
-}
-function removeCartItem(index) {
-  cart.splice(index,1);
-  renderCart();
-}
-
-function renderCart() {
-  const items=document.getElementById("cartItems");
-  if(cart.length===0) {
-    items.innerHTML=`<p style="text-align:center">${
-      language==="en"?"Your cart is empty.":"السلة فارغة حاليًا."
-    }</p>`;
-  } else {
-    items.innerHTML=cart.map((item,index)=>{
-      const product=productById(item.id);
-      const label=productName(product);
-      const variant=item.variantLabel?` — ${item.variantLabel}`:"";
-      return `
-        <div class="cart-item">
-          <div class="cart-item-info">
-            <strong>${label}${variant}</strong><br>
-            ${money(item.price)} × ${item.qty}<br>
-            <strong>${money(item.price*item.qty)}</strong>
-          </div>
-          <div class="quantity-controls">
-            <button onclick="changeQuantity(${index},-1)">−</button>
-            <span>${item.qty}</span>
-            <button onclick="changeQuantity(${index},1)">+</button>
-          </div>
-          <button class="remove-button" onclick="removeCartItem(${index})">
-            ${language==="en"?"Remove":"حذف"}
-          </button>
-        </div>`;
-    }).join("");
-  }
-
-  const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
-  document.getElementById("cartTotal").textContent=
-    `${language==="en"?"Total":"الإجمالي"}: ${money(total)}`;
-  document.getElementById("checkoutButton").textContent=
-    language==="en"?"Order on WhatsApp 💚":"اطلبي على واتساب 💚";
-}
-
-function checkoutWhatsApp() {
-  if(cart.length===0) {
-    alert(language==="en"
-      ?"Your cart is empty. Please add a product first."
-      :"السلة فارغة. أضيفي لعبة للسلة أولًا.");
-    return;
-  }
-
-  const lines=cart.map(item=>{
-    const product=productById(item.id);
-    const variant=item.variantLabel?` (${item.variantLabel})`:"";
-    return `${productName(product)}${variant} x${item.qty} = ${money(item.price*item.qty)}`;
-  });
-  const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
-
-  const message=language==="en"
-    ?`Hello Mickey Toys! I would like to order:\n\n${lines.join("\n")}\n\nTotal: ${money(total)}\nPlease confirm availability and shipping cost.`
-    :`أهلًا Mickey Toys، عايزة أطلب المنتجات دي:\n\n${lines.join("\n")}\n\nالإجمالي: ${money(total)}\nمن فضلكم أكدوا توافر المنتجات وتكلفة الشحن.`;
-
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,"_blank");
-}
-
-function setLanguage(lang) {
-  language=lang;
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
-
-  document.getElementById("englishButton").classList.toggle("active",lang==="en");
-  document.getElementById("arabicButton").classList.toggle("active",lang==="ar");
-
-  document.getElementById("tagline").textContent=
-    lang==="en"?"Fun toys for happy little ones!":"ألعاب ممتعة لأطفال مبسوطين!";
-  document.getElementById("offersTitle").textContent=
-    lang==="en"?"🎉 Special Offers":"🎉 عروض خاصة";
-  document.getElementById("offerBadge").textContent=
-    lang==="en"?"LIMITED-TIME OFFER":"عرض لفترة محدودة";
-  document.getElementById("woodenOfferDescription").textContent=
-    lang==="en"?"Fun wooden blocks for creative play!":"مكعبات خشبية ممتعة للعب والإبداع!";
-  document.getElementById("offerSaving").textContent=
-    lang==="en"?"Save 25 EGP!":"وفّري 25 جنيه!";
-  document.getElementById("offerShopButton").textContent=
-    lang==="en"?"Shop Now":"تسوّقي الآن";
-  document.getElementById("markerOfferBadge").textContent=
-    lang==="en"?"SPECIAL OFFER":"عرض خاص";
-  document.getElementById("markerOfferName").textContent=
-    lang==="en"?"Touch 48pcs Markers 🎨":"ألوان ماركر تاتش 48 قطعة 🎨";
-  document.getElementById("markerOfferDescription").textContent=
-    lang==="en"?"A colorful set for drawing and creativity.":"مجموعة ألوان للرسم والإبداع.";
-  document.getElementById("markerOfferSaving").textContent=
-    lang==="en"?"Save 26 EGP!":"وفّري 26 جنيه!";
-  document.getElementById("markerOfferShopButton").textContent=
-    lang==="en"?"Shop Now":"تسوّقي الآن";
-  document.getElementById("productsTitle").textContent=
-    lang==="en"?"Our Toys":"ألعابنا";
-  document.getElementById("cartTitle").textContent=
-    lang==="en"?"🛒 Shopping Cart":"🛒 سلة المشتريات";
-  document.getElementById("shippingNote").textContent=
-    lang==="en"
-      ?"Shipping cost will be confirmed before the order is completed."
-      :"سيتم تأكيد تكلفة الشحن قبل إتمام الطلب.";
-  document.getElementById("contactTitle").textContent=
-    lang==="en"?"📱 Contact Mickey Toys":"📱 تواصلي مع Mickey Toys";
-  document.getElementById("contactDescription").textContent=
-    lang==="en"
-      ?"Have a question? Contact us directly on WhatsApp."
-      :"عندك أي سؤال؟ تواصلي معانا مباشرة على واتساب.";
-  document.getElementById("contactButton").textContent=
-    lang==="en"?"Chat with us on WhatsApp 💚":"كلمينا على واتساب 💚";
-  document.getElementById("facebookButton").textContent=
-    lang==="en"?"Follow Us on Facebook 💙":"تابعينا على فيسبوك 💙";
-
-  renderProducts();
-  renderCart();
-  if(document.getElementById("lightbox").classList.contains("open")) updateLightbox();
-}
-
-renderProducts();
-renderCart();
+function goToProduct(id){const el=document.getElementById("product-"+id);if(el)el.scrollIntoView({behavior:"smooth",block:"center"})}
+function moveProductImage(id,dir,event){if(event)event.stopPropagation();const p=productById(id);if(!p||p.images.length<2)return;imageIndexes[id]=((imageIndexes[id]||0)+dir+p.images.length)%p.images.length;renderProducts()}
+function openLightbox(id,index){lightboxProductId=id;lightboxIndex=index;document.getElementById("lightbox").classList.add("open");updateLightbox()}
+function updateLightbox(){const p=productById(lightboxProductId);if(!p)return;document.getElementById("lightboxImage").src=imagePath(p.images[lightboxIndex]);document.getElementById("lightboxImage").alt=productName(p);document.getElementById("lightboxCount").textContent=`${lightboxIndex+1} / ${p.images.length}`;const many=p.images.length>1;document.querySelector(".lightbox-prev").style.display=many?"block":"none";document.querySelector(".lightbox-next").style.display=many?"block":"none"}
+function lightboxMove(dir,event){event.stopPropagation();const p=productById(lightboxProductId);if(!p||p.images.length<2)return;lightboxIndex=(lightboxIndex+dir+p.images.length)%p.images.length;updateLightbox()}
+function closeLightbox(){document.getElementById("lightbox").classList.remove("open")}
+document.addEventListener("keydown",e=>{if(!document.getElementById("lightbox").classList.contains("open"))return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const p=productById(lightboxProductId);if(p&&p.images.length>1){lightboxIndex=(lightboxIndex+(e.key==="ArrowRight"?1:-1)+p.images.length)%p.images.length;updateLightbox()}}});
+function updateVariantPrice(id){const p=productById(id),s=document.getElementById("variant-"+id);if(p&&s)document.getElementById("price-"+id).textContent=money(p.variants[Number(s.value)].price)}
+function addToCart(id){const p=productById(id);if(!p)return;let price=p.price,label="";if(p.variants){const v=p.variants[Number(document.getElementById("variant-"+id).value)];price=v.price;label=language==="en"?v.label:v.labelAr}const found=cart.find(i=>i.id===id&&i.price===price&&i.variantLabel===label);if(found)found.qty++;else cart.push({id,price,qty:1,variantLabel:label});renderCart();document.getElementById("shoppingCart").scrollIntoView({behavior:"smooth",block:"start"})}
+function changeQuantity(i,n){if(!cart[i])return;cart[i].qty+=n;if(cart[i].qty<=0)cart.splice(i,1);renderCart()}
+function removeCartItem(i){cart.splice(i,1);renderCart()}
+function renderCart(){const box=document.getElementById("cartItems");if(!cart.length){box.innerHTML=`<p style="text-align:center">${language==="en"?"Your cart is empty.":"السلة فارغة حاليًا."}</p>`}else{box.innerHTML=cart.map((item,i)=>{const p=productById(item.id),v=item.variantLabel?` — ${item.variantLabel}`:"";return `<div class="cart-item"><div class="cart-item-info"><strong>${productName(p)}${v}</strong><br>${money(item.price)} × ${item.qty}<br><strong>${money(item.price*item.qty)}</strong></div><div class="quantity-controls"><button onclick="changeQuantity(${i},-1)">−</button><span>${item.qty}</span><button onclick="changeQuantity(${i},1)">+</button></div><button class="remove-button" onclick="removeCartItem(${i})">${language==="en"?"Remove":"حذف"}</button></div>`}).join("")}const total=cart.reduce((s,i)=>s+i.price*i.qty,0);document.getElementById("cartTotal").textContent=`${language==="en"?"Total":"الإجمالي"}: ${money(total)}`;document.getElementById("checkoutButton").textContent=language==="en"?"Order on WhatsApp 💚":"اطلبي على واتساب 💚"}
+function checkoutWhatsApp(){if(!cart.length){alert(language==="en"?"Your cart is empty. Please add a product first.":"السلة فارغة. أضيفي لعبة للسلة أولًا.");return}const lines=cart.map(i=>{const p=productById(i.id),v=i.variantLabel?` (${i.variantLabel})`:"";return `${productName(p)}${v} x${i.qty} = ${money(i.price*i.qty)}`});const total=cart.reduce((s,i)=>s+i.price*i.qty,0);const msg=language==="en"?`Hello Mickey Toys! I would like to order:\n\n${lines.join("\n")}\n\nTotal: ${money(total)}\nPlease confirm availability and shipping cost.`:`أهلًا Mickey Toys، عايزة أطلب المنتجات دي:\n\n${lines.join("\n")}\n\nالإجمالي: ${money(total)}\nمن فضلكم أكدوا توافر المنتجات وتكلفة الشحن.`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank")}
+function setLanguage(lang){language=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.getElementById("englishButton").classList.toggle("active",lang==="en");document.getElementById("arabicButton").classList.toggle("active",lang==="ar");
+const t=(id,en,ar)=>document.getElementById(id).textContent=lang==="en"?en:ar;
+t("tagline","Fun toys for happy little ones!","ألعاب ممتعة لأطفال مبسوطين!");t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");t("offerBadge","LIMITED-TIME OFFER","عرض لفترة محدودة");t("woodenOfferDescription","Fun wooden blocks for creative play!","مكعبات خشبية ممتعة للعب والإبداع!");t("offerSaving","Save 25 EGP!","وفّري 25 جنيه!");t("offerShopButton","Shop Now","تسوّقي الآن");t("markerOfferBadge","SPECIAL OFFER","عرض خاص");t("markerOfferName","Touch 48pcs Markers 🎨","ألوان ماركر تاتش 48 قطعة 🎨");t("markerOfferDescription","A colorful set for drawing and creativity.","مجموعة ألوان للرسم والإبداع.");t("markerOfferSaving","Save 26 EGP!","وفّري 26 جنيه!");t("markerOfferShopButton","Shop Now","تسوّقي الآن");t("productsTitle","Our Toys","ألعابنا");t("cartTitle","🛒 Shopping Cart","🛒 سلة المشتريات");t("shippingNote","Shipping cost will be confirmed before the order is completed.","سيتم تأكيد تكلفة الشحن قبل إتمام الطلب.");t("contactTitle","📱 Contact Mickey Toys","📱 تواصلي مع Mickey Toys");t("contactDescription","Have a question? Contact us directly on WhatsApp.","عندك أي سؤال؟ تواصلي معانا مباشرة على واتساب.");t("contactButton","Chat with us on WhatsApp 💚","كلمينا على واتساب 💚");t("facebookButton","Follow Us on Facebook 💙","تابعينا على فيسبوك 💙");renderProducts();renderCart();if(document.getElementById("lightbox").classList.contains("open"))updateLightbox()}
+renderProducts();renderCart();
 </script>
 </body>
 </html>
