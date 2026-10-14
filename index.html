@@ -35,11 +35,11 @@ h2.section-title{text-align:center;margin:34px 10px 22px;color:var(--pink);font-
 .product select{width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:9px;color:var(--text);background:#fff}
 .add-button{display:block;width:100%;padding:13px 10px;background:var(--pink);color:#fff;border:0;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:12px}
 .add-button:hover{background:var(--pink-dark)}
-.offers-section{max-width:1100px;width:calc(100% - 28px);margin:26px auto;padding:24px 18px;background:linear-gradient(120deg,#fff0f7,#eef8ff);border:1px solid var(--border);border-radius:22px;text-align:center;box-shadow:var(--shadow)}
+.catalog-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:22px;max-width:1440px;margin:18px auto 30px;padding:0 18px;align-items:start}.catalog-main{min-width:0}.offers-section{width:100%;margin:16px 0 0;padding:16px 12px;background:linear-gradient(160deg,#fff0f7,#eef8ff);border:1px solid var(--border);border-radius:22px;text-align:center;box-shadow:var(--shadow);position:sticky;top:82px}.offers-section h2{font-size:23px;margin:0 0 14px}.catalog-main h2.section-title{margin-top:22px}
 .offers-section h2{color:var(--pink);font-size:28px;margin:0 0 20px}
-.offer-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:800px;margin:auto}
+.offer-cards{display:grid;grid-template-columns:1fr;gap:14px;max-width:100%;margin:auto}
 .offer-card{padding:16px;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
-.offer-image{display:block;width:100%;height:210px;object-fit:contain;background:#fffafd;border-radius:12px;margin:0 auto 14px;border:1px solid #f7d5e3}
+.offer-image{display:block;width:100%;height:150px;object-fit:contain;background:#fffafd;border-radius:12px;margin:0 auto 14px;border:1px solid #f7d5e3}
 .offer-badge{display:inline-block;padding:8px 12px;border-radius:20px;background:var(--pink);color:#fff;font-size:12px;font-weight:bold}
 .offer-card h3{color:var(--text);font-size:22px;margin:16px 0 8px}.offer-card p{line-height:1.6}
 .offer-prices{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
@@ -63,8 +63,9 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 .lightbox-close{top:12px;right:16px;width:42px;height:42px;border-radius:50%;font-size:26px}
 .lightbox-arrow{top:50%;transform:translateY(-50%);border-radius:50%;width:45px;height:45px;font-size:28px}
 .lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-count{position:absolute;bottom:12px;color:#fff;font-size:15px}
-@media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
-@media(max-width:560px){header h1{font-size:28px!important}.products{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px;gap:10px}.product{padding:9px;border-radius:15px}.product h3{font-size:16px}.product-description{font-size:12px;min-height:0}.gallery{height:180px}.price{font-size:19px}.add-button{font-size:13px;padding:11px 6px}.offer-cards{grid-template-columns:1fr}.offer-image{height:190px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
+@media(max-width:1050px){.catalog-layout{grid-template-columns:210px minmax(0,1fr);gap:14px;padding:0 12px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.gallery{height:210px}}
+@media(max-width:720px){.catalog-layout{display:flex;flex-direction:column;gap:8px;padding:0 10px}.offers-section{position:static;order:0;margin:10px 0 4px;padding:12px;width:100%}.offers-section h2{font-size:22px}.offer-cards{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:6px}.offer-card{flex:0 0 78%;max-width:300px;scroll-snap-align:start;padding:12px}.offer-image{height:135px}.catalog-main{width:100%;order:1}.catalog-main h2.section-title{margin-top:18px}}
+@media(max-width:560px){header h1{font-size:28px!important}.products{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px;gap:10px}.product{padding:9px;border-radius:15px}.product h3{font-size:16px}.product-description{font-size:12px;min-height:0}.gallery{height:180px}.price{font-size:19px}.add-button{font-size:13px;padding:11px 6px}.offer-cards{display:flex;grid-template-columns:none}.offer-card{flex-basis:78%}.offer-image{height:135px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
 @media(max-width:360px){.products{grid-template-columns:1fr}.gallery{height:260px}}
 </style>
 </head>
@@ -76,7 +77,8 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 </div>
 <div class="banner"><img src="mickey-banner.png.jpeg" alt="Mickey Toys" onerror="this.style.display='none'"></div>
 
-<section class="offers-section" id="specialOffers">
+<div class="catalog-layout">
+<aside class="offers-section" id="specialOffers">
 <h2 id="offersTitle">🎉 Special Offers</h2>
 <div class="offer-cards">
 <article class="offer-card">
@@ -88,7 +90,7 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 <button class="add-button" onclick="goToProduct('woodenBlocks')"><span id="offerShopButton">Shop Now</span></button>
 </article>
 <article class="offer-card">
-<img class="offer-image" src="WhatsApp%20Image%202026-10-07%20at%2011.43.27%20PM.jpeg" alt="Touch 48pcs Markers" onerror="this.style.display='none'">
+<img class="offer-image" src="عرض%20جنجا.jpg" alt="Jenga Special Offer" onerror="this.style.display='none'">
 <span class="offer-badge" id="markerOfferBadge">SPECIAL OFFER</span>
 <h3 id="markerOfferName">Touch 48pcs Markers 🎨</h3><p id="markerOfferDescription">A colorful set for drawing and creativity.</p>
 <p class="offer-prices"><span class="offer-old-price">275 EGP</span><span class="offer-new-price">249 EGP</span></p>
@@ -96,11 +98,13 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 <button class="add-button" onclick="goToProduct('markers')"><span id="markerOfferShopButton">Shop Now</span></button>
 </article>
 </div>
-</section>
-
+</aside>
+<div class="catalog-main">
 <h2 class="section-title" id="productsTitle">Our Toys</h2>
 <nav class="category-nav" aria-label="Product categories"><button class="category-chip active" onclick="filterProducts('all',this)" id="catAll">All Toys</button><button class="category-chip" onclick="filterProducts('art',this)" id="catArt">Art & Colors</button><button class="category-chip" onclick="filterProducts('build',this)" id="catBuild">Building Toys</button><button class="category-chip" onclick="filterProducts('play',this)" id="catPlay">Kids Toys</button></nav>
 <main class="products" id="products"></main>
+</div>
+</div>
 
 <section class="cart-section" id="shoppingCart">
 <h2 id="cartTitle">🛒 Shopping Cart</h2><div id="cartItems"></div>
@@ -126,31 +130,30 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 <script>
 const WHATSAPP_NUMBER="201107743657";
 const productsData=[
-{id:"headset",nameEn:"Barbie Headset",nameAr:"سماعة باربي",descEn:"A fun headset for kids.",descAr:"سماعة ممتعة للأطفال.",price:495,images:[
-"WhatsApp Image 2026-10-11 at 9.44.09 AM(2).jpeg","WhatsApp Image 2026-10-11 at 9.44.05 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.05 AM(1).jpeg","WhatsApp Image 2026-10-11 at 9.44.06 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.07 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM(1).jpeg","WhatsApp Image 2026-10-11 at 9.44.10 AM.jpeg"]},
 {id:"markers",nameEn:"Touch 48pcs Markers",nameAr:"ألوان ماركر تاتش 48 قطعة",descEn:"Special offer! A colorful set for drawing and creativity.",descAr:"عرض خاص! مجموعة ألوان للرسم والإبداع.",price:249,oldPrice:275,images:[
-"WhatsApp Image 2026-10-07 at 11.43.27 PM.jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg","WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
-{id:"touch60",nameEn:"Touch Markers — 60 Colors",nameAr:"شنطة ماركر تاتش — 60 لون",descEn:"Touch marker set with 60 colors.",descAr:"شنطة ألوان ماركر تاتش 60 لون.",price:330,images:["WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg"]},
-{id:"touch80",nameEn:"Touch Markers — 80 Colors",nameAr:"شنطة ماركر تاتش — 80 لون",descEn:"Touch marker set with 80 colors.",descAr:"شنطة ألوان ماركر تاتش 80 لون.",price:420,images:["WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg"]},
-{id:"metallicColors",nameEn:"Two-Tier Metal Art Case — 145 Pieces",nameAr:"شنطة ألوان معدنية دورين — 145 قطعة",descEn:"A two-tier metal art case with 145 pieces. Choose pink unicorn or light blue design.",descAr:"شنطة ألوان معدنية دورين تضم 145 قطعة. اختاري التصميم الوردي يونيكورن أو الأزرق الفاتح.",price:630,variants:[{label:"Pink Unicorn",labelAr:"وردي يونيكورن",price:630},{label:"Light Blue Design",labelAr:"أزرق فاتح",price:630}],images:["شنطه الوان معدن 1.jpeg","شنطه الوان معدن 2.jpeg","شنطه الوان معدن 3.jpeg","شنطه الوان معدن 4.jpeg","شنطه الوان معدن 5.jpeg","شنطه الوان معدن 6.jpeg","شنطه الوان معدن 7.jpeg","شنطه الوان معدن 8.jpeg","شنطه الوان معدن 9.jpeg"]},
+"WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg","WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
+{id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:185,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]},
+{id:"largeXylophone",nameEn:"Large Xylophone Piano",nameAr:"إكسيلفون بيانو حجم كبير",descEn:"A large colorful xylophone piano for musical play.",descAr:"إكسيلفون بيانو كبير وملون للعب والموسيقى.",price:429,images:["اكسيلفون بيانو حجم كبير 1.jpeg","اكسيلفون بيانو حجم كبير 2.jpeg"]},
 {id:"safe",nameEn:"Kids Money Safe",nameAr:"خزنة نقود للأطفال",descEn:"A fun way for children to save their money.",descAr:"طريقة ممتعة لتعليم الأطفال توفير النقود.",price:420,images:["WhatsApp Image 2026-10-08 at 12.03.11 AM.jpeg"]},
-
+{id:"touch60",nameEn:"Touch Markers — 60 Colors",nameAr:"شنطة ماركر تاتش — 60 لون",descEn:"Touch marker set with 60 colors.",descAr:"شنطة ألوان ماركر تاتش 60 لون.",price:325,images:["تاتش 60 لون 1.jpeg","تاتش 60 لون 2.jpeg","تاتش 60 لون 3.jpeg"]},
+{id:"metallicColors",nameEn:"Two-Tier Metal Art Case — 145 Pieces",nameAr:"شنطة ألوان معدنية دورين — 145 قطعة",descEn:"A two-tier metal art case with 145 pieces. Choose pink unicorn or light blue design.",descAr:"شنطة ألوان معدنية دورين تضم 145 قطعة. اختاري التصميم الوردي يونيكورن أو الأزرق الفاتح.",price:630,variants:[{label:"Pink Unicorn",labelAr:"وردي يونيكورن",price:630},{label:"Light Blue Design",labelAr:"أزرق فاتح",price:630}],images:["شنطه الوان معدن 1.jpeg","شنطه الوان معدن 2.jpeg","شنطه الوان معدن 3.jpeg","شنطه الوان معدن 4.jpeg","شنطه الوان معدن 5.jpeg","شنطه الوان معدن 6.jpeg","شنطه الوان معدن 7.jpeg","شنطه الوان معدن 8.jpeg","شنطه الوان معدن 9.jpeg"]},
 {id:"magnetic",nameEn:"Magnetic Building Sticks",nameAr:"عصي البناء المغناطيسية",descEn:"Magnetic building toy. Choose the number of pieces.",descAr:"لعبة تركيب مغناطيسية. اختاري عدد القطع.",variants:[{label:"42 pieces",labelAr:"42 قطعة",price:360},{label:"64 pieces",labelAr:"64 قطعة",price:460},{label:"84 pieces",labelAr:"84 قطعة",price:550}],images:[
 "WhatsApp Image 2026-10-11 at 10.29.26 AM(3).jpeg","WhatsApp Image 2026-10-11 at 10.29.26 AM(2).jpeg","WhatsApp Image 2026-10-11 at 10.29.26 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.29.26 AM.jpeg","WhatsApp Image 2026-10-11 at 10.29.25 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.29.25 AM.jpeg"]},
+{id:"touch80",nameEn:"Touch Markers — 80 Colors",nameAr:"شنطة ماركر تاتش — 80 لون",descEn:"Touch marker set with 80 colors.",descAr:"شنطة ألوان ماركر تاتش 80 لون.",price:420,images:["تاتش80لون 1.jpeg","تاتش80لون2.jpg"]},
+{id:"headset",nameEn:"Barbie Headset",nameAr:"سماعة باربي",descEn:"A fun headset for kids.",descAr:"سماعة ممتعة للأطفال.",price:495,images:[
+"WhatsApp Image 2026-10-11 at 9.44.09 AM(2).jpeg","WhatsApp Image 2026-10-11 at 9.44.05 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.05 AM(1).jpeg","WhatsApp Image 2026-10-11 at 9.44.06 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.07 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM.jpeg","WhatsApp Image 2026-10-11 at 9.44.09 AM(1).jpeg","WhatsApp Image 2026-10-11 at 9.44.10 AM.jpeg"]},
 {id:"appleBoard",nameEn:"Apple-Shaped Blackboard",nameAr:"سبورة على شكل تفاحة",descEn:"A cute apple-shaped board for drawing and writing.",descAr:"سبورة لطيفة على شكل تفاحة للرسم والكتابة.",price:330,images:["السبوره شكل تفاحه 1.jpg","السبوره شكل تفاحه 2.jpg","السبوره شكل تفاحه 3.jpg","السبوره شكل تفاحه 4.jpg","السبوره شكل تفاحه 5.jpg","السبوره شكل تفاحه 6.jpg","السبوره شكل تفاحه 7.jpg"]},
 {id:"makeupBag",nameEn:"Unicorn Makeup Bag 🦄💄",nameAr:"شنطة ميك أب يونيكورن 🦄💄",descEn:"A unicorn-themed makeup bag for kids.",descAr:"شنطة ميك أب للأطفال بتصميم يونيكورن.",price:695,images:["شنطه ميكب يونى كورن 1.jpeg","شنطه ميكب يونى كورن 2.jpeg","شنطه ميكب يونى كورن 3.jpeg","شنطه ميكب يونى كورن 4.jpeg","شنطه ميكب يونى كورن 5.jpeg","شنطه ميكب يونى كورن 6.jpeg"]},
-
 {id:"colledoll",nameEn:"Colledoll Makeup Bag",nameAr:"شنطة ميكب Colledoll",descEn:"A fun makeup bag for kids.",descAr:"شنطة ميكب ممتعة للأطفال.",price:549,images:["شنطه ميكب colledoll 1.jpg","شنطه ميكب colledoll 2.jpg","شنطه ميكب colledoll 3.jpg","شنطه ميكب colledoll 4.jpg","شنطه ميكب colledoll 5.jpg","شنطه ميكب colledoll 6.jpg","شنطه ميكب colledoll 7.jpg","شنطه ميكب colledoll 8.jpg"]},
 {id:"animalPiano",nameEn:"Animal Sounds Piano",nameAr:"بيانو أصوات الحيوانات",descEn:"A playful piano with animal sounds.",descAr:"بيانو ممتع بأصوات الحيوانات.",price:375,images:["بيانو اصوات الحيوانات 1.jpg","بيانو اصوات الحيوانات 2.jpg","بيانو اصوات الحيوانات 3.jpg"]},
 {id:"flashCards",nameEn:"Flash Cards",nameAr:"فلاش كارد",descEn:"Educational flash cards for kids.",descAr:"كروت تعليمية للأطفال.",price:210,images:["فلاش كارد 1.jpg","فلاش كارد 2.jpg","فلاش كارد 3.jpg","فلاش كارد 4.jpg","فلاش كارد 5.jpg","فلاش كارد 6.jpg"]},
 {id:"magneticWhiteboard",nameEn:"Magnetic Whiteboard",nameAr:"السبورة المغناطيسية",descEn:"A magnetic whiteboard for writing and drawing.",descAr:"سبورة مغناطيسية للكتابة والرسم.",price:330,images:["Magnetic whiteboard 1.jpg","Magnetic whiteboard 2.jpg","Magnetic whiteboard 3.jpg","Magnetic whiteboard 4.jpg","Magnetic whiteboard 5.jpg"]},
 {id:"colors208",nameEn:"208-Color Set",nameAr:"علبة ألوان 208 لون",descEn:"A colorful 208-color art set.",descAr:"علبة ألوان متنوعة تضم 208 لون.",price:390,images:["علبه الوان 208 لون 1.jpg","علبه الوان 208 لون 2.jpg","علبه الوان 208 لون 3.jpg","علبه الوان 208 لون 4.jpg","علبه الوان 208 لون 5.jpg","علبه الوان 208 لون 6.jpg","علبه الوان 208 لون 7.jpg"]},
-{id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:185,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]},
 {id:"siliconeBalls",nameEn:"Silicone Balls",nameAr:"كور سيليكون",descEn:"Colorful silicone balls for play.",descAr:"كور سيليكون ملونة للعب.",price:195,images:["كور سيلكون 1.jpeg","كور سيلكون 2.jpeg","كور سيلكون 3.jpeg"]},
 {id:"shakhalil",nameEn:"Baby Rattles",nameAr:"شخاليل",descEn:"Colorful rattles for little ones.",descAr:"شخاليل ملونة للصغار.",price:345,images:["شخاليل 1.jpg","شخاليل 2.jpg","شخاليل 3.jpg","شخاليل 4.jpg","شخاليل 5.jpg"]}
-];
+];;
 let language="en",cart=[],imageIndexes={},lightboxProductId=null,lightboxIndex=0,activeCategory="all";
-const productCategories={headset:"play",markers:"art",touch60:"art",touch80:"art",metallicColors:"art",safe:"play",magnetic:"build",appleBoard:"art",makeupBag:"play",colledoll:"play",animalPiano:"play",flashCards:"art",magneticWhiteboard:"art",colors208:"art",woodenBlocks:"build",siliconeBalls:"play",shakhalil:"play"};
+const productCategories={headset:"play",markers:"art",largeXylophone:"play",touch60:"art",touch80:"art",metallicColors:"art",safe:"play",magnetic:"build",appleBoard:"art",makeupBag:"play",colledoll:"play",animalPiano:"play",flashCards:"art",magneticWhiteboard:"art",colors208:"art",woodenBlocks:"build",siliconeBalls:"play",shakhalil:"play"};
 function filterProducts(category,button){activeCategory=category;document.querySelectorAll(".category-chip").forEach(b=>b.classList.remove("active"));if(button)button.classList.add("active");renderProducts()}
 function imagePath(filename){return encodeURIComponent(filename).replace(/%2F/gi,"/")}
 function money(price){return `${price} ${language==="en"?"EGP":"جنيه"}`}
