@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mickey Toys</title>
 <style>
-:root{--pink-bg:#fff0f6;--pink:#c83e78;--pink-dark:#ad2f65;--text:#594957;--green:#25d366;--green-dark:#128c4a;--border:#f0bbd2}
+:root{--pink-bg:#fffafd;--pink:#d95791;--pink-dark:#bb3975;--blue:#9bcde8;--text:#554b59;--green:#25d366;--green-dark:#128c4a;--border:#f3d7e5;--shadow:0 8px 24px rgba(104,65,91,.08)}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--pink-bg);color:var(--text)}
-header{background:linear-gradient(135deg,#c83e78,#f078a8);color:#fff;text-align:center;padding:24px 15px}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(180deg,#fffafd 0%,#f7fbff 100%);color:var(--text)}
+header{background:linear-gradient(120deg,#f6a8cb,#a9d8ef);color:#fff;text-align:center;padding:22px 15px;box-shadow:0 4px 18px #d88ab422}
 header h1{margin:0 0 8px;font-size:32px}header p{margin:0;font-size:16px}
-.language-bar{display:flex;justify-content:center;gap:8px;padding:12px}
+.language-bar{display:flex;justify-content:center;gap:8px;padding:12px;position:sticky;top:0;z-index:20;background:#fffafdf0;backdrop-filter:blur(8px)}
 button,select{font:inherit}
 .language-bar button{background:#fff;color:var(--pink);border:1px solid var(--pink);padding:9px 16px;border-radius:20px;cursor:pointer;font-weight:bold}
 .language-bar button.active{background:var(--pink);color:#fff}
@@ -18,13 +18,14 @@ button,select{font:inherit}
 .banner img{display:block;width:100%;max-height:420px;object-fit:contain;border-radius:16px}
 header h1{font-size:40px!important}
 @media(max-width:520px){header h1{font-size:34px!important}.banner img{max-height:300px}}
-h2.section-title{text-align:center;margin:28px 10px;color:var(--pink);font-size:30px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;max-width:1200px;padding:0 16px;margin:0 auto 35px}
-.product{background:linear-gradient(145deg,#fffafd,#ffeaf3);border:2px solid var(--border);border-radius:18px;padding:13px;min-width:0;box-shadow:0 5px 14px #9632641f;transition:transform .2s,box-shadow .2s}
+h2.section-title{text-align:center;margin:34px 10px 22px;color:var(--pink);font-size:30px}
+.category-nav{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;padding:0 12px;margin:0 auto 22px;max-width:1100px}.category-chip{border:1px solid #eac6da;background:#fff;color:var(--pink-dark);border-radius:22px;padding:10px 16px;font-weight:bold;cursor:pointer}.category-chip.active,.category-chip:hover{background:var(--pink);color:#fff;border-color:var(--pink)}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1200px;padding:0 18px;margin:0 auto 38px}
+.product{background:#fff;border:1px solid var(--border);border-radius:20px;padding:14px;min-width:0;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
 .product:hover{transform:translateY(-3px);box-shadow:0 8px 20px #9632642e}
 .product h3{color:var(--text);font-size:20px;margin:13px 0 8px;line-height:1.4}
 .product-description{color:var(--text);font-size:14px;line-height:1.6;min-height:44px;margin:8px 0}
-.gallery{position:relative;width:100%;height:250px;background:#fffafd;border-radius:12px;overflow:hidden;border:1px solid #f7d5e3}
+.gallery{position:relative;width:100%;height:245px;background:linear-gradient(145deg,#fffafd,#f4faff);border-radius:15px;overflow:hidden;border:1px solid #f5e1eb}
 .gallery img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
 .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:40px;border:0;border-radius:20px;background:#ffffffed;color:var(--pink);font-size:25px;font-weight:bold;cursor:pointer;box-shadow:0 2px 8px #0002}
 .gallery-arrow.prev{left:6px}.gallery-arrow.next{right:6px}
@@ -34,10 +35,10 @@ h2.section-title{text-align:center;margin:28px 10px;color:var(--pink);font-size:
 .product select{width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:9px;color:var(--text);background:#fff}
 .add-button{display:block;width:100%;padding:13px 10px;background:var(--pink);color:#fff;border:0;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:12px}
 .add-button:hover{background:var(--pink-dark)}
-.offers-section{max-width:1100px;width:calc(100% - 28px);margin:28px auto;padding:24px 16px;background:linear-gradient(135deg,#ffe3ef,#fffafd);border:2px solid var(--border);border-radius:20px;text-align:center;box-shadow:0 6px 18px #64284619}
+.offers-section{max-width:1100px;width:calc(100% - 28px);margin:26px auto;padding:24px 18px;background:linear-gradient(120deg,#fff0f7,#eef8ff);border:1px solid var(--border);border-radius:22px;text-align:center;box-shadow:var(--shadow)}
 .offers-section h2{color:var(--pink);font-size:28px;margin:0 0 20px}
 .offer-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:800px;margin:auto}
-.offer-card{padding:16px;background:#fff;border:2px dashed var(--pink);border-radius:16px}
+.offer-card{padding:16px;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
 .offer-image{display:block;width:100%;height:210px;object-fit:contain;background:#fffafd;border-radius:12px;margin:0 auto 14px;border:1px solid #f7d5e3}
 .offer-badge{display:inline-block;padding:8px 12px;border-radius:20px;background:var(--pink);color:#fff;font-size:12px;font-weight:bold}
 .offer-card h3{color:var(--text);font-size:22px;margin:16px 0 8px}.offer-card p{line-height:1.6}
@@ -62,7 +63,9 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 .lightbox-close{top:12px;right:16px;width:42px;height:42px;border-radius:50%;font-size:26px}
 .lightbox-arrow{top:50%;transform:translateY(-50%);border-radius:50%;width:45px;height:45px;font-size:28px}
 .lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-count{position:absolute;bottom:12px;color:#fff;font-size:15px}
-@media(max-width:520px){header h1{font-size:27px}.products{grid-template-columns:1fr;padding:0 12px;gap:15px}.gallery{height:290px}.product{padding:12px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:560px){header h1{font-size:28px!important}.products{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px;gap:10px}.product{padding:9px;border-radius:15px}.product h3{font-size:16px}.product-description{font-size:12px;min-height:0}.gallery{height:180px}.price{font-size:19px}.add-button{font-size:13px;padding:11px 6px}.offer-cards{grid-template-columns:1fr}.offer-image{height:190px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
+@media(max-width:360px){.products{grid-template-columns:1fr}.gallery{height:260px}}
 </style>
 </head>
 <body>
@@ -96,6 +99,7 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 </section>
 
 <h2 class="section-title" id="productsTitle">Our Toys</h2>
+<nav class="category-nav" aria-label="Product categories"><button class="category-chip active" onclick="filterProducts('all',this)" id="catAll">All Toys</button><button class="category-chip" onclick="filterProducts('art',this)" id="catArt">Art & Colors</button><button class="category-chip" onclick="filterProducts('build',this)" id="catBuild">Building Toys</button><button class="category-chip" onclick="filterProducts('play',this)" id="catPlay">Kids Toys</button></nav>
 <main class="products" id="products"></main>
 
 <section class="cart-section" id="shoppingCart">
@@ -128,6 +132,7 @@ const productsData=[
 "WhatsApp Image 2026-10-07 at 11.43.27 PM.jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg","WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
 {id:"touch60",nameEn:"Touch Markers — 60 Colors",nameAr:"شنطة ماركر تاتش — 60 لون",descEn:"Touch marker set with 60 colors.",descAr:"شنطة ألوان ماركر تاتش 60 لون.",price:330,images:["WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg"]},
 {id:"touch80",nameEn:"Touch Markers — 80 Colors",nameAr:"شنطة ماركر تاتش — 80 لون",descEn:"Touch marker set with 80 colors.",descAr:"شنطة ألوان ماركر تاتش 80 لون.",price:420,images:["WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg"]},
+{id:"metallicColors",nameEn:"Two-Tier Metal Art Case — 145 Pieces",nameAr:"شنطة ألوان معدنية دورين — 145 قطعة",descEn:"A two-tier metal art case with 145 pieces. Choose pink unicorn or light blue design.",descAr:"شنطة ألوان معدنية دورين تضم 145 قطعة. اختاري التصميم الوردي يونيكورن أو الأزرق الفاتح.",price:630,variants:[{label:"Pink Unicorn",labelAr:"وردي يونيكورن",price:630},{label:"Light Blue Design",labelAr:"أزرق فاتح",price:630}],images:["شنطه الوان معدن 1.jpeg","شنطه الوان معدن 2.jpeg","شنطه الوان معدن 3.jpeg","شنطه الوان معدن 4.jpeg","شنطه الوان معدن 5.jpeg","شنطه الوان معدن 6.jpeg","شنطه الوان معدن 7.jpeg","شنطه الوان معدن 8.jpeg","شنطه الوان معدن 9.jpeg"]},
 {id:"safe",nameEn:"Kids Money Safe",nameAr:"خزنة نقود للأطفال",descEn:"A fun way for children to save their money.",descAr:"طريقة ممتعة لتعليم الأطفال توفير النقود.",price:420,images:["WhatsApp Image 2026-10-08 at 12.03.11 AM.jpeg"]},
 
 {id:"magnetic",nameEn:"Magnetic Building Sticks",nameAr:"عصي البناء المغناطيسية",descEn:"Magnetic building toy. Choose the number of pieces.",descAr:"لعبة تركيب مغناطيسية. اختاري عدد القطع.",variants:[{label:"42 pieces",labelAr:"42 قطعة",price:360},{label:"64 pieces",labelAr:"64 قطعة",price:460},{label:"84 pieces",labelAr:"84 قطعة",price:550}],images:[
@@ -144,7 +149,9 @@ const productsData=[
 {id:"siliconeBalls",nameEn:"Silicone Balls",nameAr:"كور سيليكون",descEn:"Colorful silicone balls for play.",descAr:"كور سيليكون ملونة للعب.",price:195,images:["كور سيلكون 1.jpeg","كور سيلكون 2.jpeg","كور سيلكون 3.jpeg"]},
 {id:"shakhalil",nameEn:"Baby Rattles",nameAr:"شخاليل",descEn:"Colorful rattles for little ones.",descAr:"شخاليل ملونة للصغار.",price:345,images:["شخاليل 1.jpg","شخاليل 2.jpg","شخاليل 3.jpg","شخاليل 4.jpg","شخاليل 5.jpg"]}
 ];
-let language="en",cart=[],imageIndexes={},lightboxProductId=null,lightboxIndex=0;
+let language="en",cart=[],imageIndexes={},lightboxProductId=null,lightboxIndex=0,activeCategory="all";
+const productCategories={headset:"play",markers:"art",touch60:"art",touch80:"art",metallicColors:"art",safe:"play",magnetic:"build",appleBoard:"art",makeupBag:"play",colledoll:"play",animalPiano:"play",flashCards:"art",magneticWhiteboard:"art",colors208:"art",woodenBlocks:"build",siliconeBalls:"play",shakhalil:"play"};
+function filterProducts(category,button){activeCategory=category;document.querySelectorAll(".category-chip").forEach(b=>b.classList.remove("active"));if(button)button.classList.add("active");renderProducts()}
 function imagePath(filename){return encodeURIComponent(filename).replace(/%2F/gi,"/")}
 function money(price){return `${price} ${language==="en"?"EGP":"جنيه"}`}
 function productById(id){return productsData.find(p=>p.id===id)}
@@ -152,7 +159,7 @@ function productName(p){return language==="en"?p.nameEn:p.nameAr}
 function productDescription(p){return language==="en"?p.descEn:p.descAr}
 function renderProducts(){
 const container=document.getElementById("products");
-container.innerHTML=productsData.map(p=>{
+container.innerHTML=productsData.filter(p=>activeCategory==="all"||productCategories[p.id]===activeCategory).map(p=>{
 const index=imageIndexes[p.id]||0,imgs=p.images,current=imgs[index]||imgs[0];
 const gallery=`<div class="gallery"><img src="${imagePath(current)}" alt="${productName(p)}" onclick="openLightbox('${p.id}',${index})" onerror="this.style.opacity='.2'">
 ${imgs.length>1?`<button class="gallery-arrow prev" onclick="moveProductImage('${p.id}',-1,event)" aria-label="Previous image">‹</button><button class="gallery-arrow next" onclick="moveProductImage('${p.id}',1,event)" aria-label="Next image">›</button><div class="gallery-count">${index+1} / ${imgs.length}</div>`:""}</div>`;
@@ -173,10 +180,10 @@ function addToCart(id){const p=productById(id);if(!p)return;let price=p.price,la
 function changeQuantity(i,n){if(!cart[i])return;cart[i].qty+=n;if(cart[i].qty<=0)cart.splice(i,1);renderCart()}
 function removeCartItem(i){cart.splice(i,1);renderCart()}
 function renderCart(){const box=document.getElementById("cartItems");if(!cart.length){box.innerHTML=`<p style="text-align:center">${language==="en"?"Your cart is empty.":"السلة فارغة حاليًا."}</p>`}else{box.innerHTML=cart.map((item,i)=>{const p=productById(item.id),v=item.variantLabel?` — ${item.variantLabel}`:"";return `<div class="cart-item"><div class="cart-item-info"><strong>${productName(p)}${v}</strong><br>${money(item.price)} × ${item.qty}<br><strong>${money(item.price*item.qty)}</strong></div><div class="quantity-controls"><button onclick="changeQuantity(${i},-1)">−</button><span>${item.qty}</span><button onclick="changeQuantity(${i},1)">+</button></div><button class="remove-button" onclick="removeCartItem(${i})">${language==="en"?"Remove":"حذف"}</button></div>`}).join("")}const total=cart.reduce((s,i)=>s+i.price*i.qty,0);document.getElementById("cartTotal").textContent=`${language==="en"?"Total":"الإجمالي"}: ${money(total)}`;document.getElementById("checkoutButton").textContent=language==="en"?"Order on WhatsApp 💚":"اطلبي على واتساب 💚"}
-function checkoutWhatsApp(){if(!cart.length){alert(language==="en"?"Your cart is empty. Please add a product first.":"السلة فارغة. أضيفي لعبة للسلة أولًا.");return}const lines=cart.map(i=>{const p=productById(i.id),v=i.variantLabel?` (${i.variantLabel})`:"";return `${productName(p)}${v} x${i.qty} = ${money(i.price*i.qty)}`});const total=cart.reduce((s,i)=>s+i.price*i.qty,0);const msg=language==="en"?`Hello Mickey Toys! I would like to order:\n\n${lines.join("\n")}\n\nTotal: ${money(total)}\nPlease confirm availability and shipping cost.`:`أهلًا Mickey Toys، عايزة أطلب المنتجات دي:\n\n${lines.join("\n")}\n\nالإجمالي: ${money(total)}\nمن فضلكم أكدوا توافر المنتجات وتكلفة الشحن.`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank")}
+function checkoutWhatsApp(){if(!cart.length){alert(language==="en"?"Your cart is empty. Please add a product first.":"السلة فارغة. أضيفي لعبة للسلة أولًا.");return}const lines=cart.map(i=>{const p=productById(i.id),v=i.variantLabel?` (${i.variantLabel})`:"";return `${productName(p)}${v} x${i.qty} = ${money(i.price*i.qty)}`});const total=cart.reduce((s,i)=>s+i.price*i.qty,0);const msg=language==="en"?`Hello Mickey Toys! I would like to order:\n\n${lines.join("\n")}\n\nTotal: ${money(total)}\nPlease confirm availability and shipping cost. I will send my name, address, and phone number for order confirmation.`:`أهلًا Mickey Toys، عايزة أطلب المنتجات دي:\n\n${lines.join("\n")}\n\nالإجمالي: ${money(total)}\nمن فضلكم أكدوا توافر المنتجات وتكلفة الشحن. هبعت اسمي وعنواني ورقم تليفوني لتأكيد الطلب.`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank")}
 function setLanguage(lang){language=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.getElementById("englishButton").classList.toggle("active",lang==="en");document.getElementById("arabicButton").classList.toggle("active",lang==="ar");
 const t=(id,en,ar)=>document.getElementById(id).textContent=lang==="en"?en:ar;
-t("tagline","Fun toys for happy little ones!","ألعاب ممتعة لأطفال مبسوطين!");t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");t("offerBadge","LIMITED-TIME OFFER","عرض لفترة محدودة");t("woodenOfferDescription","Fun wooden blocks for creative play!","مكعبات خشبية ممتعة للعب والإبداع!");t("offerSaving","Save 35 EGP!","وفّري 35 جنيه!");t("offerShopButton","Shop Now","تسوّقي الآن");t("markerOfferBadge","SPECIAL OFFER","عرض خاص");t("markerOfferName","Touch 48pcs Markers 🎨","ألوان ماركر تاتش 48 قطعة 🎨");t("markerOfferDescription","A colorful set for drawing and creativity.","مجموعة ألوان للرسم والإبداع.");t("markerOfferSaving","Save 26 EGP!","وفّري 26 جنيه!");t("markerOfferShopButton","Shop Now","تسوّقي الآن");t("productsTitle","Our Toys","ألعابنا");t("cartTitle","🛒 Shopping Cart","🛒 سلة المشتريات");t("shippingNote","Shipping cost will be confirmed before the order is completed.","سيتم تأكيد تكلفة الشحن قبل إتمام الطلب.");t("contactTitle","📱 Contact Mickey Toys","📱 تواصلي مع Mickey Toys");t("contactDescription","Have a question? Contact us directly on WhatsApp.","عندك أي سؤال؟ تواصلي معانا مباشرة على واتساب.");t("contactButton","Chat with us on WhatsApp 💚","كلمينا على واتساب 💚");t("facebookButton","Follow Us on Facebook 💙","تابعينا على فيسبوك 💙");renderProducts();renderCart();if(document.getElementById("lightbox").classList.contains("open"))updateLightbox()}
+t("tagline","Fun toys for happy little ones!","ألعاب ممتعة لأطفال مبسوطين!");t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");t("offerBadge","LIMITED-TIME OFFER","عرض لفترة محدودة");t("woodenOfferDescription","Fun wooden blocks for creative play!","مكعبات خشبية ممتعة للعب والإبداع!");t("offerSaving","Save 35 EGP!","وفّري 35 جنيه!");t("offerShopButton","Shop Now","تسوّقي الآن");t("markerOfferBadge","SPECIAL OFFER","عرض خاص");t("markerOfferName","Touch 48pcs Markers 🎨","ألوان ماركر تاتش 48 قطعة 🎨");t("markerOfferDescription","A colorful set for drawing and creativity.","مجموعة ألوان للرسم والإبداع.");t("markerOfferSaving","Save 26 EGP!","وفّري 26 جنيه!");t("markerOfferShopButton","Shop Now","تسوّقي الآن");t("productsTitle","Our Toys","ألعابنا");t("catAll","All Toys","كل الألعاب");t("catArt","Art & Colors","الألوان والرسم");t("catBuild","Building Toys","ألعاب التركيب");t("catPlay","Kids Toys","ألعاب الأطفال");t("cartTitle","🛒 Shopping Cart","🛒 سلة المشتريات");t("shippingNote","Shipping cost will be confirmed before the order is completed.","سيتم تأكيد تكلفة الشحن قبل إتمام الطلب.");t("contactTitle","📱 Contact Mickey Toys","📱 تواصلي مع Mickey Toys");t("contactDescription","Have a question? Contact us directly on WhatsApp.","عندك أي سؤال؟ تواصلي معانا مباشرة على واتساب.");t("contactButton","Chat with us on WhatsApp 💚","كلمينا على واتساب 💚");t("facebookButton","Follow Us on Facebook 💙","تابعينا على فيسبوك 💙");renderProducts();renderCart();if(document.getElementById("lightbox").classList.contains("open"))updateLightbox()}
 renderProducts();renderCart();
 </script>
 </body>
