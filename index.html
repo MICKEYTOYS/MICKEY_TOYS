@@ -68,6 +68,33 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 @media(max-width:720px){.top-showcase{display:flex;flex-direction:column;gap:12px;padding:0 10px;margin-top:10px;min-height:0}.top-showcase .banner{order:0;min-height:0;height:auto}.top-showcase .banner img{max-height:320px;min-height:0;height:auto}.offers-section{order:1;padding:12px;width:100%;min-height:0;height:auto}.offers-section h2{font-size:22px}.offer-cards{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:6px}.offer-card{flex:0 0 78%;max-width:300px;scroll-snap-align:start;padding:12px}.offer-image{height:155px}.catalog-layout{padding:0 10px}.catalog-main h2.section-title{margin-top:18px}}
 @media(max-width:560px){header h1{font-size:28px!important}.products{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px;gap:10px}.product{padding:9px;border-radius:15px}.product h3{font-size:16px}.product-description{font-size:12px;min-height:0}.gallery{height:180px}.price{font-size:19px}.add-button{font-size:13px;padding:11px 6px}.offer-cards{display:flex;grid-template-columns:none}.offer-card{flex-basis:78%}.offer-image{height:150px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
 @media(max-width:360px){.products{grid-template-columns:1fr}.gallery{height:260px}}
+
+/* Mickey Toys colorful refresh: less empty white space, no sky/baby blue */
+:root{--pink-bg:#ffe4ef;--pink:#e84d91;--pink-dark:#c52d70;--blue:#8d54b8;--text:#503747;--border:#f1b5d0;--shadow:0 7px 18px rgba(157,49,99,.13)}
+body{background:linear-gradient(135deg,#ffe6f0 0%,#fff0cf 34%,#f2e5ff 68%,#ffe3eb 100%);color:var(--text)}
+header{background:linear-gradient(110deg,#e84d91 0%,#f06b6b 52%,#9d5bc4 100%);padding:14px 15px;box-shadow:0 4px 16px #d9579140}
+.language-bar{padding:8px 12px;background:#ffe5eff2}
+.language-bar button{background:#fff0f6}
+.banner{margin-bottom:8px}
+.top-showcase{gap:12px;margin:8px auto 12px;padding:0 10px;min-height:0}
+.top-showcase .banner{min-height:0;height:auto;align-self:stretch;padding:5px;background:linear-gradient(135deg,#ffd2e4,#fff0bd,#e9d5ff);border:2px solid #f4a7ca;border-radius:20px}
+.top-showcase .banner img{display:block;width:100%;height:auto;min-height:0;max-height:none;object-fit:contain;border-radius:13px}
+.offers-section{min-height:0;height:auto;padding:12px;background:linear-gradient(145deg,#ffd9e8 0%,#fff0bc 48%,#eadcff 100%);border-color:#edacd0}
+.offers-section h2{color:#c52d70;text-shadow:none}
+.offer-card{background:linear-gradient(150deg,#fff0f6 0%,#fff4cf 52%,#f0e5ff 100%);border-color:#f0b2d0}
+.offer-card:nth-child(2n){background:linear-gradient(145deg,#fce0ed,#e9f8d9 100%)}
+.offer-image{background:#fff0f6;border-color:#efb2d0}
+.product{background:linear-gradient(155deg,#fff5f9 0%,#fff8df 100%);border-color:#efb6d1}
+.product:nth-child(3n+2){background:linear-gradient(150deg,#fff0f5,#f0e5ff)}
+.product:nth-child(3n){background:linear-gradient(150deg,#fff5dc,#ffe4ed)}
+.gallery{background:linear-gradient(145deg,#ffe5ef,#fff2c9,#eee1ff);border-color:#f0b4d0}
+.cart-section,.contact-section{background:linear-gradient(145deg,#fff0f6,#fff4d5,#eee3ff);border-color:#efb1ce}
+.category-chip{background:#fff0f6;border-color:#efb2d0}
+h2.section-title{margin-top:20px;margin-bottom:14px}
+.products{gap:16px;margin-bottom:24px}
+footer{background:#f7d7e7;margin-top:12px}
+@media(max-width:720px){.top-showcase{gap:8px;margin-top:6px}.top-showcase .banner{padding:4px}.top-showcase .banner img{width:100%;height:auto;max-height:none;min-height:0}.offers-section{padding:10px}.products{gap:10px;margin-bottom:20px}}
+
 </style>
 </head>
 <body>
