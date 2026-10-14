@@ -35,7 +35,7 @@ h2.section-title{text-align:center;margin:34px 10px 22px;color:var(--pink);font-
 .product select{width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:9px;color:var(--text);background:#fff}
 .add-button{display:block;width:100%;padding:13px 10px;background:var(--pink);color:#fff;border:0;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:12px}
 .add-button:hover{background:var(--pink-dark)}
-.catalog-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:22px;max-width:1440px;margin:18px auto 30px;padding:0 18px;align-items:start}.catalog-main{min-width:0}.offers-section{width:100%;margin:16px 0 0;padding:16px 12px;background:linear-gradient(160deg,#fff0f7,#eef8ff);border:1px solid var(--border);border-radius:22px;text-align:center;box-shadow:var(--shadow);position:sticky;top:82px}.offers-section h2{font-size:23px;margin:0 0 14px}.catalog-main h2.section-title{margin-top:22px}
+.top-showcase{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(420px,1fr);gap:18px;align-items:stretch;max-width:1500px;margin:14px auto 24px;padding:0 14px;min-height:390px}.top-showcase .banner{width:100%;height:100%;min-height:390px;margin:0;min-width:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:22px;padding:8px;box-shadow:var(--shadow)}.top-showcase .banner img{max-height:470px;min-height:340px;width:100%;height:100%;object-fit:contain}.catalog-layout{display:block;max-width:1440px;margin:18px auto 30px;padding:0 18px;align-items:start}.catalog-main{min-width:0}.offers-section{width:100%;height:100%;min-height:390px;margin:0;padding:16px;background:linear-gradient(160deg,#fff0f7,#eef8ff);border:1px solid var(--border);border-radius:22px;text-align:center;box-shadow:var(--shadow);position:static;min-width:0;display:flex;flex-direction:column;justify-content:center}.offers-section h2{font-size:23px;margin:0 0 14px}.catalog-main h2.section-title{margin-top:22px}
 .offers-section h2{color:var(--pink);font-size:28px;margin:0 0 20px}
 .offer-cards{display:grid;grid-template-columns:1fr;gap:14px;max-width:100%;margin:auto}
 .offer-card{padding:16px;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
@@ -63,8 +63,9 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 .lightbox-close{top:12px;right:16px;width:42px;height:42px;border-radius:50%;font-size:26px}
 .lightbox-arrow{top:50%;transform:translateY(-50%);border-radius:50%;width:45px;height:45px;font-size:28px}
 .lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-count{position:absolute;bottom:12px;color:#fff;font-size:15px}
-@media(max-width:1050px){.catalog-layout{grid-template-columns:210px minmax(0,1fr);gap:14px;padding:0 12px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.gallery{height:210px}}
-@media(max-width:720px){.catalog-layout{display:flex;flex-direction:column;gap:8px;padding:0 10px}.offers-section{position:static;order:0;margin:10px 0 4px;padding:12px;width:100%}.offers-section h2{font-size:22px}.offer-cards{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:6px}.offer-card{flex:0 0 78%;max-width:300px;scroll-snap-align:start;padding:12px}.offer-image{height:135px}.catalog-main{width:100%;order:1}.catalog-main h2.section-title{margin-top:18px}}
+@media(max-width:1050px){.top-showcase{grid-template-columns:minmax(0,1.1fr) minmax(350px,1fr);gap:12px;padding:0 12px;min-height:360px}.top-showcase .banner,.offers-section{min-height:360px}.top-showcase .banner img{min-height:300px}.offer-image{height:155px}.offer-card{padding:12px}.offer-card h3{font-size:18px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.gallery{height:210px}}
+@media(min-width:721px){.offer-cards{grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}.offer-card{padding:12px;display:flex;flex-direction:column;justify-content:flex-start}.offer-image{height:185px;flex-shrink:0}.offer-card h3{font-size:18px;margin:12px 0 6px}.offer-card p{font-size:14px;margin:8px 0}.offer-new-price{font-size:25px}.offer-old-price{font-size:14px}.offer-badge{font-size:11px;padding:7px 10px}.offer-card .add-button{font-size:14px;padding:11px 8px;margin-top:auto}}
+@media(max-width:720px){.top-showcase{display:flex;flex-direction:column;gap:12px;padding:0 10px;margin-top:10px;min-height:0}.top-showcase .banner{order:0;min-height:0;height:auto}.top-showcase .banner img{max-height:320px;min-height:0;height:auto}.offers-section{order:1;padding:12px;width:100%;min-height:0;height:auto}.offers-section h2{font-size:22px}.offer-cards{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:6px}.offer-card{flex:0 0 78%;max-width:300px;scroll-snap-align:start;padding:12px}.offer-image{height:135px}.catalog-layout{padding:0 10px}.catalog-main h2.section-title{margin-top:18px}}
 @media(max-width:560px){header h1{font-size:28px!important}.products{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px;gap:10px}.product{padding:9px;border-radius:15px}.product h3{font-size:16px}.product-description{font-size:12px;min-height:0}.gallery{height:180px}.price{font-size:19px}.add-button{font-size:13px;padding:11px 6px}.offer-cards{display:flex;grid-template-columns:none}.offer-card{flex-basis:78%}.offer-image{height:135px}.lightbox{padding:50px 40px}.lightbox img{max-height:80vh}.cart-item{flex-wrap:wrap}}
 @media(max-width:360px){.products{grid-template-columns:1fr}.gallery{height:260px}}
 </style>
@@ -75,30 +76,28 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 <button id="englishButton" class="active" onclick="setLanguage('en')">English</button>
 <button id="arabicButton" onclick="setLanguage('ar')">العربية</button>
 </div>
-<div class="banner"><img src="mickey-banner.png.jpeg" alt="Mickey Toys" onerror="this.style.display='none'"></div>
+<div class="top-showcase">
+  <div class="banner"><img src="mickey-banner.png.jpeg" alt="Mickey Toys" onerror="this.style.display='none'"></div>
+  <aside class="offers-section" id="specialOffers">
+    <h2 id="offersTitle">🎉 Special Offers</h2>
+    <div class="offer-cards">
+      <article class="offer-card jenga-offer">
+        <img class="offer-image" src="عرض%20جنجا.jpg" alt="عرض الجنجة" onerror="this.style.display='none'">
+      </article>
+      <article class="offer-card marker-offer">
+        <img class="offer-image" src="WhatsApp%20Image%202026-10-07%20at%2011.43.27%20PM.jpeg" alt="Touch 48 Colors Markers">
+        <span class="offer-badge" id="markerOfferBadge">SPECIAL OFFER</span>
+        <h3 id="markerOfferName">Touch 48pcs Markers 🎨</h3>
+        <p id="markerOfferDescription">A colorful set for drawing and creativity.</p>
+        <p class="offer-prices"><span class="offer-old-price">275 EGP</span><span class="offer-new-price">249 EGP</span></p>
+        <p class="offer-saving" id="markerOfferSaving">Save 26 EGP!</p>
+        <button class="add-button" onclick="goToProduct('markers')"><span id="markerOfferShopButton">Shop Now</span></button>
+      </article>
+    </div>
+  </aside>
+</div>
 
 <div class="catalog-layout">
-<aside class="offers-section" id="specialOffers">
-<h2 id="offersTitle">🎉 Special Offers</h2>
-<div class="offer-cards">
-<article class="offer-card">
-<img class="offer-image" src="Wooden%20Blocks%201.jpg.jpg" alt="Wooden Blocks" onerror="this.style.display='none'">
-<span class="offer-badge" id="offerBadge">LIMITED-TIME OFFER</span>
-<h3>Wooden Blocks 🧸</h3><p id="woodenOfferDescription">Fun wooden blocks for creative play!</p>
-<p class="offer-prices"><span class="offer-old-price">220 EGP</span><span class="offer-new-price">185 EGP</span></p>
-<p class="offer-saving" id="offerSaving">Save 35 EGP!</p>
-<button class="add-button" onclick="goToProduct('woodenBlocks')"><span id="offerShopButton">Shop Now</span></button>
-</article>
-<article class="offer-card">
-<img class="offer-image" src="عرض%20جنجا.jpg" alt="Jenga Special Offer" onerror="this.style.display='none'">
-<span class="offer-badge" id="markerOfferBadge">SPECIAL OFFER</span>
-<h3 id="markerOfferName">Touch 48pcs Markers 🎨</h3><p id="markerOfferDescription">A colorful set for drawing and creativity.</p>
-<p class="offer-prices"><span class="offer-old-price">275 EGP</span><span class="offer-new-price">249 EGP</span></p>
-<p class="offer-saving" id="markerOfferSaving">Save 26 EGP!</p>
-<button class="add-button" onclick="goToProduct('markers')"><span id="markerOfferShopButton">Shop Now</span></button>
-</article>
-</div>
-</aside>
 <div class="catalog-main">
 <h2 class="section-title" id="productsTitle">Our Toys</h2>
 <nav class="category-nav" aria-label="Product categories"><button class="category-chip active" onclick="filterProducts('all',this)" id="catAll">All Toys</button><button class="category-chip" onclick="filterProducts('art',this)" id="catArt">Art & Colors</button><button class="category-chip" onclick="filterProducts('build',this)" id="catBuild">Building Toys</button><button class="category-chip" onclick="filterProducts('play',this)" id="catPlay">Kids Toys</button></nav>
@@ -131,7 +130,7 @@ footer{text-align:center;padding:22px 10px;color:var(--text)}
 const WHATSAPP_NUMBER="201107743657";
 const productsData=[
 {id:"markers",nameEn:"Touch 48pcs Markers",nameAr:"ألوان ماركر تاتش 48 قطعة",descEn:"Special offer! A colorful set for drawing and creativity.",descAr:"عرض خاص! مجموعة ألوان للرسم والإبداع.",price:249,oldPrice:275,images:[
-"WhatsApp Image 2026-10-11 at 10.37.46 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg","WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
+"WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg","WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg","WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg","WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
 {id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:185,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]},
 {id:"largeXylophone",nameEn:"Large Xylophone Piano",nameAr:"إكسيلفون بيانو حجم كبير",descEn:"A large colorful xylophone piano for musical play.",descAr:"إكسيلفون بيانو كبير وملون للعب والموسيقى.",price:429,images:["اكسيلفون بيانو حجم كبير 1.jpeg","اكسيلفون بيانو حجم كبير 2.jpeg"]},
 {id:"safe",nameEn:"Kids Money Safe",nameAr:"خزنة نقود للأطفال",descEn:"A fun way for children to save their money.",descAr:"طريقة ممتعة لتعليم الأطفال توفير النقود.",price:420,images:["WhatsApp Image 2026-10-08 at 12.03.11 AM.jpeg"]},
@@ -186,7 +185,7 @@ function renderCart(){const box=document.getElementById("cartItems");if(!cart.le
 function checkoutWhatsApp(){if(!cart.length){alert(language==="en"?"Your cart is empty. Please add a product first.":"السلة فارغة. أضيفي لعبة للسلة أولًا.");return}const lines=cart.map(i=>{const p=productById(i.id),v=i.variantLabel?` (${i.variantLabel})`:"";return `${productName(p)}${v} x${i.qty} = ${money(i.price*i.qty)}`});const total=cart.reduce((s,i)=>s+i.price*i.qty,0);const msg=language==="en"?`Hello Mickey Toys! I would like to order:\n\n${lines.join("\n")}\n\nTotal: ${money(total)}\nPlease confirm availability and shipping cost. I will send my name, address, and phone number for order confirmation.`:`أهلًا Mickey Toys، عايزة أطلب المنتجات دي:\n\n${lines.join("\n")}\n\nالإجمالي: ${money(total)}\nمن فضلكم أكدوا توافر المنتجات وتكلفة الشحن. هبعت اسمي وعنواني ورقم تليفوني لتأكيد الطلب.`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank")}
 function setLanguage(lang){language=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.getElementById("englishButton").classList.toggle("active",lang==="en");document.getElementById("arabicButton").classList.toggle("active",lang==="ar");
 const t=(id,en,ar)=>document.getElementById(id).textContent=lang==="en"?en:ar;
-t("tagline","Fun toys for happy little ones!","ألعاب ممتعة لأطفال مبسوطين!");t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");t("offerBadge","LIMITED-TIME OFFER","عرض لفترة محدودة");t("woodenOfferDescription","Fun wooden blocks for creative play!","مكعبات خشبية ممتعة للعب والإبداع!");t("offerSaving","Save 35 EGP!","وفّري 35 جنيه!");t("offerShopButton","Shop Now","تسوّقي الآن");t("markerOfferBadge","SPECIAL OFFER","عرض خاص");t("markerOfferName","Touch 48pcs Markers 🎨","ألوان ماركر تاتش 48 قطعة 🎨");t("markerOfferDescription","A colorful set for drawing and creativity.","مجموعة ألوان للرسم والإبداع.");t("markerOfferSaving","Save 26 EGP!","وفّري 26 جنيه!");t("markerOfferShopButton","Shop Now","تسوّقي الآن");t("productsTitle","Our Toys","ألعابنا");t("catAll","All Toys","كل الألعاب");t("catArt","Art & Colors","الألوان والرسم");t("catBuild","Building Toys","ألعاب التركيب");t("catPlay","Kids Toys","ألعاب الأطفال");t("cartTitle","🛒 Shopping Cart","🛒 سلة المشتريات");t("shippingNote","Shipping cost will be confirmed before the order is completed.","سيتم تأكيد تكلفة الشحن قبل إتمام الطلب.");t("contactTitle","📱 Contact Mickey Toys","📱 تواصلي مع Mickey Toys");t("contactDescription","Have a question? Contact us directly on WhatsApp.","عندك أي سؤال؟ تواصلي معانا مباشرة على واتساب.");t("contactButton","Chat with us on WhatsApp 💚","كلمينا على واتساب 💚");t("facebookButton","Follow Us on Facebook 💙","تابعينا على فيسبوك 💙");renderProducts();renderCart();if(document.getElementById("lightbox").classList.contains("open"))updateLightbox()}
+t("tagline","Fun toys for happy little ones!","ألعاب ممتعة لأطفال مبسوطين!");t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");t("markerOfferBadge","SPECIAL OFFER","عرض خاص");t("markerOfferName","Touch 48pcs Markers 🎨","ألوان ماركر تاتش 48 قطعة 🎨");t("markerOfferDescription","A colorful set for drawing and creativity.","مجموعة ألوان للرسم والإبداع.");t("markerOfferSaving","Save 26 EGP!","وفّري 26 جنيه!");t("markerOfferShopButton","Shop Now","تسوّقي الآن");t("productsTitle","Our Toys","ألعابنا");t("catAll","All Toys","كل الألعاب");t("catArt","Art & Colors","الألوان والرسم");t("catBuild","Building Toys","ألعاب التركيب");t("catPlay","Kids Toys","ألعاب الأطفال");t("cartTitle","🛒 Shopping Cart","🛒 سلة المشتريات");t("shippingNote","Shipping cost will be confirmed before the order is completed.","سيتم تأكيد تكلفة الشحن قبل إتمام الطلب.");t("contactTitle","📱 Contact Mickey Toys","📱 تواصلي مع Mickey Toys");t("contactDescription","Have a question? Contact us directly on WhatsApp.","عندك أي سؤال؟ تواصلي معانا مباشرة على واتساب.");t("contactButton","Chat with us on WhatsApp 💚","كلمينا على واتساب 💚");t("facebookButton","Follow Us on Facebook 💙","تابعينا على فيسبوك 💙");renderProducts();renderCart();if(document.getElementById("lightbox").classList.contains("open"))updateLightbox()}
 renderProducts();renderCart();
 </script>
 </body>
