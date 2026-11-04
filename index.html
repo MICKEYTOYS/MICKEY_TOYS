@@ -352,10 +352,8 @@ header h1{font-size:28px}
 <h3 id="jengaOfferName">Wooden Jenga Game 🪵</h3>
 <p id="jengaOfferDescription">A fun stacking game for family time.</p>
 <p class="offer-prices">
-<span class="offer-old-price">185 EGP</span>
-<span class="offer-new-price">160 EGP</span>
+<span class="offer-new-price">185 EGP</span>
 </p>
-<p class="offer-saving" id="jengaOfferSaving">Save 35 EGP!</p>
 <button class="add-button" onclick="goToProduct('woodenBlocks')">
 <span id="jengaOfferShopButton">Shop Now</span>
 </button>
@@ -427,14 +425,14 @@ const WHATSAPP_NUMBER="201107743657";
 
 const productsData=[
 
-{id:"markers",nameEn:"Touch 48pcs Markers",nameAr:"ألوان ماركر تاتش 48 قطعة",descEn:"A colorful set for drawing and creativity.",descAr:"مجموعة ألوان للرسم والإبداع.",price:275,offerPrice:249,images:[
+{id:"markers",nameEn:"Touch 48pcs Markers",nameAr:"ألوان ماركر تاتش 48 قطعة",descEn:"A colorful set for drawing and creativity.",descAr:"مجموعة ألوان للرسم والإبداع.",price:275,images:[
 "WhatsApp Image 2026-10-11 at 10.37.46 AM.jpeg",
 "WhatsApp Image 2026-10-11 at 10.32.18 AM.jpeg",
 "WhatsApp Image 2026-10-11 at 10.31.18 AM(1).jpeg",
 "WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg",
 "WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
 
-{id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:160,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]},
+{id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:185,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]},
 
 {id:"largeXylophone",nameEn:"Large Xylophone Piano",nameAr:"إكسيلفون بيانو حجم كبير",descEn:"A large colorful xylophone piano for musical play.",descAr:"إكسيلفون بيانو كبير وملون للعب والموسيقى.",price:370,images:["اكسيلفون بيانو حجم كبير 1.jpeg","اكسيلفون بيانو حجم كبير 2.jpeg"]},
 
@@ -613,6 +611,7 @@ const container=document.getElementById("products");
 const query=(document.getElementById("productSearch")?.value||"").trim().toLocaleLowerCase();
 
 container.innerHTML=productsData.filter(p=>
+p.id!=="woodenBlocks"&&
 (activeCategory==="all"||productCategories[p.id]===activeCategory)&&
 (!query||[p.nameAr,p.nameEn,p.descAr,p.descEn].join(" ").toLocaleLowerCase().includes(query))
 ).map(p=>{
@@ -827,7 +826,6 @@ t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");
 t("jengaOfferBadge","SPECIAL OFFER","عرض خاص");
 t("jengaOfferName","Wooden Jenga Game 🪵","لعبة الجنجة الخشبية 🪵");
 t("jengaOfferDescription","A fun stacking game for family time.","لعبة تكديس ممتعة لوقت عائلي جميل.");
-t("jengaOfferSaving","Save 25 EGP!","وفّري 25 جنيه!");
 t("jengaOfferShopButton","Shop Now","تسوّقي الآن");
 
 t("productsTitle","Our Toys","ألعابنا");
