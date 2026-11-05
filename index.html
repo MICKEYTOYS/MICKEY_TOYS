@@ -323,170 +323,75 @@ header h1{font-size:28px}
 .gallery{height:260px}
 }
 
-/* MICKEY TOYS — CREATIVE BOUTIQUE CONCEPT */
+
+/* NEW PROFESSIONAL MICKEY TOYS LOOK — colorful, bold and playful */
+html[dir="rtl"] .hero-copy{text-align:right}
+html[dir="rtl"] .hero-copy p{margin-inline-start:0;margin-inline-end:auto}
 :root{
- --pink-bg:#fff0f5; --pink:#e83e83; --pink-dark:#a91f5d; --blue:#7040a4;
- --text:#35223b; --green:#25b96f; --green-dark:#12864d;
- --border:#f0b2cd; --shadow:0 14px 34px rgba(82,29,69,.13)
+ --mt-berry:#c51d65;--mt-hot:#f04487;--mt-purple:#4b267f;--mt-deep:#28163f;
+ --mt-yellow:#ffd34e;--mt-mint:#8de0c0;--mt-blue:#6dcbe8;--mt-cream:#fff5e8;
+ --mt-ink:#30203e;--mt-muted:#76657d;--mt-shadow:0 14px 34px rgba(48,22,63,.14)
 }
-body{
- background:
- radial-gradient(circle at 8% 9%,rgba(255,196,83,.28) 0 90px,transparent 92px),
- radial-gradient(circle at 93% 20%,rgba(220,85,153,.17) 0 130px,transparent 132px),
- linear-gradient(145deg,#fff2f6 0%,#ffe8df 42%,#f1e6ff 100%);
- color:var(--text);font-family:"Trebuchet MS",Arial,sans-serif
-}
-header{
- min-height:112px;padding:22px 18px 20px;
- background:linear-gradient(115deg,#4c235d 0%,#8d286f 48%,#d63f83 100%);
- box-shadow:0 8px 28px rgba(75,29,78,.24);border-bottom:5px solid #ffd45d
-}
-header:before,header:after{color:#ffe18a;font-size:30px;letter-spacing:16px}
-header h1{font-size:clamp(34px,4vw,52px);font-weight:900;letter-spacing:.3px;text-shadow:0 3px 0 rgba(0,0,0,.13)}
-header p{font-size:16px;font-weight:700;color:#ffe9f3;letter-spacing:.3px}
-.language-bar{background:rgba(255,242,247,.9);border-bottom:1px solid #f4c8d9;box-shadow:0 5px 16px #60264b10}
-.language-bar button{background:#fff;color:#85285f;border:2px solid #e9a4c4;border-radius:999px;padding:9px 19px}
-.language-bar button.active{background:#79265f;border-color:#79265f;color:#fff;box-shadow:0 5px 12px #79265f35}
-.top-showcase{max-width:1500px;gap:18px;margin:22px auto 30px;padding:0 18px}
-.top-showcase:before{content:"✦";font-size:48px;color:#f2b943;left:0;top:-18px}
-.top-showcase:after{content:"✿";font-size:44px;color:#d84b91;right:0;bottom:-15px}
-.top-showcase .banner{
- position:relative;isolation:isolate;min-height:330px;padding:12px;
- border:0;border-radius:30px;overflow:hidden;
- background:linear-gradient(135deg,#5a286b,#b83278 55%,#f17c83);
- box-shadow:0 20px 42px rgba(92,37,88,.22)
-}
-.top-showcase .banner:before{content:"";position:absolute;inset:12px;border:1px solid #ffffff75;border-radius:22px;pointer-events:none;z-index:2}
-.top-showcase .banner:after{content:"✦  ✿  ★";position:absolute;right:26px;top:20px;color:#ffe17a;font-size:26px;letter-spacing:12px;z-index:2;pointer-events:none}
-.top-showcase .banner img{position:relative;z-index:1;width:100%;height:100%;max-height:410px;object-fit:contain;border-radius:20px;filter:drop-shadow(0 12px 16px #32102c30)}
-.offers-section{
- padding:18px;border:0;border-radius:28px;color:#fff;
- background:linear-gradient(155deg,#51245f 0%,#76255f 55%,#a72f70 100%);
- box-shadow:0 18px 38px rgba(83,31,79,.22);position:relative;overflow:hidden
-}
-.offers-section:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:#ffcf5b22;top:-105px;left:-70px}
-.offers-section h2{position:relative;color:#ffe18a;font-size:29px;font-weight:900;margin:0 0 15px;text-shadow:none}
-.offers-section h2:before,.offers-section h2:after{color:#ffb8d4}
-.offer-card{background:linear-gradient(145deg,#fff8fb,#ffe8f1);border:3px solid #ffd36a;border-radius:23px;box-shadow:0 12px 28px #260e2938;color:#40213c;padding:14px}
-.offer-card:before{background:#f4c64a55;width:95px;height:95px;right:-32px;top:-42px}
-.offer-card:after{color:#d23e83;font-size:23px}
-.offer-image{height:190px;background:linear-gradient(135deg,#fff,#ffe4ed);border:0;border-radius:17px;padding:7px}
-.offer-badge{background:#e23c80;color:#fff;border-radius:7px 18px 7px 18px;padding:8px 14px;letter-spacing:.4px}
-.offer-card h3{color:#59264f;font-size:21px;font-weight:900}
-.offer-new-price{color:#bf246a;font-size:30px}
-.add-button{background:linear-gradient(100deg,#e63d83,#a82d79);border-radius:14px;padding:14px 12px;font-size:16px;box-shadow:0 6px 14px #a82d7938;transition:transform .18s,filter .18s}
-.add-button:hover{background:linear-gradient(100deg,#c82e72,#84215f);transform:translateY(-2px);filter:saturate(1.1)}
-.catalog-layout{max-width:1500px;margin:28px auto 38px;padding:0 18px}
-h2.section-title{display:table;margin:0 auto 22px;padding:12px 32px;color:#fff;font-size:clamp(25px,3vw,34px);font-weight:900;background:linear-gradient(100deg,#63265f,#bd337c);border-radius:18px 18px 5px 18px;box-shadow:0 9px 20px #8e28652c;position:relative}
-h2.section-title:after{content:"✦";position:absolute;color:#ffda68;right:10px;top:-15px;font-size:23px}
-.search-wrap{max-width:720px;margin:0 auto 17px}
-.search-wrap input{background:#fff;border:2px solid #e9a4c4;border-radius:16px;padding:15px 19px;box-shadow:0 8px 22px #692b5812}
-.search-wrap input:focus{border-color:#a72f70;box-shadow:0 0 0 4px #e83e831a}
-.category-nav{gap:10px;margin-bottom:26px}
-.category-chip{background:#fff;border:2px solid #eab0cb;color:#78265f;border-radius:12px 12px 12px 4px;padding:11px 18px;box-shadow:0 4px 10px #74275210;transition:.18s}
-.category-chip.active,.category-chip:hover{background:#79265f;color:#fff;border-color:#79265f;transform:translateY(-2px)}
-.products{max-width:1350px;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:0 8px}
-.product{background:#fff;border:0;border-radius:22px;padding:12px;box-shadow:0 10px 25px rgba(76,31,72,.11);position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s}
-.product:before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#e83e83,#ffc94f,#8e56bd)}
-.product:nth-child(3n+2){background:linear-gradient(160deg,#fff 0%,#fff0f6 100%)}
-.product:nth-child(3n){background:linear-gradient(160deg,#fff 0%,#fff8e8 100%)}
-.product:hover{transform:translateY(-7px);box-shadow:0 18px 34px rgba(76,31,72,.18)}
-.product h3{color:#54234e;font-size:19px;font-weight:900}
-.product-description{color:#70586e;font-size:13px}
-.gallery{height:245px;border:0;border-radius:17px;background:linear-gradient(145deg,#ffe7f0,#fff1ce 55%,#eee4ff);overflow:hidden}
-.gallery img{mix-blend-mode:multiply;display:block;width:100%;height:100%;object-fit:contain;padding:8px}
-.gallery-arrow{background:#fff;color:#8e2867;box-shadow:0 3px 12px #34152c25}
-.gallery-count{background:#55254fe8;color:#fff}
-.price{color:#c12c70;font-size:24px;font-weight:900}
-.product select{border:2px solid #efc1d6;border-radius:12px;background:#fff8fb}
-.cart-section,.contact-section{max-width:1050px;background:linear-gradient(135deg,#54245f,#842969);color:#fff;border:0;border-radius:28px;padding:26px;box-shadow:0 18px 38px #58245b2c}
-.cart-section h2,.contact-section h2{color:#ffe18a;font-size:28px;font-weight:900}
-.cart-item{border-bottom:1px solid #ffffff35}
-.cart-total{color:#ffe18a;font-size:27px}
-.shipping-note{color:#ffe8f2}
-.quantity-controls button{background:#ffe0ed;color:#8b245e;border-radius:10px}
-.remove-button{background:#ffd9df;color:#9e1c45;border-radius:10px}
-.whatsapp-button{background:linear-gradient(100deg,#21bd70,#128d59);border-radius:14px;box-shadow:0 7px 16px #071e1238}
-.whatsapp-button:hover{background:#087b4b}
-.contact-section p{color:#fff0f7}
-.facebook-button{background:linear-gradient(100deg,#4267b2,#3156a0);border-radius:14px}
-footer{background:#351b43;color:#ffe8f2;border-top:5px solid #f4c64a;padding:26px 12px}
-.lightbox{background:#1e1025f5}
-.lightbox-close,.lightbox-arrow{background:#ffe3ee;color:#7c245d}
-@media(max-width:1050px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.top-showcase{grid-template-columns:minmax(0,1.1fr) minmax(320px,1fr)}}
-@media(max-width:720px){
- .top-showcase{display:flex;flex-direction:column;gap:15px;margin:16px auto 24px;padding:0 12px}
- .top-showcase .banner{min-height:210px;padding:9px;border-radius:23px}
- .top-showcase .banner img{max-height:280px}
- .offers-section{border-radius:23px;padding:15px}
- .offers-section h2{font-size:24px}
- .catalog-layout{padding:0 10px}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 3px}
- .product{border-radius:17px;padding:9px}
- .gallery{height:178px;border-radius:13px}
- .product h3{font-size:15px}
- .product-description{font-size:11px}
- .price{font-size:20px}
- .cart-section,.contact-section{padding:20px 15px;border-radius:22px}
- h2.section-title{padding:10px 24px}
-}
-@media(max-width:380px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery{height:155px}}
-@media(prefers-reduced-motion:no-preference){.product,.add-button,.category-chip{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:#fff3e8;color:var(--mt-ink);font-family:Arial,sans-serif;background-image:radial-gradient(circle at 4% 22%,rgba(255,211,78,.28) 0 110px,transparent 112px),radial-gradient(circle at 96% 53%,rgba(109,203,232,.2) 0 145px,transparent 147px)}
+header{background:linear-gradient(105deg,#31164f 0%,#542477 52%,#a51f69 100%);padding:18px 16px 15px;box-shadow:0 8px 24px rgba(49,22,79,.2)}
+header:before,header:after{color:#ffd34e;opacity:.95;font-size:28px}
+header h1{font-size:clamp(31px,4vw,46px);font-weight:950;letter-spacing:-1px;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.12);margin-bottom:4px}
+header p{color:#ffe6f1;font-weight:700;font-size:14px}
+.language-bar{background:#fff8ef;border-bottom:1px solid #f3d9c7;box-shadow:0 5px 18px rgba(49,22,79,.06);padding:10px;gap:9px}
+.language-bar button{border:1px solid #e9c6d8;background:#fff;color:#542477;border-radius:999px;padding:9px 18px;font-weight:800}
+.language-bar button.active{background:#c51d65;color:#fff;border-color:#c51d65;box-shadow:0 5px 13px rgba(197,29,101,.23)}
+.announcement-strip{background:linear-gradient(90deg,#ffd34e,#ffb65f,#ff8c91);color:#421b51;text-align:center;padding:11px 14px;font-weight:900;font-size:13px;letter-spacing:.2px}
+.top-showcase{grid-template-columns:minmax(0,1.6fr) minmax(290px,.78fr);gap:20px;max-width:1480px;margin:22px auto 16px;padding:0 22px}
+.top-showcase:before{content:"✦";color:#e84587;left:9px;top:-14px;font-size:36px}.top-showcase:after{color:#e7a923;right:12px;bottom:-12px;font-size:32px}
+.top-showcase .banner{position:relative;isolation:isolate;min-height:360px;height:100%;justify-content:flex-start;align-items:center;padding:clamp(25px,4vw,54px);border:0;border-radius:30px;overflow:hidden;background:linear-gradient(112deg,#32164f 0%,#552278 48%,#b52670 100%);box-shadow:var(--mt-shadow)}
+.top-showcase .banner:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(38,16,59,.97) 0%,rgba(57,22,81,.91) 42%,rgba(87,30,101,.42) 72%,rgba(87,30,101,.12) 100%)}
+.top-showcase .banner img{position:absolute;z-index:-2;right:0;top:0;width:67%;height:100%;max-height:none;object-fit:cover;object-position:center;opacity:.82;border-radius:0;mix-blend-mode:screen;mask-image:linear-gradient(90deg,transparent 0%,#000 35%)}
+.hero-copy{position:relative;z-index:2;max-width:520px;text-align:left;color:#fff}
+.hero-kicker{display:inline-block;background:var(--mt-yellow);color:#3b1b4c;border-radius:999px;padding:8px 13px;font-size:11px;font-weight:950;letter-spacing:1.2px;margin-bottom:16px}
+.hero-copy h2{font-size:clamp(34px,4.4vw,58px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:950;letter-spacing:-1.3px}
+.hero-copy h2 em{font-style:normal;color:var(--mt-yellow);text-shadow:0 3px 0 rgba(0,0,0,.08)}
+.hero-copy p{max-width:430px;color:#fceaf3;font-size:16px;line-height:1.7;font-weight:600;margin:0 0 22px}
+.hero-button{display:inline-flex;align-items:center;gap:18px;background:var(--mt-yellow);color:#35194a;text-decoration:none;border-radius:999px;padding:14px 21px;font-size:14px;font-weight:950;box-shadow:0 8px 18px rgba(0,0,0,.17);transition:.2s}
+.hero-button:hover{transform:translateY(-3px);background:#ffe17c}.hero-button span{font-size:20px;line-height:12px}
+.hero-sticker{position:absolute;z-index:3;right:22px;top:20px;width:84px;height:84px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--mt-yellow);color:#442052;font-size:13px;font-weight:1000;line-height:1.15;transform:rotate(10deg);box-shadow:0 7px 15px #21102d44;border:4px solid #fff4d7}
+.offers-section{background:linear-gradient(155deg,#ffcfdf 0%,#ffe6a7 100%);border:0;border-radius:28px;padding:17px;box-shadow:var(--mt-shadow);justify-content:flex-start}
+.offers-section h2{color:#4b267f;font-size:25px;font-weight:950;margin:0 0 13px}
+.offers-section h2:before,.offers-section h2:after{color:#c51d65}
+.offer-card{background:#fff9f0;border:2px solid rgba(255,255,255,.8);border-radius:21px;padding:13px;box-shadow:0 8px 18px rgba(86,31,73,.11)}
+.offer-card:before{background:#8de0c066}.offer-card:after{color:#f04487}
+.offer-image{height:175px;background:#ffeaf1;border:0;border-radius:15px;object-fit:contain;padding:5px}
+.offer-badge{background:#c51d65;color:white;font-weight:950;letter-spacing:.5px}
+.offer-card h3{color:#3c244d;font-weight:900}.offer-new-price{color:#c51d65;font-weight:1000}
+.add-button{background:linear-gradient(100deg,#c51d65,#f04487);border-radius:13px;padding:13px;font-weight:950;box-shadow:0 6px 15px rgba(197,29,101,.2)}
+.add-button:hover{background:linear-gradient(100deg,#a81754,#d92c74);transform:translateY(-2px)}
+.trust-strip{max-width:1435px;margin:18px auto 30px;padding:0 22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.trust-item{display:flex;align-items:center;gap:13px;padding:16px 18px;background:linear-gradient(125deg,#fffaf3,#ffe8ef);border:1px solid #f3d3dd;border-radius:19px;box-shadow:0 7px 19px rgba(49,22,79,.07)}
+.trust-item:nth-child(2){background:linear-gradient(125deg,#f0e5ff,#fff2dc)}.trust-item:nth-child(3){background:linear-gradient(125deg,#e4f8f0,#fff3df)}
+.trust-icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border-radius:15px;background:#ffd8e7;font-size:23px}.trust-item:nth-child(2) .trust-icon{background:#ded0ff}.trust-item:nth-child(3) .trust-icon{background:#c5f0df}
+.trust-item strong{display:block;color:#3c244d;font-size:14px;font-weight:950;margin-bottom:4px}.trust-item small{display:block;color:#76657d;font-size:11px;line-height:1.45}
+.catalog-layout{max-width:1450px;margin:24px auto 38px;padding:0 22px}
+h2.section-title{font-size:clamp(27px,3.4vw,39px);font-weight:1000;color:#3b1c50;margin:16px 10px 6px}
+.section-subtitle{text-align:center;color:#78647e;font-size:14px;line-height:1.6;margin:0 0 21px;font-weight:600}
+.search-wrap{max-width:720px;margin:0 auto 18px}.search-wrap input{background:#fffaf5;border:2px solid #efd1df;border-radius:16px;padding:15px 18px;box-shadow:0 6px 18px rgba(49,22,79,.06)}.search-wrap input:focus{border-color:#c51d65;box-shadow:0 0 0 4px #c51d6519}
+.category-nav{gap:10px;margin-bottom:25px}.category-chip{background:#fffaf5;border:1px solid #e9d5e2;color:#4b267f;border-radius:999px;padding:11px 18px;font-size:13px;font-weight:900;box-shadow:0 4px 12px rgba(49,22,79,.05)}.category-chip:nth-child(2){background:#ffe1ec;border-color:#f5bad0}.category-chip:nth-child(3){background:#eee4ff;border-color:#d8c4f4}.category-chip:nth-child(4){background:#fff0c5;border-color:#f3dfa1}.category-chip.active,.category-chip:hover{background:#4b267f;border-color:#4b267f;color:#fff}
+.products{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1390px;padding:0;margin:0 auto 34px}
+.product{background:linear-gradient(160deg,#fffaf3,#fff0f5)!important;border:1px solid #f0d9e2;border-radius:21px;padding:12px;box-shadow:0 7px 19px rgba(49,22,79,.08);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.product:nth-child(4n+2){background:linear-gradient(160deg,#f8f0ff,#fff9ee)!important}.product:nth-child(4n+3){background:linear-gradient(160deg,#effaf4,#fff9ef)!important}.product:nth-child(4n){background:linear-gradient(160deg,#fff3d7,#fff2f7)!important}
+.product:hover{transform:translateY(-5px);box-shadow:0 14px 27px rgba(49,22,79,.14)}
+.gallery{height:225px;background:#fff;border:1px solid #f3e4e9;border-radius:16px;overflow:hidden}.gallery img{transition:transform .3s}.product:hover .gallery img{transform:scale(1.035)}
+.gallery-arrow{background:#fff;color:#c51d65;border:1px solid #f2d8e4;box-shadow:0 3px 10px #28163f18}.gallery-count{background:#fff;color:#4b267f;border:1px solid #f0d9e2;font-weight:800}
+.product h3{font-size:16px;font-weight:950;color:#3c244d;min-height:42px;margin:13px 2px 5px}.product-description{font-size:12px;color:#78677f;line-height:1.55;min-height:38px}.price{font-size:22px;font-weight:1000;color:#c51d65}.product select{border:1px solid #e8cbd9;border-radius:11px;background:#fffaf5}.product .add-button{margin-top:auto}
+.cart-section,.contact-section{max-width:980px;background:linear-gradient(140deg,#fffaf3,#ffeaf2 65%,#f0e8ff);border:1px solid #efd2df;border-radius:25px;box-shadow:var(--mt-shadow);padding:24px;margin:28px auto}.cart-section h2,.contact-section h2{color:#3b1c50;font-weight:1000}.cart-item{border-bottom:1px solid #f0d9e2}.quantity-controls button{background:#ffe1ec;color:#a51f69;border-radius:9px}.remove-button{background:#ffe7eb;color:#a51f4c;border-radius:9px}.cart-total{color:#c51d65;font-weight:1000}.shipping-note{color:#78677f}.whatsapp-button{background:#20b96d;border-radius:13px;font-weight:950;box-shadow:0 6px 15px #20b96d33}.facebook-button{border-radius:13px;font-weight:900}
+footer{background:#28163f;color:#ffeaf3;padding:28px 14px;margin-top:34px}
+@media(max-width:1050px){.top-showcase{grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr)}.products{grid-template-columns:repeat(3,minmax(0,1fr))}.gallery{height:210px}}
+@media(max-width:720px){.announcement-strip{font-size:11px;padding:10px}.top-showcase{display:flex;flex-direction:column;padding:0 12px;margin:14px auto;gap:13px}.top-showcase .banner{min-height:330px;height:330px;padding:22px;border-radius:23px}.top-showcase .banner img{width:100%;height:100%;object-fit:cover;opacity:.56;mask-image:linear-gradient(90deg,transparent 0%,#000 45%)}.top-showcase .banner:before{background:linear-gradient(90deg,rgba(38,16,59,.98),rgba(57,22,81,.86) 68%,rgba(87,30,101,.35))}.hero-copy{max-width:90%}.hero-copy h2{font-size:39px}.hero-copy p{font-size:13px;max-width:280px}.hero-sticker{width:68px;height:68px;font-size:11px;right:12px;top:12px}.offers-section{padding:14px}.offers-section h2{font-size:22px}.offer-cards{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:7px}.offer-card{flex:0 0 82%;max-width:310px;scroll-snap-align:start}.trust-strip{grid-template-columns:1fr;gap:9px;padding:0 13px;margin:14px auto 24px}.trust-item{padding:12px 14px}.catalog-layout{padding:0 12px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:0 2px}.product{padding:9px;border-radius:16px}.gallery{height:175px}.product h3{font-size:14px;min-height:0}.product-description{font-size:11px;min-height:0}.price{font-size:19px}.add-button{font-size:12px;padding:11px 6px}.cart-section,.contact-section{width:calc(100% - 24px);padding:17px;border-radius:19px}}
+@media(max-width:380px){.products{grid-template-columns:1fr}.gallery{height:245px}.hero-copy h2{font-size:33px}}
 
 
-/* === MICKEY TOYS: IMMERSIVE PLAY WORLD === */
-:root{--mt-perspective:1100px}
-body{background-image:radial-gradient(circle at 8% 18%,#ffd36b35 0 8%,transparent 8.5%),radial-gradient(circle at 92% 32%,#e83e8320 0 10%,transparent 10.5%),linear-gradient(135deg,#ffe6f0 0%,#fff0cf 34%,#f2e5ff 68%,#ffe3eb 100%);background-attachment:fixed}
-header{isolation:isolate;min-height:106px;display:grid;align-content:center}
-header:before{content:"✦";font-size:76px;left:5%;top:8px;letter-spacing:0;color:#ffd36b;opacity:.85;transform:rotate(-15deg)}
-header:after{content:"✿";font-size:78px;right:5%;bottom:-18px;letter-spacing:0;color:#ffc4dc;opacity:.8;transform:rotate(15deg)}
-.top-showcase{perspective:1400px;align-items:center;gap:clamp(16px,2.4vw,34px);margin-top:34px;margin-bottom:46px}
-.top-showcase .banner{transform:rotateY(2deg) rotateX(1deg);transform-style:preserve-3d;box-shadow:0 28px 0 -17px #4b1c5430,0 34px 55px #4b1c5430;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
-.top-showcase .banner:hover{transform:rotateY(0) rotateX(0) translateY(-7px);box-shadow:0 35px 0 -17px #4b1c5430,0 42px 65px #4b1c5438}
-.top-showcase .banner img{filter:drop-shadow(0 20px 18px #32102c42);transform:translateZ(28px)}
-.offers-section{transform:rotateY(-2deg);transform-style:preserve-3d;box-shadow:0 12px 0 -5px #3b153a45,0 28px 48px #3b153a35}
-.offer-card{transform:translateZ(18px);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.offer-card:hover{transform:translateY(-9px) rotate(-1deg) translateZ(30px);box-shadow:0 24px 38px #260e294a}
-.catalog-layout{position:relative}
-h2.section-title{transform:rotate(-1deg);box-shadow:0 7px 0 #431c4c25,0 14px 24px #8e28652c}
-.search-wrap input{box-shadow:0 10px 0 -5px #59264f1c,0 15px 25px #692b5818}
-.category-chip{box-shadow:0 5px 0 #54234e17,0 8px 14px #74275210}
-.products{perspective:1300px;align-items:stretch;gap:clamp(16px,2vw,26px)}
-.product{transform-style:preserve-3d;will-change:transform;isolation:isolate;overflow:visible;border:1px solid #ffffffd9;box-shadow:0 9px 0 -4px #55234f22,0 18px 30px #4c1f481c;transition:transform .18s ease-out,box-shadow .25s ease,border-color .25s ease}
-.product:before{height:8px;border-radius:22px 22px 0 0;box-shadow:0 2px 9px #d84b9140}
-.product:after{content:"✦";position:absolute;z-index:4;top:13px;right:14px;color:#e8a92c;font-size:22px;text-shadow:0 2px 4px #fff;pointer-events:none;transform:translateZ(35px)}
-.product:hover{box-shadow:0 14px 0 -5px #55234f24,0 30px 48px #4c1f4830;border-color:#ffd36a}
-.gallery{position:relative;overflow:visible;isolation:isolate;transform:translateZ(24px);background:radial-gradient(ellipse at 50% 75%,#6d31501c,transparent 60%),linear-gradient(145deg,#ffe7f0,#fff1ce 55%,#eee4ff);box-shadow:inset 0 -12px 22px #6a28500c}
-.gallery:before{content:"";position:absolute;inset:12px;border:1px solid #ffffffa8;border-radius:14px;pointer-events:none;z-index:1}
-.gallery img{display:block;width:100%;height:100%;object-fit:contain;padding:8px;mix-blend-mode:normal;position:relative;z-index:2;filter:drop-shadow(0 14px 10px #39213b35);transform:translateZ(34px) scale(.94);transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s;cursor:zoom-in}
-.product:hover .gallery img{transform:translateZ(48px) scale(1.035) rotate(-1deg);filter:drop-shadow(0 23px 15px #39213b45)}
-.product h3,.product-description,.product select,.product .price,.product .add-button{position:relative;transform:translateZ(13px)}
-.product h3{margin-top:18px}
-.product .add-button{box-shadow:0 6px 0 #65194c55,0 12px 18px #a82d7930;transition:transform .2s,box-shadow .2s,filter .2s}
-.product .add-button:hover{transform:translateZ(18px) translateY(-3px);box-shadow:0 9px 0 #65194c55,0 17px 23px #a82d7940}
-.cart-section,.contact-section{box-shadow:0 12px 0 -5px #32123a35,0 28px 45px #58245b30;position:relative;overflow:hidden}
-.cart-section:before,.contact-section:before{content:"✦  ✧  ✦";position:absolute;right:20px;top:10px;color:#ffdf83;font-size:27px;letter-spacing:12px;opacity:.8;pointer-events:none}
-footer{position:relative;overflow:hidden}
-footer:before{content:"✿  ★  ✦  ✿";display:block;color:#ffda75;letter-spacing:22px;font-size:24px;margin-bottom:10px;opacity:.8}
-/* gentle reveal while scrolling */
-.mt-reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}
-.mt-reveal.is-visible{opacity:1;transform:translateY(0)}
-@media(max-width:720px){
- body{background-attachment:scroll}
- .top-showcase{perspective:none;margin-top:20px;margin-bottom:30px}
- .top-showcase .banner,.offers-section{transform:none;box-shadow:0 12px 28px #4b1c5425}
- .top-showcase .banner:hover{transform:none}
- .products{perspective:none;gap:13px}
- .product{transform:none!important;box-shadow:0 7px 0 -4px #55234f20,0 12px 22px #4c1f481a}
- .product:after{font-size:17px;top:10px;right:10px}
- .gallery{transform:none}
- .gallery img{transform:none;filter:drop-shadow(0 10px 8px #39213b2c)}
- .product:hover .gallery img{transform:scale(1.015)}
- .product h3,.product-description,.product select,.product .price,.product .add-button{transform:none}
- .product .add-button:hover{transform:translateY(-2px)}
- .cart-section:before,.contact-section:before{font-size:18px;letter-spacing:6px}
-}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.offer-product-images{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0 auto 13px;width:100%}
+.offer-product-images img{display:block;width:100%;height:165px;object-fit:contain;background:#fff;border-radius:14px;padding:5px;border:1px solid #f0d9e2}
+.markers-mandala-offer .offer-saving{margin:7px 0 2px;color:#128c4a;font-weight:950}
+@media(max-width:720px){.offer-product-images img{height:145px}}
 
 </style>
 </head>
@@ -503,34 +408,52 @@ footer:before{content:"✿  ★  ✦  ✿";display:block;color:#ffda75;letter-sp
 <button id="arabicButton" onclick="setLanguage('ar')">العربية</button>
 </div>
 
+<div class="announcement-strip" id="announcementStrip">🎁 Fun finds, happy kids & special offers — shop Mickey Toys today!</div>
+
 <div class="top-showcase">
 <div class="banner">
-<img src="https://mickeytoys.github.io/MICKEY_TOYS/mickey-banner.png.jpeg" alt="Mickey Toys" onerror="this.style.display='none'">
+<img src="mickey-banner.png.jpeg" alt="Mickey Toys toys collection" onerror="this.style.display='none'">
+<div class="hero-copy">
+<span class="hero-kicker" id="heroKicker">A LITTLE MAGIC IN EVERY PLAY</span>
+<h2 id="heroTitle">Big smiles start with<br><em>Mickey Toys!</em></h2>
+<p id="heroDescription">Discover colorful toys, creative activities and lovely gifts for every little moment.</p>
+<a class="hero-button" href="#products" id="heroButton">Explore the toys <span>→</span></a>
+</div>
+<div class="hero-sticker" id="heroSticker">PLAY<br>MORE ✦</div>
 </div>
 
 <aside class="offers-section" id="specialOffers">
 <h2 id="offersTitle">🎉 Special Offers</h2>
 
 <div class="offer-cards">
-<article class="offer-card jenga-offer">
-<img class="offer-image" src="https://mickeytoys.github.io/MICKEY_TOYS/%D8%B9%D8%B1%D8%B6%20%D8%AC%D9%86%D8%AC%D8%A7.jpg" alt="Wooden Jenga special offer">
-<span class="offer-badge" id="jengaOfferBadge">SPECIAL OFFER</span>
-<h3 id="jengaOfferName">Wooden Jenga Game 🪵</h3>
-<p id="jengaOfferDescription">A fun stacking game for family time.</p>
-<p class="offer-prices">
-<span class="offer-new-price">185 EGP</span>
-</p>
-<button class="add-button" onclick="goToProduct('woodenBlocks')">
-<span id="jengaOfferShopButton">Shop Now</span>
+<article class="offer-card markers-mandala-offer">
+<div class="offer-product-images">
+<img src="WhatsApp%20Image%202026-10-11%20at%2010.37.46%20AM.jpeg" alt="Touch 48 markers">
+<img src="%D9%83%D8%AA%D8%A8%20%D8%AA%D9%84%D9%88%D9%8A%D9%86%20%D9%85%D8%A7%D9%86%D8%AF%D9%8A%D9%84%D8%A7.jpeg" alt="Mandala coloring book gift">
+</div>
+<span class="offer-badge" id="markersOfferBadge">SPECIAL OFFER</span>
+<h3 id="markersOfferName">Touch 48 Colors + FREE Mandala Book 🎨🎁</h3>
+<p id="markersOfferDescription">Get a Mandala coloring book FREE with the Touch 48 markers set. Limited time offer!</p>
+<p class="offer-prices"><span class="offer-new-price">329 EGP</span></p>
+<p class="offer-saving" id="markersOfferGift">🎁 FREE Mandala Coloring Book</p>
+<button class="add-button" onclick="addToCart('markersMandalaOffer')">
+<span id="markersOfferButton">Get the Offer</span>
 </button>
 </article>
 </div>
 </aside>
 </div>
 
+<section class="trust-strip" aria-label="Mickey Toys benefits">
+  <div class="trust-item"><span class="trust-icon">🚚</span><div><strong id="trustOneTitle">Delivery across Egypt</strong><small id="trustOneText">Your little one's favorites come to your door</small></div></div>
+  <div class="trust-item"><span class="trust-icon">🎨</span><div><strong id="trustTwoTitle">Play, learn & create</strong><small id="trustTwoText">Fun picks for curious little minds</small></div></div>
+  <div class="trust-item"><span class="trust-icon">💝</span><div><strong id="trustThreeTitle">Picked with love</strong><small id="trustThreeText">Lovely toys for memorable moments</small></div></div>
+</section>
+
 <div class="catalog-layout">
 <div class="catalog-main">
-<h2 class="section-title" id="productsTitle">Our Toys</h2>
+<h2 class="section-title" id="productsTitle">Find their next favorite</h2>
+<p class="section-subtitle" id="productsSubtitle">Colorful discoveries, creative play and gifts made for happy little moments.</p>
 
 <div class="search-wrap">
 <input id="productSearch" type="search"
@@ -598,7 +521,7 @@ const productsData=[
 "WhatsApp Image 2026-10-11 at 10.31.18 AM.jpeg",
 "WhatsApp Image 2026-10-11 at 10.31.17 PM(1).jpeg"]},
 
-{id:"woodenBlocks",nameEn:"Wooden Blocks",nameAr:"مكعبات خشبية",descEn:"Fun wooden blocks for creative play. Limited-time offer!",descAr:"مكعبات خشبية ممتعة للعب والإبداع. عرض لفترة محدودة!",price:185,images:["Wooden Blocks 1.jpg.jpg","Wooden Blocks 2.jpg.jpg","Wooden Blocks 3.jpg.jpg","Wooden Blocks 4.jpg.jpg"]},
+{id:"markersMandalaOffer",nameEn:"SPECIAL OFFER — Touch 48 Markers + FREE Mandala Coloring Book",nameAr:"عرض خاص — شنطة ألوان تاتش 48 لون + كتاب تلوين ماندالا هدية",descEn:"Touch 48 markers with a FREE Mandala coloring book.",descAr:"شنطة ألوان تاتش 48 لون ومعاها كتاب تلوين ماندالا هدية.",price:329,images:[]},
 
 {id:"largeXylophone",nameEn:"Large Xylophone Piano",nameAr:"إكسيلفون بيانو حجم كبير",descEn:"A large colorful xylophone piano for musical play.",descAr:"إكسيلفون بيانو كبير وملون للعب والموسيقى.",price:370,images:["اكسيلفون بيانو حجم كبير 1.jpeg","اكسيلفون بيانو حجم كبير 2.jpeg"]},
 
@@ -733,7 +656,7 @@ markers:"art",largeXylophone:"play",touch60:"art",touch80:"art",
 metallicColors:"art",safe:"play",magnetic:"build",appleBoard:"art",
 makeupBag:"play",colledoll:"play",animalPiano:"play",
 flashCards:"art",magneticWhiteboard:"art",colors208:"art",
-woodenBlocks:"build",siliconeBalls:"play",shakhalil:"play",
+siliconeBalls:"play",shakhalil:"play",
 stitchHeadset:"play",carrotPhone:"play",electricGears:"build",
 lovelyGirl:"play",cameraPiano:"play",penguinPiano:"play",
 jewelryBeads:"art",woodenColors220:"art",hairColorComb:"art",
@@ -753,9 +676,7 @@ renderProducts();
 }
 
 function imagePath(filename){
-// Load the original product photos from the live Mickey Toys GitHub Pages site,
-// so this standalone preview can display them when opened locally.
-return "https://mickeytoys.github.io/MICKEY_TOYS/" + encodeURIComponent(filename).replace(/%2F/gi,"/");
+return encodeURIComponent(filename).replace(/%2F/gi,"/");
 }
 
 function money(price){
@@ -779,7 +700,7 @@ const container=document.getElementById("products");
 const query=(document.getElementById("productSearch")?.value||"").trim().toLocaleLowerCase();
 
 container.innerHTML=productsData.filter(p=>
-p.id!=="woodenBlocks"&&
+p.id!=="markersMandalaOffer"&&
 (activeCategory==="all"||productCategories[p.id]===activeCategory)&&
 (!query||[p.nameAr,p.nameEn,p.descAr,p.descEn].join(" ").toLocaleLowerCase().includes(query))
 ).map(p=>{
@@ -792,7 +713,7 @@ const gallery=`
 <div class="gallery">
 <img src="${imagePath(current)}" alt="${productName(p)}"
 onclick="openLightbox('${p.id}',${index})"
-onerror="this.style.display='none';this.parentElement.classList.add('image-missing')">
+onerror="this.style.opacity='.2'">
 ${imgs.length>1?`
 <button class="gallery-arrow prev" onclick="moveProductImage('${p.id}',-1,event)" aria-label="Previous image">‹</button>
 <button class="gallery-arrow next" onclick="moveProductImage('${p.id}',1,event)" aria-label="Next image">›</button>
@@ -990,13 +911,27 @@ document.getElementById("arabicButton").classList.toggle("active",lang==="ar");
 const t=(id,en,ar)=>document.getElementById(id).textContent=lang==="en"?en:ar;
 
 t("tagline","Fun toys for happy little ones!","ألعاب ممتعة لأطفال مبسوطين!");
+t("announcementStrip","🎁 Fun finds, happy kids & special offers — shop Mickey Toys today!","🎁 ألعاب مبهجة وعروض حلوة — اكتشفي عالم Mickey Toys!");
+t("heroKicker","A LITTLE MAGIC IN EVERY PLAY","لمسة سحر في كل لحظة لعب");
+document.getElementById("heroTitle").innerHTML=lang==="en"?"Big smiles start with<br><em>Mickey Toys!</em>":"الضحكة الكبيرة تبدأ مع<br><em>Mickey Toys!</em>";
+t("heroDescription","Discover colorful toys, creative activities and lovely gifts for every little moment.","اكتشفي ألعاب ملونة وأنشطة إبداعية وهدايا جميلة لكل لحظة حلوة.");
+t("heroButton","Explore the toys →","اكتشفي الألعاب ←");
+t("heroSticker","PLAY MORE ✦","العب أكتر ✦");
+t("trustOneTitle","Delivery across Egypt","توصيل لجميع المحافظات");
+t("trustOneText","Your little one's favorites come to your door","ألعاب طفلك المفضلة لحد باب البيت");
+t("trustTwoTitle","Play, learn & create","العب واتعلم وابتكر");
+t("trustTwoText","Fun picks for curious little minds","اختيارات ممتعة لعقول بتحب تكتشف");
+t("trustThreeTitle","Picked with love","اختيارات بحب");
+t("trustThreeText","Lovely toys for memorable moments","ألعاب جميلة لذكريات أحلى");
+t("productsSubtitle","Colorful discoveries, creative play and gifts made for happy little moments.","اكتشافات ملونة وألعاب إبداعية وهدايا للحظات كلها فرحة.");
 t("offersTitle","🎉 Special Offers","🎉 عروض خاصة");
-t("jengaOfferBadge","SPECIAL OFFER","عرض خاص");
-t("jengaOfferName","Wooden Jenga Game 🪵","لعبة الجنجة الخشبية 🪵");
-t("jengaOfferDescription","A fun stacking game for family time.","لعبة تكديس ممتعة لوقت عائلي جميل.");
-t("jengaOfferShopButton","Shop Now","تسوّقي الآن");
+t("markersOfferBadge","SPECIAL OFFER","عرض خاص");
+t("markersOfferName","Touch 48 Colors + FREE Mandala Book 🎨🎁","شنطة ألوان تاتش 48 لون + كتاب ماندالا هدية 🎨🎁");
+t("markersOfferDescription","Get a Mandala coloring book FREE with the Touch 48 markers set. Limited time offer!","احصلي على كتاب تلوين ماندالا هدية مع شنطة ألوان تاتش 48 لون لفترة محدودة!");
+t("markersOfferGift","🎁 FREE Mandala Coloring Book","🎁 كتاب تلوين ماندالا هدية");
+t("markersOfferButton","Get the Offer","اطلبي العرض");
 
-t("productsTitle","Our Toys","ألعابنا");
+t("productsTitle","Find their next favorite","اختاري لعبتهم المفضلة الجاية");
 t("catAll","All Toys","كل الألعاب");
 t("catArt","Art & Colors","الألوان والرسم");
 t("catBuild","Building Toys","ألعاب التركيب");
@@ -1017,38 +952,5 @@ if(document.getElementById("lightbox").classList.contains("open"))updateLightbox
 renderProducts();
 renderCart();
 </script>
-
-<script>
-// Subtle 3D tilt on desktop only; keeps the original product gallery/cart logic intact.
-(function(){
- const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
- if(!finePointer) return;
- document.addEventListener('pointermove',function(e){
-   const card=e.target.closest('.product');
-   if(!card) return;
-   const r=card.getBoundingClientRect();
-   const x=(e.clientX-r.left)/r.width;
-   const y=(e.clientY-r.top)/r.height;
-   const ry=(x-.5)*8;
-   const rx=(.5-y)*7;
-   card.style.transform=`perspective(950px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
- },{passive:true});
- document.addEventListener('pointerout',function(e){
-   const card=e.target.closest('.product');
-   if(card && !card.contains(e.relatedTarget)) card.style.transform='';
- },{passive:true});
-})();
-// Reveal the main shopping sections as the visitor scrolls.
-(function(){
- const sections=document.querySelectorAll('.catalog-layout,.cart-section,.contact-section,footer');
- if(!('IntersectionObserver' in window)){sections.forEach(el=>el.classList.add('is-visible'));return;}
- sections.forEach(el=>el.classList.add('mt-reveal'));
- const observer=new IntersectionObserver(entries=>{
-   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});
- },{threshold:.08});
- sections.forEach(el=>observer.observe(el));
-})();
-</script>
-
 </body>
 </html>
